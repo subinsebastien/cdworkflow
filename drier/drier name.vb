@@ -458,8 +458,5 @@ Public Class drier_name
         End If
     End Sub
 
-    Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
-        hhhh.Show()
-
-    End Sub
+   
 End Class

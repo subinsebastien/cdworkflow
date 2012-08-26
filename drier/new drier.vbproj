@@ -74,12 +74,6 @@
     <Compile Include="drier name.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="hhhh.Designer.vb">
-      <DependentUpon>hhhh.vb</DependentUpon>
-    </Compile>
-    <Compile Include="hhhh.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -122,10 +116,6 @@
   <ItemGroup>
     <EmbeddedResource Include="drier name.resx">
       <DependentUpon>drier name.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="hhhh.resx">
-      <DependentUpon>hhhh.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
