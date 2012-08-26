@@ -1,0 +1,15 @@
+E:\NEW\drier\obj\Debug\ResolveAssemblyReference.cache
+E:\NEW\drier\obj\Debug\drier.drier_name.resources
+E:\NEW\drier\obj\Debug\drier.Resources.resources
+E:\NEW\drier\obj\Debug\drier.New_Transaction.resources
+E:\NEW\drier\obj\Debug\new drier.vbproj.GenerateResource.Cache
+E:\NEW\drier\obj\Debug\drier.exe
+E:\NEW\drier\obj\Debug\drier.xml
+E:\NEW\drier\obj\Debug\drier.pdb
+E:\NEW\drier\bin\Debug\drier.exe
+E:\NEW\drier\bin\Debug\drier.pdb
+E:\NEW\drier\bin\Debug\drier.xml
+E:\NEW\drier\obj\Debug\drier.user_regn1.resources
+E:\NEW\drier\obj\Debug\drier.SplashScreen_drier.resources
+E:\NEW\drier\bin\Debug\drier.exe.config
+E:\NEW\drier\obj\Debug\drier.hhhh.resources
