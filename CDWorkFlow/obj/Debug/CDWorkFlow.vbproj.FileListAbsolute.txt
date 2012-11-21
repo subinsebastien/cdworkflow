@@ -1,0 +1,19 @@
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\bin\Debug\CDWorkFlow.exe
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\bin\Debug\CDWorkFlow.pdb
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\bin\Debug\CDWorkFlow.xml
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.Password_change.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.EditCustomerDetails.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.EditUserDetails.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.Home.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.TransactionDetails.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.Resources.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.New_Transaction.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.ViewInventory.resources
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.vbproj.GenerateResource.Cache
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.exe
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.xml
+C:\Users\Napster\Documents\Visual Studio 2008\Projects\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.pdb
+C:\Users\Napster\Documents\GitHub\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.exe
+C:\Users\Napster\Documents\GitHub\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.xml
+C:\Users\Napster\Documents\GitHub\cdworkflow\CDWorkFlow\obj\Debug\CDWorkFlow.pdb
