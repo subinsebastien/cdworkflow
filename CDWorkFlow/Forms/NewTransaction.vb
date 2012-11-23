@@ -20,7 +20,7 @@ Public Class New_Transaction
             tbox.Focus()
         Else
             e.KeyChar = ""
-            StatusBarUpdater.updateStatusBar("numerals only", 1)
+            StatusBarUpdater.updateStatusBar("Numerals only", 1)
             tbox.Focus()
         End If
         If Asc(e.KeyChar) = 13 Then
@@ -112,6 +112,10 @@ Public Class New_Transaction
     End Sub
 
     Private Sub cmbcname_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbcname.SelectedIndexChanged
+
+        ErrorProvider1.SetError(cmbcname, "ERROROROR")
+        ErrorProvider1.SetError(txtmobile, "ERROROROR")
+
         Dim dr1 As SqlDataReader
         dr = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
         dr.Read()
@@ -119,7 +123,6 @@ Public Class New_Transaction
         If dr.HasRows Then
 
             If IsDBNull(dr(2)) Then
-                'MsgBox("sorry nuill")
                 txtmobile.Text = "null"
                 txtaddress.Text = dr(3)
             Else
@@ -188,8 +191,6 @@ Public Class New_Transaction
         If txtinkg.Text.ToString = "0.0" Then
             txtinkg.Clear()
         End If
-
-        'label18.Text = "Balance Rs." + Val(txtdue.Text)
     End Sub
 
     Private Sub txtcredit_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtcredit.GotFocus

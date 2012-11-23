@@ -58,7 +58,6 @@ Partial Class ViewInventory
         Me.chkboxcustomer = New System.Windows.Forms.CheckBox
         Me.Label3 = New System.Windows.Forms.Label
         Me.cmbcname = New System.Windows.Forms.ComboBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.totavg = New System.Windows.Forms.Button
         Me.Label7 = New System.Windows.Forms.Label
         Me.Label12 = New System.Windows.Forms.Label
@@ -71,12 +70,12 @@ Partial Class ViewInventory
         Me.DeleteButton = New System.Windows.Forms.Button
         Me.ViewButton = New System.Windows.Forms.Button
         Me.PrintButton = New System.Windows.Forms.Button
+        Me.RadioButton5 = New System.Windows.Forms.RadioButton
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -87,12 +86,11 @@ Partial Class ViewInventory
         Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dates, Me.Cust_name, Me.inkg, Me.outkg, Me.credit, Me.rate, Me.runbalance, Me.tid})
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 260)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 266)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
@@ -100,7 +98,7 @@ Partial Class ViewInventory
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(700, 218)
+        Me.DataGridView1.Size = New System.Drawing.Size(700, 212)
         Me.DataGridView1.TabIndex = 25
         '
         'dates
@@ -128,10 +126,10 @@ Partial Class ViewInventory
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle3.Format = "N3"
         Me.inkg.DefaultCellStyle = DataGridViewCellStyle3
-        Me.inkg.HeaderText = "Inbound Cardamom (Kg.)"
+        Me.inkg.HeaderText = "Fresh Cardamom (Kg.)"
         Me.inkg.Name = "inkg"
         Me.inkg.ReadOnly = True
-        Me.inkg.Width = 98
+        Me.inkg.Width = 105
         '
         'outkg
         '
@@ -140,7 +138,7 @@ Partial Class ViewInventory
         DataGridViewCellStyle4.Format = "N3"
         DataGridViewCellStyle4.NullValue = Nothing
         Me.outkg.DefaultCellStyle = DataGridViewCellStyle4
-        Me.outkg.HeaderText = "Outbound Cardamom (Kg.)"
+        Me.outkg.HeaderText = "Processed Cardamom (Kg.)"
         Me.outkg.Name = "outkg"
         Me.outkg.ReadOnly = True
         Me.outkg.Width = 98
@@ -190,10 +188,10 @@ Partial Class ViewInventory
         '
         'FiltrButton
         '
-        Me.FiltrButton.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FiltrButton.Location = New System.Drawing.Point(612, 222)
+        Me.FiltrButton.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FiltrButton.Location = New System.Drawing.Point(616, 228)
         Me.FiltrButton.Name = "FiltrButton"
-        Me.FiltrButton.Size = New System.Drawing.Size(100, 32)
+        Me.FiltrButton.Size = New System.Drawing.Size(96, 32)
         Me.FiltrButton.TabIndex = 60
         Me.FiltrButton.Text = "Filter"
         Me.FiltrButton.UseVisualStyleBackColor = True
@@ -202,45 +200,46 @@ Partial Class ViewInventory
         '
         Me.PictureBox1.Image = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(-1, -5)
+        Me.PictureBox1.Location = New System.Drawing.Point(-1, -2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(917, 100)
+        Me.PictureBox1.Size = New System.Drawing.Size(917, 97)
         Me.PictureBox1.TabIndex = 61
         Me.PictureBox1.TabStop = False
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.RadioButton5)
         Me.GroupBox2.Controls.Add(Me.chkbox_sort)
         Me.GroupBox2.Controls.Add(Me.RadioButton3)
         Me.GroupBox2.Controls.Add(Me.RadioButton1)
         Me.GroupBox2.Controls.Add(Me.RadioButton2)
         Me.GroupBox2.Controls.Add(Me.RadioButton4)
-        Me.GroupBox2.Location = New System.Drawing.Point(253, 101)
+        Me.GroupBox2.Location = New System.Drawing.Point(285, 101)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(220, 153)
+        Me.GroupBox2.Size = New System.Drawing.Size(205, 159)
         Me.GroupBox2.TabIndex = 69
         Me.GroupBox2.TabStop = False
         '
         'chkbox_sort
         '
         Me.chkbox_sort.AutoSize = True
-        Me.chkbox_sort.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkbox_sort.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkbox_sort.Location = New System.Drawing.Point(6, 0)
         Me.chkbox_sort.Name = "chkbox_sort"
         Me.chkbox_sort.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.chkbox_sort.Size = New System.Drawing.Size(101, 20)
+        Me.chkbox_sort.Size = New System.Drawing.Size(89, 19)
         Me.chkbox_sort.TabIndex = 51
-        Me.chkbox_sort.Text = "Sort Order By"
+        Me.chkbox_sort.Text = "Sort List By"
         Me.chkbox_sort.UseVisualStyleBackColor = True
         '
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Enabled = False
-        Me.RadioButton3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton3.Location = New System.Drawing.Point(26, 24)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(85, 20)
+        Me.RadioButton3.Size = New System.Drawing.Size(93, 19)
         Me.RadioButton3.TabIndex = 54
         Me.RadioButton3.TabStop = True
         Me.RadioButton3.Text = "Due Amount"
@@ -250,10 +249,10 @@ Partial Class ViewInventory
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Enabled = False
-        Me.RadioButton1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadioButton1.Location = New System.Drawing.Point(26, 50)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(121, 20)
+        Me.RadioButton1.Size = New System.Drawing.Size(133, 19)
         Me.RadioButton1.TabIndex = 52
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Inbound Cardamom"
@@ -263,10 +262,10 @@ Partial Class ViewInventory
         '
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Enabled = False
-        Me.RadioButton2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton2.Location = New System.Drawing.Point(26, 76)
+        Me.RadioButton2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton2.Location = New System.Drawing.Point(26, 100)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(130, 20)
+        Me.RadioButton2.Size = New System.Drawing.Size(143, 19)
         Me.RadioButton2.TabIndex = 53
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Outbound Cardamom"
@@ -276,10 +275,10 @@ Partial Class ViewInventory
         '
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.Enabled = False
-        Me.RadioButton4.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton4.Location = New System.Drawing.Point(26, 102)
+        Me.RadioButton4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton4.Location = New System.Drawing.Point(26, 126)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(104, 20)
+        Me.RadioButton4.Size = New System.Drawing.Size(112, 19)
         Me.RadioButton4.TabIndex = 55
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "Customer Name"
@@ -292,30 +291,30 @@ Partial Class ViewInventory
         Me.GroupBox4.Controls.Add(Me.from_date)
         Me.GroupBox4.Controls.Add(Me.Label2)
         Me.GroupBox4.Controls.Add(Me.Label1)
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 101)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 170)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(235, 84)
+        Me.GroupBox4.Size = New System.Drawing.Size(267, 90)
         Me.GroupBox4.TabIndex = 72
         Me.GroupBox4.TabStop = False
         '
         'to_date
         '
         Me.to_date.CustomFormat = ""
-        Me.to_date.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.to_date.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.to_date.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.to_date.Location = New System.Drawing.Point(106, 49)
+        Me.to_date.Location = New System.Drawing.Point(140, 51)
         Me.to_date.Name = "to_date"
-        Me.to_date.Size = New System.Drawing.Size(112, 20)
+        Me.to_date.Size = New System.Drawing.Size(112, 23)
         Me.to_date.TabIndex = 71
         '
         'CheckBoxdate
         '
         Me.CheckBoxdate.AutoSize = True
-        Me.CheckBoxdate.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBoxdate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBoxdate.Location = New System.Drawing.Point(6, 0)
         Me.CheckBoxdate.Name = "CheckBoxdate"
         Me.CheckBoxdate.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.CheckBoxdate.Size = New System.Drawing.Size(90, 20)
+        Me.CheckBoxdate.Size = New System.Drawing.Size(95, 19)
         Me.CheckBoxdate.TabIndex = 67
         Me.CheckBoxdate.Text = "Time Period"
         Me.CheckBoxdate.UseVisualStyleBackColor = True
@@ -323,30 +322,30 @@ Partial Class ViewInventory
         'from_date
         '
         Me.from_date.CustomFormat = ""
-        Me.from_date.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.from_date.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.from_date.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.from_date.Location = New System.Drawing.Point(106, 23)
+        Me.from_date.Location = New System.Drawing.Point(140, 22)
         Me.from_date.Name = "from_date"
-        Me.from_date.Size = New System.Drawing.Size(112, 20)
+        Me.from_date.Size = New System.Drawing.Size(112, 23)
         Me.from_date.TabIndex = 70
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(16, 53)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(18, 56)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 16)
+        Me.Label2.Size = New System.Drawing.Size(48, 15)
         Me.Label2.TabIndex = 69
         Me.Label2.Text = "To Date"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 27)
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(18, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 16)
+        Me.Label1.Size = New System.Drawing.Size(62, 15)
         Me.Label1.TabIndex = 68
         Me.Label1.Text = "From Date"
         '
@@ -355,20 +354,20 @@ Partial Class ViewInventory
         Me.GroupBox3.Controls.Add(Me.chkboxcustomer)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.cmbcname)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 191)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 101)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(235, 63)
+        Me.GroupBox3.Size = New System.Drawing.Size(267, 63)
         Me.GroupBox3.TabIndex = 71
         Me.GroupBox3.TabStop = False
         '
         'chkboxcustomer
         '
         Me.chkboxcustomer.AutoSize = True
-        Me.chkboxcustomer.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkboxcustomer.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkboxcustomer.Location = New System.Drawing.Point(6, 0)
         Me.chkboxcustomer.Name = "chkboxcustomer"
         Me.chkboxcustomer.Padding = New System.Windows.Forms.Padding(5, 0, 0, 0)
-        Me.chkboxcustomer.Size = New System.Drawing.Size(117, 20)
+        Me.chkboxcustomer.Size = New System.Drawing.Size(121, 19)
         Me.chkboxcustomer.TabIndex = 59
         Me.chkboxcustomer.Text = "Customer Details"
         Me.chkboxcustomer.UseVisualStyleBackColor = True
@@ -376,57 +375,39 @@ Partial Class ViewInventory
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(18, 26)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(86, 16)
+        Me.Label3.Size = New System.Drawing.Size(94, 15)
         Me.Label3.TabIndex = 49
         Me.Label3.Text = "Customer Name"
         '
         'cmbcname
         '
         Me.cmbcname.Enabled = False
-        Me.cmbcname.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbcname.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbcname.FormattingEnabled = True
-        Me.cmbcname.Location = New System.Drawing.Point(106, 23)
+        Me.cmbcname.Location = New System.Drawing.Point(140, 23)
         Me.cmbcname.Name = "cmbcname"
-        Me.cmbcname.Size = New System.Drawing.Size(112, 24)
+        Me.cmbcname.Size = New System.Drawing.Size(112, 23)
         Me.cmbcname.TabIndex = 50
         Me.cmbcname.Text = "---Select Name---"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.totavg)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.totdried)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.totfresh)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(479, 101)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(233, 96)
-        Me.GroupBox1.TabIndex = 78
-        Me.GroupBox1.TabStop = False
         '
         'totavg
         '
         Me.totavg.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.totavg.AutoSize = True
         Me.totavg.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.totavg.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.totavg.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
         Me.totavg.FlatAppearance.BorderSize = 0
         Me.totavg.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control
         Me.totavg.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
         Me.totavg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.totavg.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.totavg.Location = New System.Drawing.Point(169, 60)
+        Me.totavg.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totavg.Location = New System.Drawing.Point(649, 63)
         Me.totavg.Name = "totavg"
-        Me.totavg.Size = New System.Drawing.Size(58, 26)
+        Me.totavg.Size = New System.Drawing.Size(59, 25)
         Me.totavg.TabIndex = 91
         Me.totavg.Text = "Button3"
         Me.totavg.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -435,20 +416,20 @@ Partial Class ViewInventory
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(16, 63)
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(463, 68)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 16)
+        Me.Label7.Size = New System.Drawing.Size(50, 15)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "Average"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(16, 17)
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(463, 22)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(91, 16)
+        Me.Label12.Size = New System.Drawing.Size(98, 15)
         Me.Label12.TabIndex = 0
         Me.Label12.Text = "Fresh Cardamom"
         '
@@ -457,15 +438,16 @@ Partial Class ViewInventory
         Me.totdried.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.totdried.AutoSize = True
         Me.totdried.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.totdried.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.totdried.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
         Me.totdried.FlatAppearance.BorderSize = 0
         Me.totdried.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control
         Me.totdried.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
         Me.totdried.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.totdried.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.totdried.Location = New System.Drawing.Point(169, 37)
+        Me.totdried.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totdried.Location = New System.Drawing.Point(649, 40)
         Me.totdried.Name = "totdried"
-        Me.totdried.Size = New System.Drawing.Size(58, 26)
+        Me.totdried.Size = New System.Drawing.Size(59, 25)
         Me.totdried.TabIndex = 90
         Me.totdried.Text = "Button2"
         Me.totdried.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -474,27 +456,29 @@ Partial Class ViewInventory
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(16, 40)
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(463, 45)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(90, 16)
+        Me.Label8.Size = New System.Drawing.Size(123, 15)
         Me.Label8.TabIndex = 2
-        Me.Label8.Text = "Dried Cardamom"
+        Me.Label8.Text = "Processed Cardamom"
         '
         'totfresh
         '
         Me.totfresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.totfresh.AutoSize = True
         Me.totfresh.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.totfresh.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.totfresh.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control
         Me.totfresh.FlatAppearance.BorderSize = 0
         Me.totfresh.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control
         Me.totfresh.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control
         Me.totfresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.totfresh.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.totfresh.Location = New System.Drawing.Point(169, 12)
+        Me.totfresh.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.totfresh.Location = New System.Drawing.Point(649, 15)
         Me.totfresh.Name = "totfresh"
-        Me.totfresh.Size = New System.Drawing.Size(58, 26)
+        Me.totfresh.Size = New System.Drawing.Size(59, 25)
         Me.totfresh.TabIndex = 89
         Me.totfresh.Text = "Button1"
         Me.totfresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -503,35 +487,36 @@ Partial Class ViewInventory
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(120, 61)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(612, 64)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(12, 16)
+        Me.Label4.Size = New System.Drawing.Size(10, 15)
         Me.Label4.TabIndex = 88
         Me.Label4.Text = ":"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(120, 17)
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(612, 20)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(12, 16)
+        Me.Label6.Size = New System.Drawing.Size(10, 15)
         Me.Label6.TabIndex = 86
         Me.Label6.Text = ":"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(120, 38)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(612, 41)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(12, 16)
+        Me.Label5.Size = New System.Drawing.Size(10, 15)
         Me.Label5.TabIndex = 87
         Me.Label5.Text = ":"
         '
         'DeleteButton
         '
+        Me.DeleteButton.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteButton.Image = CType(resources.GetObject("DeleteButton.Image"), System.Drawing.Image)
         Me.DeleteButton.Location = New System.Drawing.Point(684, 484)
         Me.DeleteButton.Name = "DeleteButton"
@@ -541,6 +526,7 @@ Partial Class ViewInventory
         '
         'ViewButton
         '
+        Me.ViewButton.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ViewButton.Image = CType(resources.GetObject("ViewButton.Image"), System.Drawing.Image)
         Me.ViewButton.Location = New System.Drawing.Point(650, 484)
         Me.ViewButton.Name = "ViewButton"
@@ -550,6 +536,7 @@ Partial Class ViewInventory
         '
         'PrintButton
         '
+        Me.PrintButton.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PrintButton.Image = CType(resources.GetObject("PrintButton.Image"), System.Drawing.Image)
         Me.PrintButton.Location = New System.Drawing.Point(616, 484)
         Me.PrintButton.Name = "PrintButton"
@@ -557,19 +544,40 @@ Partial Class ViewInventory
         Me.PrintButton.TabIndex = 81
         Me.PrintButton.UseVisualStyleBackColor = True
         '
+        'RadioButton5
+        '
+        Me.RadioButton5.AutoSize = True
+        Me.RadioButton5.Enabled = False
+        Me.RadioButton5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton5.Location = New System.Drawing.Point(26, 75)
+        Me.RadioButton5.Name = "RadioButton5"
+        Me.RadioButton5.Size = New System.Drawing.Size(49, 19)
+        Me.RadioButton5.TabIndex = 56
+        Me.RadioButton5.TabStop = True
+        Me.RadioButton5.Text = "Date"
+        Me.RadioButton5.UseVisualStyleBackColor = True
+        '
         'ViewInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(721, 537)
+        Me.Controls.Add(Me.totavg)
         Me.Controls.Add(Me.PrintButton)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.ViewButton)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.totdried)
         Me.Controls.Add(Me.DeleteButton)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.totfresh)
         Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.FiltrButton)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PictureBox1)
@@ -583,9 +591,8 @@ Partial Class ViewInventory
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
@@ -607,7 +614,6 @@ Partial Class ViewInventory
     Friend WithEvents chkboxcustomer As System.Windows.Forms.CheckBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmbcname As System.Windows.Forms.ComboBox
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents totavg As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
@@ -628,4 +634,5 @@ Partial Class ViewInventory
     Friend WithEvents rate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents runbalance As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tid As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RadioButton5 As System.Windows.Forms.RadioButton
 End Class
