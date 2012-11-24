@@ -46,22 +46,22 @@ Partial Class New_Transaction
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.lbluname = New System.Windows.Forms.LinkLabel
         Me.Label16 = New System.Windows.Forms.Label
-        Me.Panel2 = New System.Windows.Forms.Panel
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.label18 = New System.Windows.Forms.Button
         Me.indate = New System.Windows.Forms.DateTimePicker
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
         Me.Panel3 = New System.Windows.Forms.Panel
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label5
@@ -306,15 +306,6 @@ Partial Class New_Transaction
         Me.Label16.Text = "23"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(9, 10)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(46, 47)
-        Me.Panel2.TabIndex = 1
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -375,16 +366,6 @@ Partial Class New_Transaction
         Me.indate.TabIndex = 9
         Me.indate.Value = New Date(2012, 11, 11, 0, 0, 0, 0)
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.CDWorkFlow.My.Resources.Resources.BannerImage
-        Me.PictureBox1.InitialImage = Nothing
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(606, 100)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'PrintDocument1
         '
         '
@@ -424,6 +405,25 @@ Partial Class New_Transaction
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(9, 10)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(46, 47)
+        Me.Panel2.TabIndex = 1
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
+        Me.PictureBox1.InitialImage = Nothing
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(606, 100)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'New_Transaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -459,10 +459,10 @@ Partial Class New_Transaction
         Me.Text = "New Transaction"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -123,6 +123,7 @@ Partial Class EditCustomerDetails
         Me.AcceptButton = Me.ButtonSave
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(247, 275)
         Me.Controls.Add(Me.ButtonSave)
         Me.Controls.Add(Me.Banner)

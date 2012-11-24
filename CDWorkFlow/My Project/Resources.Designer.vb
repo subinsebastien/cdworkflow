@@ -73,15 +73,15 @@ Namespace My.Resources
             End Get
         End Property
         
-        Friend ReadOnly Property SucessAudio() As System.IO.UnmanagedMemoryStream
+        Friend ReadOnly Property SuccessAudio() As System.IO.UnmanagedMemoryStream
             Get
-                Return ResourceManager.GetStream("SucessAudio", resourceCulture)
+                Return ResourceManager.GetStream("SuccessAudio", resourceCulture)
             End Get
         End Property
         
-        Friend ReadOnly Property WarningAudio() As System.IO.UnmanagedMemoryStream
+        Friend ReadOnly Property WarnigAudio() As System.IO.UnmanagedMemoryStream
             Get
-                Return ResourceManager.GetStream("WarningAudio", resourceCulture)
+                Return ResourceManager.GetStream("WarnigAudio", resourceCulture)
             End Get
         End Property
     End Module

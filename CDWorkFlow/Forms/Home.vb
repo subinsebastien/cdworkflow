@@ -140,9 +140,11 @@ Public Class Home
         _adminPassword = getSHA1Hash(txtmasterpswd.Text)
         If _adminPassword <> dr(1) Then
             StatusStrip.Visible = True
-            StatusBarUpdater.updateStatusBar("please enter correct password", 1)
-            txtmasterpswd.Focus()
+            ErrorProvider1.SetError(txtmasterpswd, "Enter correct password")
+            ErrorProvider1.SetIconAlignment(txtmasterpswd, ErrorIconAlignment.MiddleLeft)
+            StatusBarUpdater.updateStatusBar("please enter correct passwor", 1)
             txtmasterpswd.Clear()
+            txtmasterpswd.Focus()
         Else
             Dim _useName As String
             _useName = txtfirstnmae.Text + " " + txtlastname.Text
@@ -152,40 +154,57 @@ Public Class Home
             _newPassword = getSHA1Hash(txtpassword.Text)
             _confirmPassword = getSHA1Hash(txtconfirm_passwd.Text)
             If Trim(txtmasterpswd.Text) = "" Then
-
+                ErrorProvider1.SetError(txtuname, "Enter correct password")
+                ErrorProvider1.SetIconAlignment(txtuname, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("Enter admin password", 1)
 
                 txtmasterpswd.Focus()
             ElseIf Trim(txtfirstnmae.Text) = "" Then
+                ErrorProvider1.SetError(txtfirstnmae, "Enter First Name")
+                ErrorProvider1.SetIconAlignment(txtfirstnmae, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("enter first name", 1)
                 txtfirstnmae.Clear()
                 txtfirstnmae.Focus()
             ElseIf Trim(txtlastname.Text) = "" Then
+                ErrorProvider1.SetError(txtlastname, "Enter Last Name")
+                ErrorProvider1.SetIconAlignment(txtlastname, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("Enter last name", 1)
                 txtlastname.Clear()
                 txtlastname.Focus()
             ElseIf Trim(txtadddress.Text) = "" Then
+                ErrorProvider1.SetError(txtadddress, "Enter Address")
+                ErrorProvider1.SetIconAlignment(txtadddress, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("Enter Address", 1)
                 txtadddress.Clear()
                 txtadddress.Focus()
             ElseIf Trim(txtmobile.Text) = "" Then
+                ErrorProvider1.SetError(txtmobile, "Enter mobile number")
+                ErrorProvider1.SetIconAlignment(txtmobile, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("Enter Mobile number", 1)
                 txtmobile.Clear()
                 txtmobile.Focus()
             ElseIf Trim(txtusername.Text) = "" Then
+                ErrorProvider1.SetError(txtusername, "enter user name")
+                ErrorProvider1.SetIconAlignment(txtusername, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("enter user name", 1)
                 txtusername.Clear()
                 txtusername.Focus()
             ElseIf Trim(txtpassword.Text) = "" Then
+                ErrorProvider1.SetError(txtpassword, "Enter new Password")
+                ErrorProvider1.SetIconAlignment(txtpassword, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("Enter new Password", 1)
                 txtpassword.Clear()
                 txtpassword.Focus()
             ElseIf Trim(txtconfirm_passwd.Text) = "" Then
+                ErrorProvider1.SetError(txtconfirm_passwd, "enter confirm password")
+                ErrorProvider1.SetIconAlignment(txtconfirm_passwd, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("enter confirm password", 1)
                 txtconfirm_passwd.Clear()
                 txtconfirm_passwd.Focus()
             ElseIf _confirmPassword <> _newPassword Then
                 checkPassword = 1
+                ErrorProvider1.SetError(txtconfirm_passwd, "password does not match")
+                ErrorProvider1.SetIconAlignment(txtconfirm_passwd, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("password does not match", 1)
                 txtconfirm_passwd.Clear()
                 txtconfirm_passwd.Focus()
@@ -288,11 +307,15 @@ Public Class Home
     End Sub
 
     Private Sub btnlogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlogin.Click
-        My.Computer.Audio.Play(My.Resources.ErrorAudio, AudioPlayMode.Background)
+
         If Trim(txtuname.Text) = "" Then
+            ErrorProvider1.SetError(txtuname, "Enter User Name")
+            ErrorProvider1.SetIconAlignment(txtuname, ErrorIconAlignment.MiddleLeft)
             StatusBarUpdater.updateStatusBar("Enter User name", 1)
             txtuname.Focus()
         ElseIf txtpswd.Text = "" Then
+            ErrorProvider1.SetError(txtpswd, "Enter Password")
+            ErrorProvider1.SetIconAlignment(txtpswd, ErrorIconAlignment.MiddleLeft)
             StatusBarUpdater.updateStatusBar("Enter Password", 1)
             txtpswd.Focus()
         ElseIf txtuname.Text = "admin" Then
@@ -301,6 +324,7 @@ Public Class Home
             Dim _adminPassword As String
             _adminPassword = getSHA1Hash(txtpswd.Text)
             If _adminPassword = dr(1) Then
+                My.Computer.Audio.Play(My.Resources.SuccessAudio, AudioPlayMode.Background)
                 IsMdiContainer = True
                 GroupBox1.Visible = False
                 MenuStrip.Visible = False
@@ -311,6 +335,8 @@ Public Class Home
                 tssldefault.Visible = True
                 ToolStrip1.Visible = True
             Else
+                ErrorProvider1.SetError(txtpswd, "Enter Password")
+                ErrorProvider1.SetIconAlignment(txtpswd, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("Enter correct Password", 1)
                 txtpswd.Clear()
                 txtpswd.Focus()
@@ -322,6 +348,7 @@ Public Class Home
             If dr.HasRows Then
                 _checkPassword = getSHA1Hash(txtpswd.Text)
                 If dr(0) = _checkPassword Then
+                    My.Computer.Audio.Play(My.Resources.SuccessAudio, AudioPlayMode.Background)
                     label18.Visible = True
                     userName = dr(2)
                     logid = dr(1)
@@ -336,11 +363,15 @@ Public Class Home
                     tssldefault.Visible = True
                     ToolStrip1.Visible = False
                 Else
+                    ErrorProvider1.SetError(txtpswd, "Enter Password")
+                    ErrorProvider1.SetIconAlignment(txtpswd, ErrorIconAlignment.MiddleLeft)
                     StatusBarUpdater.updateStatusBar("Enter correct Password", 1)
                     txtpswd.Clear()
                     txtpswd.Focus()
                 End If
             Else
+                ErrorProvider1.SetError(txtpswd, "Enter Password")
+                ErrorProvider1.SetIconAlignment(txtuname, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("User does not exists", 1)
                 txtuname.Clear()
                 txtuname.Focus()
@@ -358,11 +389,16 @@ Public Class Home
     End Sub
 
     Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
+        My.Computer.Audio.Play(My.Resources.SuccessAudio, AudioPlayMode.Background)
         drier_name_Load(Me, New System.EventArgs)
         GroupBox1.Visible = True
         txtuname.Text = ""
         txtpswd.Text = ""
         txtuname.Focus()
+    End Sub
+
+    Private Sub txtuname_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtuname.GotFocus
+
     End Sub
 
     Private Sub txtuname_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtuname.KeyPress
@@ -410,4 +446,15 @@ Public Class Home
     End Sub
 
 
+    Private Sub txtuname_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtuname.LostFocus
+        ErrorProvider1.SetError(txtuname, "")
+    End Sub
+
+    Private Sub txtpswd_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtpswd.LostFocus
+        ErrorProvider1.SetError(txtpswd, "")
+    End Sub
+
+    Private Sub txtmasterpswd_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmasterpswd.LostFocus
+        ErrorProvider1.SetError(txtmasterpswd, "")
+    End Sub
 End Class

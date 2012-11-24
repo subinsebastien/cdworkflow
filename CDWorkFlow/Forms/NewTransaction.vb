@@ -2,7 +2,7 @@
 Imports System.Drawing.Graphics
 Public Class New_Transaction
     Dim db As New DataBaseInterface
-    Dim dr As SqlDataReader
+    Dim globalDataReader As SqlDataReader
     Dim checkForNewEntry As Integer = 0
     Dim customerId As Integer
     Dim tempSum As Decimal
@@ -38,10 +38,10 @@ Public Class New_Transaction
         If chk_insert = 1 Then
             cmbcname.AutoCompleteMode = AutoCompleteMode.SuggestAppend
             cmbcname.AutoCompleteSource = AutoCompleteSource.ListItems
-            dr = db.reader("select name from TABLECUSTOMER")
-            If dr.HasRows Then
-                While dr.Read
-                    cmbcname.Items.Add(Trim(dr(0)))
+            globalDataReader = db.reader("select name from TABLECUSTOMER")
+            If globalDataReader.HasRows Then
+                While globalDataReader.Read
+                    cmbcname.Items.Add(Trim(globalDataReader(0)))
                 End While
             End If
         Else
@@ -50,20 +50,20 @@ Public Class New_Transaction
             txtmobile.Enabled = False
             txtdue.Enabled = False
             MdiParent = Home
-            dr = db.reader("select MAX(ID) from TABLETRANSACTION")
+            globalDataReader = db.reader("select MAX(ID) from TABLETRANSACTION")
             Dim c As Integer = 0
-            dr.Read()
-            If (dr.IsDBNull(0)) Then
+            globalDataReader.Read()
+            If (globalDataReader.IsDBNull(0)) Then
                 Label16.Text = "_"
             Else
-                Label16.Text = Val(dr(0)) + 1
+                Label16.Text = Val(globalDataReader(0)) + 1
             End If
             cmbcname.AutoCompleteMode = AutoCompleteMode.SuggestAppend
             cmbcname.AutoCompleteSource = AutoCompleteSource.ListItems
-            dr = db.reader("select name from TABLECUSTOMER")
-            If dr.HasRows Then
-                While dr.Read
-                    cmbcname.Items.Add(Trim(dr(0)))
+            globalDataReader = db.reader("select name from TABLECUSTOMER")
+            If globalDataReader.HasRows Then
+                While globalDataReader.Read
+                    cmbcname.Items.Add(Trim(globalDataReader(0)))
                 End While
             Else
 
@@ -90,9 +90,9 @@ Public Class New_Transaction
     End Sub
 
     Private Sub cmbcname_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbcname.TextChanged
-        dr = db.reader("select * from TABLECUSTOMER where name = '" & Trim(cmbcname.Text) & "' ")
-        dr.Read()
-        If dr.HasRows Or Trim(cmbcname.Text) = "" Then
+        globalDataReader = db.reader("select * from TABLECUSTOMER where name = '" & Trim(cmbcname.Text) & "' ")
+        globalDataReader.Read()
+        If globalDataReader.HasRows Or Trim(cmbcname.Text) = "" Then
             checkForNewEntry = 0
             txtaddress.Enabled = False
             txtmobile.Enabled = False
@@ -112,31 +112,27 @@ Public Class New_Transaction
     End Sub
 
     Private Sub cmbcname_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbcname.SelectedIndexChanged
+        Dim dataReader As SqlDataReader
+        globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
+        globalDataReader.Read()
+        customerId = globalDataReader(0)
+        If globalDataReader.HasRows Then
 
-        ErrorProvider1.SetError(cmbcname, "ERROROROR")
-        ErrorProvider1.SetError(txtmobile, "ERROROROR")
-
-        Dim dr1 As SqlDataReader
-        dr = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
-        dr.Read()
-        customerId = dr(0)
-        If dr.HasRows Then
-
-            If IsDBNull(dr(2)) Then
+            If IsDBNull(globalDataReader(2)) Then
                 txtmobile.Text = "null"
-                txtaddress.Text = dr(3)
+                txtaddress.Text = globalDataReader(3)
             Else
-                txtmobile.Text = dr(2)
-                txtaddress.Text = dr(3)
+                txtmobile.Text = globalDataReader(2)
+                txtaddress.Text = globalDataReader(3)
             End If
-            dr1 = db.reader("select runbalance from TABLETRANSACTION where customerid=" & customerId & " order by id desc")
-            dr1.Read()
-            If dr1.HasRows Then
-                txtdue.Text = dr1(0)
-                tempSum = dr1(0)
+            dataReader = db.reader("select runbalance from TABLETRANSACTION where customerid=" & customerId & " order by id desc")
+            dataReader.Read()
+            If dataReader.HasRows Then
+                txtdue.Text = Val(dataReader(0)).ToString("#,##0.00")
+                tempSum = dataReader(0)
                 txtinkg.Focus()
             Else
-                txtdue.Text = 0.0
+                txtdue.Text = "0.00"
             End If
         End If
     End Sub
@@ -149,10 +145,14 @@ Public Class New_Transaction
             ElseIf Trim(txtaddress.Text) = "" Then
                 StatusBarUpdater.updateStatusBar("enter adress", 1)
                 txtaddress.Focus()
+            ElseIf Trim(txtmobile.Text) = "" Then
+                StatusBarUpdater.updateStatusBar("Please Enter contact Number", 1)
+                txtmobile.Focus()
+
             Else
-                If Trim(txtmobile.Text) = "" Then
-                    txtmobile.Text = "null"
-                End If
+                'If Trim(txtmobile.Text) = "" Then
+                '    txtmobile.Text = "null"
+                'End If
                 db.manipulate("insert into TABLECUSTOMER values('" & cmbcname.Text & "'," & txtmobile.Text & ",'" & txtaddress.Text & "') ")
                 chk_insert = 1
                 New_Transaction_Load(Me, New System.EventArgs)
@@ -176,9 +176,9 @@ Public Class New_Transaction
                 txtinkg.Focus()
             Else
                 ProcessedTotal = claculateSum()
-                dr = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
-                dr.Read()
-                customerId = dr(0)
+                globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
+                globalDataReader.Read()
+                customerId = globalDataReader(0)
                 db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & Val(txtinkg.Text) & "," & Val(txtoutkg.Text) & " ," & Val(txtcredit.Text) & "," & Val(cmburate.Text) & "," & ProcessedTotal & ")   ")
                 Me.Close()
 
@@ -251,7 +251,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub cmburate_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmburate.TextChanged
-        label18.Text = "Balance Rs." + Val(claculateSum()).ToString
+        label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
     End Sub
 
     Private Sub txtmobile_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtmobile.KeyPress

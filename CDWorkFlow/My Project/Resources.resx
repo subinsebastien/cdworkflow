@@ -124,10 +124,10 @@
   <data name="ErrorAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ErrorAudio.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="SucessAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SucessAudio.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="WarningAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="SuccessAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WarningAudio.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="WarnigAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SucessAudio.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

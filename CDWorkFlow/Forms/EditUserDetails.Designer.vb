@@ -172,6 +172,7 @@ Partial Class EditUserDetails
         '
         Me.txtmobno.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtmobno.Location = New System.Drawing.Point(121, 165)
+        Me.txtmobno.MaxLength = 11
         Me.txtmobno.Name = "txtmobno"
         Me.txtmobno.Size = New System.Drawing.Size(135, 23)
         Me.txtmobno.TabIndex = 62
