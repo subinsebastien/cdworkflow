@@ -129,7 +129,7 @@ Partial Class ViewInventory
         Me.inkg.HeaderText = "Fresh Cardamom (Kg.)"
         Me.inkg.Name = "inkg"
         Me.inkg.ReadOnly = True
-        Me.inkg.Width = 124
+        Me.inkg.Width = 105
         '
         'outkg
         '
@@ -141,7 +141,7 @@ Partial Class ViewInventory
         Me.outkg.HeaderText = "Processed Cardamom (Kg.)"
         Me.outkg.Name = "outkg"
         Me.outkg.ReadOnly = True
-        Me.outkg.Width = 126
+        Me.outkg.Width = 98
         '
         'credit
         '
@@ -153,7 +153,7 @@ Partial Class ViewInventory
         Me.credit.HeaderText = "Amount Paid (Rs.)"
         Me.credit.Name = "credit"
         Me.credit.ReadOnly = True
-        Me.credit.Width = 88
+        Me.credit.Width = 72
         '
         'rate
         '
@@ -177,7 +177,7 @@ Partial Class ViewInventory
         Me.runbalance.HeaderText = "Due Amount (Rs.)"
         Me.runbalance.Name = "runbalance"
         Me.runbalance.ReadOnly = True
-        Me.runbalance.Width = 106
+        Me.runbalance.Width = 87
         '
         'tid
         '
@@ -588,6 +588,7 @@ Partial Class ViewInventory
         Me.Controls.Add(Me.FiltrButton)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
         Me.Name = "ViewInventory"
         Me.Text = "View Inventory"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

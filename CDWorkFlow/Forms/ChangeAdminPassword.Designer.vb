@@ -112,7 +112,6 @@ Partial Class Password_change
         '
         'Password_change
         '
-        Me.AcceptButton = Me.btnupdate
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(246, 228)

@@ -908,10 +908,8 @@ Partial Class Home
         '
         'Home
         '
-        Me.AcceptButton = Me.btnlogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.ButtonCancel
         Me.ClientSize = New System.Drawing.Size(925, 603)
         Me.Controls.Add(Me.label18)
         Me.Controls.Add(Me.Label11)

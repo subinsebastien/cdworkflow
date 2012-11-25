@@ -146,13 +146,9 @@ Public Class New_Transaction
                 StatusBarUpdater.updateStatusBar("enter adress", 1)
                 txtaddress.Focus()
             ElseIf Trim(txtmobile.Text) = "" Then
-                StatusBarUpdater.updateStatusBar("Please Enter contact Number", 1)
+                StatusBarUpdater.updateStatusBar("Enter mobile No", 1)
                 txtmobile.Focus()
-
             Else
-                'If Trim(txtmobile.Text) = "" Then
-                '    txtmobile.Text = "null"
-                'End If
                 db.manipulate("insert into TABLECUSTOMER values('" & cmbcname.Text & "'," & txtmobile.Text & ",'" & txtaddress.Text & "') ")
                 chk_insert = 1
                 New_Transaction_Load(Me, New System.EventArgs)

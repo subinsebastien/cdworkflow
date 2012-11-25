@@ -32,7 +32,6 @@ Partial Class EditUserDetails
         Me.txtpasswd = New System.Windows.Forms.TextBox
         Me.Label7 = New System.Windows.Forms.Label
         Me.chkboxpasswd = New System.Windows.Forms.CheckBox
-        Me.txtaddress = New System.Windows.Forms.TextBox
         Me.Label4 = New System.Windows.Forms.Label
         Me.txtmobno = New System.Windows.Forms.TextBox
         Me.Label3 = New System.Windows.Forms.Label
@@ -41,6 +40,7 @@ Partial Class EditUserDetails
         Me.txtusername = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
         Me.Panel3 = New System.Windows.Forms.Panel
+        Me.txtaddress = New System.Windows.Forms.TextBox
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -148,16 +148,6 @@ Partial Class EditUserDetails
         Me.chkboxpasswd.Text = "Change Password"
         Me.chkboxpasswd.UseVisualStyleBackColor = True
         '
-        'txtaddress
-        '
-        Me.txtaddress.BackColor = System.Drawing.SystemColors.Window
-        Me.txtaddress.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtaddress.Location = New System.Drawing.Point(326, 107)
-        Me.txtaddress.Multiline = True
-        Me.txtaddress.Name = "txtaddress"
-        Me.txtaddress.Size = New System.Drawing.Size(233, 52)
-        Me.txtaddress.TabIndex = 64
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -209,6 +199,7 @@ Partial Class EditUserDetails
         '
         Me.txtusername.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtusername.Location = New System.Drawing.Point(121, 107)
+        Me.txtusername.MaxLength = 20
         Me.txtusername.Name = "txtusername"
         Me.txtusername.Size = New System.Drawing.Size(135, 23)
         Me.txtusername.TabIndex = 58
@@ -233,13 +224,20 @@ Partial Class EditUserDetails
         Me.Panel3.Size = New System.Drawing.Size(575, 54)
         Me.Panel3.TabIndex = 72
         '
+        'txtaddress
+        '
+        Me.txtaddress.Location = New System.Drawing.Point(326, 109)
+        Me.txtaddress.Multiline = True
+        Me.txtaddress.Name = "txtaddress"
+        Me.txtaddress.Size = New System.Drawing.Size(233, 56)
+        Me.txtaddress.TabIndex = 73
+        '
         'EditUserDetails
         '
-        Me.AcceptButton = Me.ButtonUpdate
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.ButtonCancel
         Me.ClientSize = New System.Drawing.Size(571, 311)
+        Me.Controls.Add(Me.txtaddress)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.txtconfirmpswd)
         Me.Controls.Add(Me.Label5)
@@ -248,7 +246,6 @@ Partial Class EditUserDetails
         Me.Controls.Add(Me.txtpasswd)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.chkboxpasswd)
-        Me.Controls.Add(Me.txtaddress)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtmobno)
         Me.Controls.Add(Me.Label3)
@@ -276,7 +273,6 @@ Partial Class EditUserDetails
     Friend WithEvents txtpasswd As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents chkboxpasswd As System.Windows.Forms.CheckBox
-    Friend WithEvents txtaddress As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txtmobno As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -285,4 +281,5 @@ Partial Class EditUserDetails
     Friend WithEvents txtusername As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents txtaddress As System.Windows.Forms.TextBox
 End Class
