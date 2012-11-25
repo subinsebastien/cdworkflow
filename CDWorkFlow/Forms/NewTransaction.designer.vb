@@ -155,7 +155,7 @@ Partial Class New_Transaction
         Me.txtinkg.Name = "txtinkg"
         Me.txtinkg.Size = New System.Drawing.Size(100, 23)
         Me.txtinkg.TabIndex = 5
-        Me.txtinkg.Text = "0.0"
+        Me.txtinkg.Text = "0.00"
         Me.txtinkg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'txtoutkg
@@ -166,7 +166,7 @@ Partial Class New_Transaction
         Me.txtoutkg.Name = "txtoutkg"
         Me.txtoutkg.Size = New System.Drawing.Size(100, 23)
         Me.txtoutkg.TabIndex = 8
-        Me.txtoutkg.Text = "0.0"
+        Me.txtoutkg.Text = "0.00"
         Me.txtoutkg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label12
@@ -217,7 +217,7 @@ Partial Class New_Transaction
         Me.cmburate.FormattingEnabled = True
         Me.cmburate.Items.AddRange(New Object() {"8.5", "9.0"})
         Me.cmburate.Location = New System.Drawing.Point(237, 208)
-        Me.cmburate.MaxLength = 3
+        Me.cmburate.MaxLength = 5
         Me.cmburate.Name = "cmburate"
         Me.cmburate.Size = New System.Drawing.Size(100, 23)
         Me.cmburate.TabIndex = 7

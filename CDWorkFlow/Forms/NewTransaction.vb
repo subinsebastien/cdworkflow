@@ -131,6 +131,7 @@ Public Class New_Transaction
                 txtdue.Text = Val(dataReader(0)).ToString("#,##0.00")
                 tempSum = dataReader(0)
                 txtinkg.Focus()
+                label18.Text = "Balance Rs." + Val(dataReader(0)).ToString("#,##0.00")
             Else
                 txtdue.Text = "0.00"
             End If
@@ -184,7 +185,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtinkg_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinkg.GotFocus
-        If txtinkg.Text.ToString = "0.0" Then
+        If txtinkg.Text.ToString = "0.00" Then
             txtinkg.Clear()
         End If
     End Sub
@@ -202,6 +203,12 @@ Public Class New_Transaction
 
     Private Sub txtcredit_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtcredit.KeyPress
         fieldvalidation(txtcredit, e)
+    End Sub
+
+    Private Sub txtcredit_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtcredit.Leave
+        If (Trim(txtcredit.TextLength = 0)) Then
+            txtcredit.Text = "0.00"
+        End If
     End Sub
 
     Private Sub txtcredit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtcredit.TextChanged
@@ -242,12 +249,20 @@ Public Class New_Transaction
         fieldvalidation(txtinkg, e)
     End Sub
 
+    Private Sub txtinkg_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinkg.Leave
+        If (Trim(txtinkg.TextLength = 0)) Then
+            txtinkg.Text = "0.00"
+        End If
+    End Sub
+
     Private Sub txtinkg_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtinkg.TextChanged
+
         label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
     End Sub
 
     Private Sub cmburate_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmburate.TextChanged
-        label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
+        'label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
+        label18.Text = Format(Val(claculateSum()), "0.00")
     End Sub
 
     Private Sub txtmobile_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtmobile.KeyPress
@@ -293,5 +308,11 @@ Public Class New_Transaction
 
     Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
+    End Sub
+
+    Private Sub txtoutkg_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtoutkg.Leave
+        If (Trim(txtoutkg.TextLength = 0)) Then
+            txtoutkg.Text = "0.00"
+        End If
     End Sub
 End Class
