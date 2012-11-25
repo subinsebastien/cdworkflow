@@ -86,7 +86,8 @@ Public Class EditCustomerDetails
             StatusBarUpdater.updateStatusBar("Enter Address", 1)
         Else
             db.manipulate("update TABLECUSTOMER set name='" & cmbcname.Text & "',mobile=" & txtmobile.Text & ",address='" & txtaddress.Text & "' where name='" & temp_name & "'")
-            StatusBarUpdater.updateStatusBar("Updated successfully", 2)
+            My.Computer.Audio.Play(My.Resources.SuccessAudio, AudioPlayMode.Background)
+            ' StatusBarUpdater.updateStatusBar("Updated successfully", 1)
             Me.Close()
         End If
     End Sub
