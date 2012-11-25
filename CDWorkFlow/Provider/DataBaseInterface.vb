@@ -10,11 +10,9 @@ Public Class DataBaseInterface
     Dim i As Integer
 
     Sub New()
-        Dim conString As String = My.Computer.Name
-
-        con = New SqlConnection("data Source=JOSEPH-PC\SQLEXPRESS;initial catalog=dbcdworkflow;integrated security=true")
-        'conString = "data Source='" & conString & "';initial catalog=dbcdworkflow;integrated security=true"
-        'MsgBox(conString)
+        Dim connectionString As String = "data Source=[HOST_NAME]\SQLEXPRESS;initial catalog=dbcdworkflow;integrated security=true"
+        connectionString = connectionString.Replace("[HOST_NAME]", My.Computer.Name)
+        con = New SqlConnection(connectionString)
         com = New SqlCommand
         com.Connection = con
     End Sub
