@@ -16,7 +16,6 @@ Public Class Password_change
     End Function
 
     Private Sub Password_change_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'just for checking
         MdiParent = Home
     End Sub
 
