@@ -333,12 +333,13 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtoutkg_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtoutkg.Leave
-
+        Dim s As String
+        Dim _outKg As String = txtoutkg.Text
         If (Trim(txtoutkg.TextLength = 0)) Then
             txtoutkg.Text = "0.000"
         Else
-            s = Convert.ToDecimal(_inKg).ToString("#,##0.000")
-            txtinkg.Text = s
+            s = Convert.ToDecimal(_outKg).ToString("#,##0.000")
+            txtoutkg.Text = s
         End If
     End Sub
 End Class
