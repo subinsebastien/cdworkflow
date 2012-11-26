@@ -13,9 +13,7 @@ Public Class New_Transaction
             tempSum = Convert.ToDecimal(txtdue.Text)
             ' MsgBox(tempSum)
         End If
-
         Return tempSum + (Val(txtinkg.Text) * Val(cmburate.Text) - Val(txtcredit.Text))
-
     End Function
 
     Function fieldvalidation(ByVal tbox As TextBox, ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -223,7 +221,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtcredit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtcredit.TextChanged
-        label18.Text = "Balance Rs." + Val(claculateSum()).ToString
+        label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
     End Sub
 
     Private Sub cmburate_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmburate.KeyPress
@@ -267,13 +265,12 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtinkg_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtinkg.TextChanged
-
         label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
     End Sub
 
     Private Sub cmburate_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmburate.TextChanged
         'label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
-        label18.Text = Format(Val(claculateSum()), "0.00")
+        label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
     End Sub
 
     Private Sub txtmobile_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtmobile.KeyPress
