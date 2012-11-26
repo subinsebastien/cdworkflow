@@ -151,7 +151,7 @@ Partial Class New_Transaction
         '
         Me.txtinkg.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtinkg.Location = New System.Drawing.Point(86, 208)
-        Me.txtinkg.MaxLength = 6
+        Me.txtinkg.MaxLength = 8
         Me.txtinkg.Name = "txtinkg"
         Me.txtinkg.Size = New System.Drawing.Size(100, 23)
         Me.txtinkg.TabIndex = 5
