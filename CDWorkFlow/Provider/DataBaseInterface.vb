@@ -8,7 +8,7 @@ Public Class DataBaseInterface
     Dim obj As Object
     Dim ds As New DataSet
     Dim i As Integer
-    'hello test change
+
     Sub New()
         Dim connectionString As String = "data Source=[HOST_NAME]\SQLEXPRESS;initial catalog=dbcdworkflow;integrated security=true"
         connectionString = connectionString.Replace("[HOST_NAME]", My.Computer.Name)
