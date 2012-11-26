@@ -8,9 +8,14 @@ Public Class New_Transaction
     Dim tempSum As Decimal
     Dim ProcessedTotal As Decimal
     Dim chk_insert As Integer = 0
-    Function claculateSum()
-        tempSum = Val(txtdue.Text)
+    Public Function claculateSum()
+        If Val(txtinkg.Text) <> 0 Then
+            tempSum = Convert.ToDecimal(txtdue.Text)
+            ' MsgBox(tempSum)
+        End If
+
         Return tempSum + (Val(txtinkg.Text) * Val(cmburate.Text) - Val(txtcredit.Text))
+
     End Function
 
     Function fieldvalidation(ByVal tbox As TextBox, ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -102,7 +107,7 @@ Public Class New_Transaction
             txtaddress.Text = ""
             txtmobile.Text = ""
             txtdue.Text = ""
-            txtinkg.Text = "0.0"
+            txtinkg.Text = "0.00"
             txtcredit.Text = "0.00"
             txtdue.Text = "0.00"
             txtaddress.Enabled = True
@@ -184,8 +189,14 @@ Public Class New_Transaction
         End If
     End Sub
 
+    Private Sub txtinkg_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinkg.Click
+        If txtinkg.Text = "0.00" Then
+            txtinkg.Clear()
+        End If
+    End Sub
+
     Private Sub txtinkg_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinkg.GotFocus
-        If txtinkg.Text.ToString = "0.00" Then
+        If txtinkg.Text = "0.00" Then
             txtinkg.Clear()
         End If
     End Sub
