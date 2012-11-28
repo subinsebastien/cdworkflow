@@ -115,10 +115,12 @@ Public Class New_Transaction
     End Sub
 
     Private Sub cmbcname_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbcname.SelectedIndexChanged
+
         Dim dataReader As SqlDataReader
         globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
         globalDataReader.Read()
         customerId = globalDataReader(0)
+
         If globalDataReader.HasRows Then
 
             If IsDBNull(globalDataReader(2)) Then
@@ -135,7 +137,10 @@ Public Class New_Transaction
                 tempSum = dataReader(0)
                 txtinkg.Focus()
                 label18.Text = "Balance Rs." + Val(dataReader(0)).ToString("#,##0.00")
+
             Else
+
+                label18.Text = "Balance Rs. 0.00"
                 txtdue.Text = "0.00"
             End If
         End If
@@ -200,7 +205,10 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtcredit_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtcredit.GotFocus
-        txtcredit.Clear()
+        If txtcredit.Text = "0.00" Then
+            txtcredit.Clear()
+        End If
+
     End Sub
 
     Private Sub txtoutkg_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtoutkg.GotFocus
@@ -215,8 +223,13 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtcredit_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtcredit.Leave
+        Dim s As String
+        Dim _txtCredit As String = txtcredit.Text
         If (Trim(txtcredit.TextLength = 0)) Then
             txtcredit.Text = "0.00"
+        Else
+            s = Convert.ToDecimal(_txtCredit).ToString("#,##0.00")
+            txtcredit.Text = s
         End If
     End Sub
 
@@ -276,9 +289,6 @@ Public Class New_Transaction
 
     Private Sub txtinkg_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtinkg.TextChanged
         label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
-
-        
-      
         'txtinkg.Text = Convert.ToDecimal(_inKg).ToString("#,##0.000")
     End Sub
 
@@ -327,11 +337,6 @@ Public Class New_Transaction
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         StatusBarUpdater.updateStatusBar("oh God", 3)
     End Sub
-
-    Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
     Private Sub txtoutkg_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtoutkg.Leave
         Dim s As String
         Dim _outKg As String = txtoutkg.Text

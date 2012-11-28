@@ -161,8 +161,9 @@ Partial Class New_Transaction
         'txtoutkg
         '
         Me.txtoutkg.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtoutkg.ImeMode = System.Windows.Forms.ImeMode.Off
         Me.txtoutkg.Location = New System.Drawing.Point(431, 208)
-        Me.txtoutkg.MaxLength = 4
+        Me.txtoutkg.MaxLength = 8
         Me.txtoutkg.Name = "txtoutkg"
         Me.txtoutkg.Size = New System.Drawing.Size(100, 23)
         Me.txtoutkg.TabIndex = 8
@@ -215,13 +216,13 @@ Partial Class New_Transaction
         Me.cmburate.AutoCompleteCustomSource.AddRange(New String() {"8.5", "9.0"})
         Me.cmburate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmburate.FormattingEnabled = True
-        Me.cmburate.Items.AddRange(New Object() {"8.5", "9.0"})
+        Me.cmburate.Items.AddRange(New Object() {"8.50", "9.00"})
         Me.cmburate.Location = New System.Drawing.Point(237, 208)
         Me.cmburate.MaxLength = 5
         Me.cmburate.Name = "cmburate"
         Me.cmburate.Size = New System.Drawing.Size(100, 23)
         Me.cmburate.TabIndex = 7
-        Me.cmburate.Text = "9.0"
+        Me.cmburate.Text = "9.00"
         '
         'Label15
         '

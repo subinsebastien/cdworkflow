@@ -501,7 +501,7 @@ Partial Class Home
         '
         Me.tsslwarning.Image = CType(resources.GetObject("tsslwarning.Image"), System.Drawing.Image)
         Me.tsslwarning.Name = "tsslwarning"
-        Me.tsslwarning.Size = New System.Drawing.Size(66, 17)
+        Me.tsslwarning.Size = New System.Drawing.Size(67, 17)
         Me.tsslwarning.Text = "warning"
         Me.tsslwarning.Visible = False
         '
@@ -509,7 +509,7 @@ Partial Class Home
         '
         Me.tsslerror.Image = CType(resources.GetObject("tsslerror.Image"), System.Drawing.Image)
         Me.tsslerror.Name = "tsslerror"
-        Me.tsslerror.Size = New System.Drawing.Size(48, 17)
+        Me.tsslerror.Size = New System.Drawing.Size(49, 17)
         Me.tsslerror.Text = "error"
         Me.tsslerror.Visible = False
         '
@@ -517,7 +517,7 @@ Partial Class Home
         '
         Me.tsslok.Image = CType(resources.GetObject("tsslok.Image"), System.Drawing.Image)
         Me.tsslok.Name = "tsslok"
-        Me.tsslok.Size = New System.Drawing.Size(36, 17)
+        Me.tsslok.Size = New System.Drawing.Size(37, 17)
         Me.tsslok.Text = "ok"
         Me.tsslok.Visible = False
         '
