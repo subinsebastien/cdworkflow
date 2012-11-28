@@ -288,6 +288,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtinkg_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtinkg.TextChanged
+       
         label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
         'txtinkg.Text = Convert.ToDecimal(_inKg).ToString("#,##0.000")
     End Sub
@@ -346,5 +347,9 @@ Public Class New_Transaction
             s = Convert.ToDecimal(_outKg).ToString("#,##0.000")
             txtoutkg.Text = s
         End If
+    End Sub
+
+    Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
+
     End Sub
 End Class
