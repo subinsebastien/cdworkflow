@@ -13,7 +13,7 @@
 [Dd]ebug/
 [Rr]elease/
 CDWorkFlow/bin/
-CDWorkFlow/obj
+CDWorkFlow/obj/
 *_i.c
 *_p.c
 *.ilk
