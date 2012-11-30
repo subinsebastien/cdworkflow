@@ -97,7 +97,7 @@ Public Class PrinterInterface
         g.DrawString("Fresh Cardamom", fontMonaco, b, columnOne, unitHeight * 2)
         g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 2)
         g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 2)
-        g.DrawString(qtyTwo, fontMonaco, b, columnFour, unitHeight * 2)
+        g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 2)
 
 
 

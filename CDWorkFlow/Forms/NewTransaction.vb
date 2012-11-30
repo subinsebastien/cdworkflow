@@ -9,11 +9,32 @@ Public Class New_Transaction
     Dim ProcessedTotal As Decimal
     Dim chk_insert As Integer = 0
     Public Function claculateSum()
-        If Val(txtinkg.Text) <> 0 Then
+        Dim _uRate As Decimal
+        Dim _credit As Decimal
+        Dim _freshcardamom As Decimal
+        If Val(txtinkg.Text) <> 0 And Val(txtdue.Text) <> 0 Then
             tempSum = Convert.ToDecimal(txtdue.Text)
             ' MsgBox(tempSum)
         End If
-        Return tempSum + (Val(txtinkg.Text) * Val(cmburate.Text) - Val(txtcredit.Text))
+       
+        If txtcredit.Text <> "" Then
+
+            _credit = Convert.ToDecimal(txtcredit.Text)
+        End If
+        If txtinkg.Text <> "" Then
+
+            _freshcardamom = Convert.ToDecimal(txtinkg.Text)
+        End If
+
+        If cmburate.Text <> "" Then
+            _uRate = Convert.ToDecimal(cmburate.Text)
+        End If
+
+
+
+
+        Return (tempSum + _freshcardamom * _uRate - _credit)
+
     End Function
 
     Function fieldvalidation(ByVal tbox As TextBox, ByVal e As System.Windows.Forms.KeyPressEventArgs)
@@ -111,11 +132,18 @@ Public Class New_Transaction
             txtaddress.Enabled = True
             txtmobile.Enabled = True
             txtdue.Enabled = True
+            txtcredit.Enabled = True
+            txtinkg.Enabled = True
+            txtoutkg.Enabled = True
+            cmburate.Enabled = True
         End If
     End Sub
 
     Private Sub cmbcname_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbcname.SelectedIndexChanged
-
+        txtcredit.Enabled = True
+        txtinkg.Enabled = True
+        txtoutkg.Enabled = True
+        cmburate.Enabled = True
         Dim dataReader As SqlDataReader
         globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
         globalDataReader.Read()
@@ -235,6 +263,7 @@ Public Class New_Transaction
 
     Private Sub txtcredit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtcredit.TextChanged
         label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
+
     End Sub
 
     Private Sub cmburate_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmburate.KeyPress
@@ -350,6 +379,10 @@ Public Class New_Transaction
     End Sub
 
     Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
 
     End Sub
 End Class

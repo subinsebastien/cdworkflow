@@ -100,7 +100,7 @@ Public Class Home
         Me.MaximizeBox = True
         MenuStrip.Visible = False
         ToolStrip.Visible = False
-        ToolStrip1.Visible = False
+
         StatusStrip.Visible = False
         IsMdiContainer = False
         label18.Visible = False
@@ -327,13 +327,14 @@ Public Class Home
                 My.Computer.Audio.Play(My.Resources.SuccessAudio, AudioPlayMode.Background)
                 IsMdiContainer = True
                 GroupBox1.Visible = False
-                MenuStrip.Visible = False
-                ToolStrip.Visible = False
+                MenuStrip.Visible = True
+                ToolStrip.Visible = True
                 StatusStrip.Visible = True
                 tsslerror.Visible = False
                 tsslwarning.Visible = False
                 tssldefault.Visible = True
-                ToolStrip1.Visible = True
+
+                ToolStripButton7.Visible = True
             Else
                 ErrorProvider1.SetError(txtpswd, "Enter Password")
                 ErrorProvider1.SetIconAlignment(txtpswd, ErrorIconAlignment.MiddleLeft)
@@ -361,7 +362,8 @@ Public Class Home
                     tsslerror.Visible = False
                     tsslwarning.Visible = False
                     tssldefault.Visible = True
-                    ToolStrip1.Visible = False
+
+                    ToolStripButton7.Visible = False
                 Else
                     ErrorProvider1.SetError(txtpswd, "Enter Password")
                     ErrorProvider1.SetIconAlignment(txtpswd, ErrorIconAlignment.MiddleLeft)
@@ -425,13 +427,13 @@ Public Class Home
         EditCustomerDetails.Show()
     End Sub
 
-    Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
+    Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Password_change.Show()
     End Sub
 
-    Private Sub ToolStripButton6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton6.Click
+    Private Sub ToolStripButton6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         drier_name_Load(Me, New System.EventArgs)
-        ToolStrip1.Visible = False
+
         GroupBox1.Visible = True
         txtuname.Text = ""
         txtpswd.Text = ""
@@ -456,5 +458,9 @@ Public Class Home
 
     Private Sub txtmasterpswd_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmasterpswd.LostFocus
         ErrorProvider1.SetError(txtmasterpswd, "")
+    End Sub
+
+    Private Sub ToolStripButton7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton7.Click
+        Password_change.Show()
     End Sub
 End Class

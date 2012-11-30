@@ -108,11 +108,9 @@ Partial Class Home
         Me.Label3 = New System.Windows.Forms.Label
         Me.txtmasterpswd = New System.Windows.Forms.TextBox
         Me.Label11 = New System.Windows.Forms.Label
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton
         Me.label18 = New System.Windows.Forms.Button
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ToolStripButton7 = New System.Windows.Forms.ToolStripButton
         Me.MenuStrip.SuspendLayout()
         Me.ToolStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
@@ -120,7 +118,6 @@ Partial Class Home
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.ToolStrip1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -129,7 +126,7 @@ Partial Class Home
         Me.MenuStrip.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.MenuStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.EditMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu})
-        Me.MenuStrip.Location = New System.Drawing.Point(0, 25)
+        Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(925, 24)
@@ -417,11 +414,11 @@ Partial Class Home
         Me.ToolStrip.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.ToolStrip.Dock = System.Windows.Forms.DockStyle.Left
         Me.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.ToolStripSeparator2, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton4, Me.ToolStripSeparator1, Me.ToolStripButton3})
-        Me.ToolStrip.Location = New System.Drawing.Point(0, 49)
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.ToolStripSeparator2, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton4, Me.ToolStripSeparator1, Me.ToolStripButton7, Me.ToolStripButton3})
+        Me.ToolStrip.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Padding = New System.Windows.Forms.Padding(10, 0, 1, 0)
-        Me.ToolStrip.Size = New System.Drawing.Size(161, 532)
+        Me.ToolStrip.Size = New System.Drawing.Size(166, 557)
         Me.ToolStrip.TabIndex = 6
         Me.ToolStrip.Text = "Main Menu Bar"
         '
@@ -432,14 +429,14 @@ Partial Class Home
         Me.NewToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.NewToolStripButton.Name = "NewToolStripButton"
         Me.NewToolStripButton.Padding = New System.Windows.Forms.Padding(10)
-        Me.NewToolStripButton.Size = New System.Drawing.Size(138, 48)
+        Me.NewToolStripButton.Size = New System.Drawing.Size(143, 48)
         Me.NewToolStripButton.Text = "  New Transaction"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(138, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(143, 6)
         Me.ToolStripSeparator2.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical270
         '
         'ToolStripButton1
@@ -449,7 +446,7 @@ Partial Class Home
         Me.ToolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton1.Name = "ToolStripButton1"
         Me.ToolStripButton1.Padding = New System.Windows.Forms.Padding(10)
-        Me.ToolStripButton1.Size = New System.Drawing.Size(138, 48)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(143, 48)
         Me.ToolStripButton1.Text = "  View Inventory"
         '
         'ToolStripButton2
@@ -459,7 +456,7 @@ Partial Class Home
         Me.ToolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton2.Name = "ToolStripButton2"
         Me.ToolStripButton2.Padding = New System.Windows.Forms.Padding(10)
-        Me.ToolStripButton2.Size = New System.Drawing.Size(138, 48)
+        Me.ToolStripButton2.Size = New System.Drawing.Size(143, 48)
         Me.ToolStripButton2.Text = "  Edit Profile"
         '
         'ToolStripButton4
@@ -469,13 +466,13 @@ Partial Class Home
         Me.ToolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton4.Name = "ToolStripButton4"
         Me.ToolStripButton4.Padding = New System.Windows.Forms.Padding(10)
-        Me.ToolStripButton4.Size = New System.Drawing.Size(138, 48)
+        Me.ToolStripButton4.Size = New System.Drawing.Size(143, 48)
         Me.ToolStripButton4.Text = "  Edit Customer"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(138, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(143, 6)
         Me.ToolStripSeparator1.TextDirection = System.Windows.Forms.ToolStripTextDirection.Vertical270
         '
         'ToolStripButton3
@@ -485,7 +482,7 @@ Partial Class Home
         Me.ToolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton3.Name = "ToolStripButton3"
         Me.ToolStripButton3.Padding = New System.Windows.Forms.Padding(10)
-        Me.ToolStripButton3.Size = New System.Drawing.Size(138, 48)
+        Me.ToolStripButton3.Size = New System.Drawing.Size(143, 48)
         Me.ToolStripButton3.Text = "  Logout"
         '
         'StatusStrip
@@ -501,7 +498,7 @@ Partial Class Home
         '
         Me.tsslwarning.Image = CType(resources.GetObject("tsslwarning.Image"), System.Drawing.Image)
         Me.tsslwarning.Name = "tsslwarning"
-        Me.tsslwarning.Size = New System.Drawing.Size(67, 17)
+        Me.tsslwarning.Size = New System.Drawing.Size(66, 17)
         Me.tsslwarning.Text = "warning"
         Me.tsslwarning.Visible = False
         '
@@ -509,7 +506,7 @@ Partial Class Home
         '
         Me.tsslerror.Image = CType(resources.GetObject("tsslerror.Image"), System.Drawing.Image)
         Me.tsslerror.Name = "tsslerror"
-        Me.tsslerror.Size = New System.Drawing.Size(49, 17)
+        Me.tsslerror.Size = New System.Drawing.Size(48, 17)
         Me.tsslerror.Text = "error"
         Me.tsslerror.Visible = False
         '
@@ -517,7 +514,7 @@ Partial Class Home
         '
         Me.tsslok.Image = CType(resources.GetObject("tsslok.Image"), System.Drawing.Image)
         Me.tsslok.Name = "tsslok"
-        Me.tsslok.Size = New System.Drawing.Size(37, 17)
+        Me.tsslok.Size = New System.Drawing.Size(36, 17)
         Me.tsslok.Text = "ok"
         Me.tsslok.Visible = False
         '
@@ -857,31 +854,6 @@ Partial Class Home
         Me.Label11.Size = New System.Drawing.Size(0, 20)
         Me.Label11.TabIndex = 16
         '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton5, Me.ToolStripButton6})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(925, 25)
-        Me.ToolStrip1.TabIndex = 19
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripButton5
-        '
-        Me.ToolStripButton5.Image = CType(resources.GetObject("ToolStripButton5.Image"), System.Drawing.Image)
-        Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton5.Name = "ToolStripButton5"
-        Me.ToolStripButton5.Size = New System.Drawing.Size(118, 22)
-        Me.ToolStripButton5.Text = "ChangePassword"
-        '
-        'ToolStripButton6
-        '
-        Me.ToolStripButton6.Image = CType(resources.GetObject("ToolStripButton6.Image"), System.Drawing.Image)
-        Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton6.Name = "ToolStripButton6"
-        Me.ToolStripButton6.Size = New System.Drawing.Size(65, 22)
-        Me.ToolStripButton6.Text = "Logout"
-        '
         'label18
         '
         Me.label18.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -906,6 +878,16 @@ Partial Class Home
         Me.ErrorProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'ToolStripButton7
+        '
+        Me.ToolStripButton7.Image = CType(resources.GetObject("ToolStripButton7.Image"), System.Drawing.Image)
+        Me.ToolStripButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ToolStripButton7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripButton7.Name = "ToolStripButton7"
+        Me.ToolStripButton7.Padding = New System.Windows.Forms.Padding(10)
+        Me.ToolStripButton7.Size = New System.Drawing.Size(143, 48)
+        Me.ToolStripButton7.Text = "Cahange Password"
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -916,7 +898,6 @@ Partial Class Home
         Me.Controls.Add(Me.ToolStrip)
         Me.Controls.Add(Me.MenuStrip)
         Me.Controls.Add(Me.StatusStrip)
-        Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.IsMdiContainer = True
@@ -936,8 +917,6 @@ Partial Class Home
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.ToolStrip1.ResumeLayout(False)
-        Me.ToolStrip1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1020,9 +999,6 @@ Partial Class Home
     Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
-    Friend WithEvents ToolStripButton5 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton6 As System.Windows.Forms.ToolStripButton
     Private WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents label18 As System.Windows.Forms.Button
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
@@ -1031,5 +1007,6 @@ Partial Class Home
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents ToolStripButton7 As System.Windows.Forms.ToolStripButton
 
 End Class
