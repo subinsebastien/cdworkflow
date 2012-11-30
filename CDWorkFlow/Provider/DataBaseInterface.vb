@@ -9,6 +9,7 @@ Public Class DataBaseInterface
     Dim ds As New DataSet
     Dim i As Integer
 
+    'The following method finds the hostname and prepares a connection string
     Sub New()
         Dim connectionString As String = "data Source=[HOST_NAME]\SQLEXPRESS;initial catalog=dbcdworkflow;integrated security=true"
         connectionString = connectionString.Replace("[HOST_NAME]", My.Computer.Name)
