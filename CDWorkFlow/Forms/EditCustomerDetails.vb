@@ -91,4 +91,12 @@ Public Class EditCustomerDetails
             Me.Close()
         End If
     End Sub
+
+    Private Sub txtmobile_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmobile.Leave
+        If Trim(txtmobile.TextLength) < 10 Then
+            StatusBarUpdater.updateStatusBar("enter Valid Number", 1)
+            txtmobile.Focus()
+
+        End If
+    End Sub
 End Class

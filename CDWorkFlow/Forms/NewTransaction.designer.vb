@@ -122,7 +122,7 @@ Partial Class New_Transaction
         Me.txtdue.Enabled = False
         Me.txtdue.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdue.Location = New System.Drawing.Point(86, 173)
-        Me.txtdue.MaxLength = 4
+        Me.txtdue.MaxLength = 7
         Me.txtdue.Name = "txtdue"
         Me.txtdue.Size = New System.Drawing.Size(146, 23)
         Me.txtdue.TabIndex = 3

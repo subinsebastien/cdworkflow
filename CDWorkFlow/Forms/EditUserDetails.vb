@@ -158,4 +158,11 @@ Public Class EditUserDetails
         End If
     End Sub
 
+    Private Sub txtmobno_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmobno.Leave
+        If Trim(txtmobno.TextLength) < 10 Then
+            StatusBarUpdater.updateStatusBar("enter Valid Number", 1)
+            txtmobno.Focus()
+
+        End If
+    End Sub
 End Class

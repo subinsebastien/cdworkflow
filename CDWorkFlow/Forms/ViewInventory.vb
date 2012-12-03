@@ -248,4 +248,11 @@ Public Class ViewInventory
     Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
+
+    Private Sub DataGridView1_CellStyleContentChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellStyleContentChangedEventArgs) Handles DataGridView1.CellStyleContentChanged
+
+    End Sub
+
+    
+    
 End Class

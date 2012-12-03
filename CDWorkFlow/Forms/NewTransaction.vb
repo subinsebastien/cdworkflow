@@ -292,6 +292,17 @@ Public Class New_Transaction
         fieldvalidation(txtdue, e)
     End Sub
 
+    Private Sub txtdue_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdue.Leave
+        Dim _due As String = txtdue.Text
+        Dim s As String
+        If (Trim(txtdue.TextLength = 0)) Then
+            txtdue.Text = "0.000"
+        Else
+            s = Convert.ToDecimal(_due).ToString("#,##0.00")
+            txtdue.Text = s
+        End If
+    End Sub
+
     Private Sub txtdue_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdue.TextChanged
         label18.Text = "Balance Rs." + (Val(txtdue.Text).ToString)
     End Sub
@@ -383,6 +394,16 @@ Public Class New_Transaction
     End Sub
 
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+
+    End Sub
+
+    Private Sub txtmobile_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmobile.Leave
+        If Trim(txtmobile.TextLength) < 10 Then
+            StatusBarUpdater.updateStatusBar("enter Valid Number", 1)
+            txtmobile.Focus()
+       
+        End If
+
 
     End Sub
 End Class
