@@ -1,6 +1,7 @@
 ﻿Public Class StatusBarUpdater
     Public Shared Function updateStatusBar(ByVal message As String, ByVal statusLabelIdentifire As Integer) As Integer
         If statusLabelIdentifire = 1 Then
+
             Home.StatusStrip.Visible = True
             Home.tssldefault.Visible = False
             Home.tsslerror.Visible = True
@@ -29,5 +30,10 @@
         End If
 
         Return 0
+    End Function
+    Public Shared Function updateErrorInfo(ByVal message As String, ByVal tbox As TextBox) As Integer
+        Home.ErrorProvider1.SetError(tbox, message)
+        Home.ErrorProvider1.SetIconAlignment(tbox, ErrorIconAlignment.MiddleLeft)
+
     End Function
 End Class

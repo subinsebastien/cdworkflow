@@ -36,7 +36,7 @@ Partial Class Password_change
         'btnupdate
         '
         Me.btnupdate.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnupdate.Location = New System.Drawing.Point(158, 193)
+        Me.btnupdate.Location = New System.Drawing.Point(159, 164)
         Me.btnupdate.Name = "btnupdate"
         Me.btnupdate.Size = New System.Drawing.Size(75, 23)
         Me.btnupdate.TabIndex = 35
@@ -46,7 +46,7 @@ Partial Class Password_change
         'txtconfirmpswd
         '
         Me.txtconfirmpswd.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtconfirmpswd.Location = New System.Drawing.Point(108, 162)
+        Me.txtconfirmpswd.Location = New System.Drawing.Point(109, 133)
         Me.txtconfirmpswd.Name = "txtconfirmpswd"
         Me.txtconfirmpswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtconfirmpswd.Size = New System.Drawing.Size(125, 20)
@@ -56,7 +56,7 @@ Partial Class Password_change
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(4, 165)
+        Me.Label5.Location = New System.Drawing.Point(5, 136)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(97, 16)
         Me.Label5.TabIndex = 33
@@ -65,7 +65,7 @@ Partial Class Password_change
         'txtnewpswd
         '
         Me.txtnewpswd.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnewpswd.Location = New System.Drawing.Point(108, 136)
+        Me.txtnewpswd.Location = New System.Drawing.Point(109, 107)
         Me.txtnewpswd.Name = "txtnewpswd"
         Me.txtnewpswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtnewpswd.Size = New System.Drawing.Size(125, 20)
@@ -75,7 +75,7 @@ Partial Class Password_change
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(4, 139)
+        Me.Label6.Location = New System.Drawing.Point(5, 110)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 16)
         Me.Label6.TabIndex = 31
@@ -84,7 +84,7 @@ Partial Class Password_change
         'txtpasswd
         '
         Me.txtpasswd.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpasswd.Location = New System.Drawing.Point(108, 110)
+        Me.txtpasswd.Location = New System.Drawing.Point(109, 81)
         Me.txtpasswd.Name = "txtpasswd"
         Me.txtpasswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpasswd.Size = New System.Drawing.Size(125, 20)
@@ -94,7 +94,7 @@ Partial Class Password_change
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(4, 113)
+        Me.Label7.Location = New System.Drawing.Point(5, 84)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(98, 16)
         Me.Label7.TabIndex = 30
@@ -106,7 +106,7 @@ Partial Class Password_change
         Me.PictureBox1.InitialImage = Nothing
         Me.PictureBox1.Location = New System.Drawing.Point(0, -2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(248, 100)
+        Me.PictureBox1.Size = New System.Drawing.Size(248, 76)
         Me.PictureBox1.TabIndex = 38
         Me.PictureBox1.TabStop = False
         '
@@ -114,7 +114,7 @@ Partial Class Password_change
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(246, 228)
+        Me.ClientSize = New System.Drawing.Size(246, 196)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnupdate)
         Me.Controls.Add(Me.txtconfirmpswd)

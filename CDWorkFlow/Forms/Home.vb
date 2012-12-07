@@ -21,6 +21,7 @@ Public Class Home
 
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs) Handles NewToolStripMenuItem.Click, NewToolStripButton.Click, NewWindowToolStripMenuItem.Click
         New_Transaction.Show()
+
     End Sub
 
     'Private Sub OpenFile(ByVal sender As Object, ByVal e As EventArgs) Handles OpenToolStripMenuItem.Click, OpenToolStripButton.Click
@@ -140,8 +141,7 @@ Public Class Home
         _adminPassword = getSHA1Hash(txtmasterpswd.Text)
         If _adminPassword <> dr(1) Then
             StatusStrip.Visible = True
-            ErrorProvider1.SetError(txtmasterpswd, "Enter correct password")
-            ErrorProvider1.SetIconAlignment(txtmasterpswd, ErrorIconAlignment.MiddleLeft)
+            StatusBarUpdater.updateErrorInfo("Enter correct password", txtmasterpswd)
             StatusBarUpdater.updateStatusBar("please enter correct passwor", 1)
             txtmasterpswd.Clear()
             txtmasterpswd.Focus()
@@ -154,20 +154,20 @@ Public Class Home
             _newPassword = getSHA1Hash(txtpassword.Text)
             _confirmPassword = getSHA1Hash(txtconfirm_passwd.Text)
             If Trim(txtmasterpswd.Text) = "" Then
-                ErrorProvider1.SetError(txtuname, "Enter correct password")
-                ErrorProvider1.SetIconAlignment(txtuname, ErrorIconAlignment.MiddleLeft)
+                StatusBarUpdater.updateErrorInfo("Enter correct password", txtuname)
                 StatusBarUpdater.updateStatusBar("Enter admin password", 1)
 
                 txtmasterpswd.Focus()
             ElseIf Trim(txtfirstnmae.Text) = "" Then
-                ErrorProvider1.SetError(txtfirstnmae, "Enter First Name")
-                ErrorProvider1.SetIconAlignment(txtfirstnmae, ErrorIconAlignment.MiddleLeft)
+                StatusBarUpdater.updateErrorInfo("Enter First Name", txtfirstnmae)
                 StatusBarUpdater.updateStatusBar("enter first name", 1)
                 txtfirstnmae.Clear()
                 txtfirstnmae.Focus()
             ElseIf Trim(txtlastname.Text) = "" Then
                 ErrorProvider1.SetError(txtlastname, "Enter Last Name")
                 ErrorProvider1.SetIconAlignment(txtlastname, ErrorIconAlignment.MiddleLeft)
+
+                StatusBarUpdater.updateErrorInfo("Enter Last Name", txtlastname)
                 StatusBarUpdater.updateStatusBar("Enter last name", 1)
                 txtlastname.Clear()
                 txtlastname.Focus()
@@ -222,6 +222,8 @@ Public Class Home
                 txtconfirm_passwd.Clear()
                 GroupBox2.Visible = False
                 GroupBox1.Visible = True
+                txtpswd.Clear()
+                txtuname.Clear()
                 txtuname.Focus()
 
             End If
@@ -264,6 +266,7 @@ Public Class Home
     End Sub
 
     Private Sub txtmobile_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtmobile.KeyPress
+        StatusBarUpdater.updateStatusBar("", 4)
         If InStr("0123456789", e.KeyChar) > 0 Or Asc(e.KeyChar) = 8 Then
             e.KeyChar = e.KeyChar
             StatusStrip.Visible = False
@@ -304,6 +307,7 @@ Public Class Home
             StatusBarUpdater.updateStatusBar("User name exists", 1)
             txtusername.Focus()
         End If
+        ErrorProvider1.SetError(txtusername, "")
     End Sub
 
     Private Sub btnlogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnlogin.Click
@@ -333,8 +337,10 @@ Public Class Home
                 tsslerror.Visible = False
                 tsslwarning.Visible = False
                 tssldefault.Visible = True
-
+                ToolStripButton5.Visible = True
                 ToolStripButton7.Visible = True
+                label18.Visible = True
+                label18.Text = "Admin"
             Else
                 ErrorProvider1.SetError(txtpswd, "Enter Password")
                 ErrorProvider1.SetIconAlignment(txtpswd, ErrorIconAlignment.MiddleLeft)
@@ -362,7 +368,7 @@ Public Class Home
                     tsslerror.Visible = False
                     tsslwarning.Visible = False
                     tssldefault.Visible = True
-
+                    ToolStripButton5.Visible = False
                     ToolStripButton7.Visible = False
                 Else
                     ErrorProvider1.SetError(txtpswd, "Enter Password")
@@ -375,6 +381,7 @@ Public Class Home
                 ErrorProvider1.SetError(txtpswd, "Enter Password")
                 ErrorProvider1.SetIconAlignment(txtuname, ErrorIconAlignment.MiddleLeft)
                 StatusBarUpdater.updateStatusBar("User does not exists", 1)
+                'StatusBarUpdater.updateErrorInfo("User does not exists", txtuname)
                 txtuname.Clear()
                 txtuname.Focus()
             End If
@@ -462,5 +469,35 @@ Public Class Home
 
     Private Sub ToolStripButton7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton7.Click
         Password_change.Show()
+    End Sub
+
+    
+    Private Sub txtlastname_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtlastname.LostFocus
+        ErrorProvider1.SetError(txtlastname, "")
+    End Sub
+
+    Private Sub txtfirstnmae_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtfirstnmae.LostFocus
+        ErrorProvider1.SetError(txtfirstnmae, "")
+    End Sub
+
+    Private Sub txtadddress_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtadddress.LostFocus
+        ErrorProvider1.SetError(txtadddress, "")
+    End Sub
+
+    Private Sub txtmobile_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmobile.LostFocus
+        If Trim(txtmobile.TextLength) < 10 Then
+            StatusBarUpdater.updateStatusBar("enter Valid Number", 1)
+            txtmobile.Focus()
+
+        End If
+        ErrorProvider1.SetError(txtmobile, "")
+    End Sub
+
+    Private Sub txtpassword_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtpassword.LostFocus
+        ErrorProvider1.SetError(txtpassword, "")
+    End Sub
+
+    Private Sub ToolStripButton5_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
+        ViewDeleteLog.Show()
     End Sub
 End Class

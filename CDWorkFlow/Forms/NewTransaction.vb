@@ -9,31 +9,76 @@ Public Class New_Transaction
     Dim ProcessedTotal As Decimal
     Dim chk_insert As Integer = 0
     Public Function claculateSum()
+        Dim _getfraction
         Dim _uRate As Decimal
         Dim _credit As Decimal
-        Dim _freshcardamom As Decimal
-        If Val(txtinkg.Text) <> 0 And Val(txtdue.Text) <> 0 Then
-            tempSum = Convert.ToDecimal(txtdue.Text)
-            ' MsgBox(tempSum)
-        End If
+        Dim _freshcardamom As Decimal = 0
        
-        If txtcredit.Text <> "" Then
+        Try
+            If txtdue.Text <> "" Then
 
-            _credit = Convert.ToDecimal(txtcredit.Text)
+                tempSum = Convert.ToDecimal(txtdue.Text)
+            End If
+        Catch ex As Exception
+            StatusBarUpdater.updateStatusBar("plese enter in correct format", 1)
+            txtdue.Clear()
+            txtdue.Text = "0.00"
+
+        End Try
+      
+        Try
+            If txtcredit.Text <> "" Then
+
+                _credit = Convert.ToDecimal(txtcredit.Text)
+            End If
+        Catch ex As Exception
+            StatusBarUpdater.updateStatusBar("plese enter in correct format", 1)
+            txtcredit.Clear()
+            txtcredit.Text = "0.00"
+
+        End Try
+        Try
+            If txtinkg.Text <> "" Then
+
+                _freshcardamom = Convert.ToDecimal(txtinkg.Text)
+            End If
+
+        Catch ex As Exception
+            StatusBarUpdater.updateStatusBar("plese enter in correct format", 1)
+            txtinkg.Clear()
+            txtinkg.Text = "0.00"
+        End Try
+
+        Try
+            If cmburate.Text <> "" Then
+                _uRate = Convert.ToDecimal(cmburate.Text)
+            End If
+        Catch ex As Exception
+            StatusBarUpdater.updateStatusBar("plese enter in correct format", 1)
+            cmburate.Focus()
+
+        End Try
+
+        tempSum = tempSum + _freshcardamom * _uRate - _credit
+        _getfraction = tempSum Mod 1
+        If _getfraction <= 0.5 And _getfraction <> 0 Then
+            Dim _findRoundValue As Decimal
+            If _getfraction < 0 Then
+                _findRoundValue = 0.5 + _getfraction
+            Else
+                _findRoundValue = 0.5 - _getfraction
+            End If
+
+            tempSum += _findRoundValue
+            'MsgBox(_findRoundValue)
+        Else
+            tempSum = System.Math.Round(tempSum)
+
         End If
-        If txtinkg.Text <> "" Then
-
-            _freshcardamom = Convert.ToDecimal(txtinkg.Text)
-        End If
-
-        If cmburate.Text <> "" Then
-            _uRate = Convert.ToDecimal(cmburate.Text)
-        End If
-
-
-
-
-        Return (tempSum + _freshcardamom * _uRate - _credit)
+        'MsgBox(System.Math.Round(tempSum, ))
+        Return tempSum
+        'label18.Text = tempSum
+        'Return (tempSum + _freshcardamom * _uRate - _credit)
 
     End Function
 
@@ -57,7 +102,16 @@ Public Class New_Transaction
         StatusBarUpdater.updateStatusBar("", 4)
     End Sub
 
+    Private Sub New_Transaction_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Me.Dispose()
+    End Sub
+
+    Private Sub New_Transaction_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+        
+    End Sub
+
     Private Sub New_Transaction_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        indate.Value = Date.Today
         lbluname.Text = Home.userName
         If chk_insert = 1 Then
             cmbcname.AutoCompleteMode = AutoCompleteMode.SuggestAppend
@@ -94,6 +148,14 @@ Public Class New_Transaction
             End If
             cmbcname.Focus()
         End If
+    End Sub
+
+    Private Sub cmbcname_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmbcname.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            'txtmobile.Focus()
+            SendKeys.Send("{TAB}")
+        End If
+
     End Sub
 
     Private Sub cmbcname_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbcname.KeyPress
@@ -140,6 +202,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub cmbcname_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbcname.SelectedIndexChanged
+
         txtcredit.Enabled = True
         txtinkg.Enabled = True
         txtoutkg.Enabled = True
@@ -164,11 +227,12 @@ Public Class New_Transaction
                 txtdue.Text = Val(dataReader(0)).ToString("#,##0.00")
                 tempSum = dataReader(0)
                 txtinkg.Focus()
-                label18.Text = "Balance Rs." + Val(dataReader(0)).ToString("#,##0.00")
+                label18.Text = "Balance Rs. " + Val(dataReader(0)).ToString("#,##0.00")
 
             Else
-
+                txtinkg.Focus()
                 label18.Text = "Balance Rs. 0.00"
+
                 txtdue.Text = "0.00"
             End If
         End If
@@ -232,6 +296,11 @@ Public Class New_Transaction
         End If
     End Sub
 
+    Private Sub txtcredit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtcredit.Click
+        StatusBarUpdater.updateStatusBar("", 4)
+        txtcredit.Clear()
+    End Sub
+
     Private Sub txtcredit_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtcredit.GotFocus
         If txtcredit.Text = "0.00" Then
             txtcredit.Clear()
@@ -244,6 +313,12 @@ Public Class New_Transaction
             txtoutkg.Clear()
         End If
 
+    End Sub
+
+    Private Sub txtcredit_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtcredit.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
+        End If
     End Sub
 
     Private Sub txtcredit_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtcredit.KeyPress
@@ -266,6 +341,12 @@ Public Class New_Transaction
 
     End Sub
 
+    Private Sub cmburate_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles cmburate.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
+        End If
+    End Sub
+
     Private Sub cmburate_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmburate.KeyPress
         If InStr("0123456789.", e.KeyChar) > 0 Or Asc(e.KeyChar) = 8 Then
             e.KeyChar = e.KeyChar
@@ -281,14 +362,21 @@ Public Class New_Transaction
     End Sub
 
     Private Sub cmburate_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmburate.SelectedIndexChanged
-        label18.Text = "Balance Rs." + (Val(claculateSum()).ToString)
+        label18.Text = "Balance Rs." + (Val(claculateSum()).ToString("#,##0.00"))
     End Sub
 
     Private Sub txtdue_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtdue.GotFocus
         txtdue.Clear()
     End Sub
 
+    Private Sub txtdue_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtdue.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
+        End If
+    End Sub
+
     Private Sub txtdue_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtdue.KeyPress
+        StatusBarUpdater.updateStatusBar("", 4)
         fieldvalidation(txtdue, e)
     End Sub
 
@@ -304,10 +392,17 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtdue_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdue.TextChanged
-        label18.Text = "Balance Rs." + (Val(txtdue.Text).ToString)
+        label18.Text = "Balance Rs." + (Val(txtdue.Text).ToString("#,##0.00"))
+    End Sub
+
+    Private Sub txtinkg_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtinkg.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
+        End If
     End Sub
 
     Private Sub txtinkg_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtinkg.KeyPress
+        StatusBarUpdater.updateStatusBar("", 4)
         fieldvalidation(txtinkg, e)
     End Sub
 
@@ -338,6 +433,13 @@ Public Class New_Transaction
         label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
     End Sub
 
+    Private Sub txtmobile_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtmobile.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            SendKeys.Send("{TAB}")
+        End If
+    End Sub
+
     Private Sub txtmobile_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtmobile.KeyPress
         StatusBarUpdater.updateStatusBar("", 4)
         If InStr("0123456789", e.KeyChar) > 0 Or Asc(e.KeyChar) = 8 Then
@@ -350,6 +452,12 @@ Public Class New_Transaction
         End If
         If Asc(e.KeyChar) = 13 Then
             txtmobile.Focus()
+        End If
+    End Sub
+
+    Private Sub txtoutkg_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtoutkg.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
         End If
     End Sub
 
@@ -389,21 +497,19 @@ Public Class New_Transaction
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
-
-    End Sub
-
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
-
-    End Sub
-
-    Private Sub txtmobile_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmobile.Leave
+    Private Sub txtmobile_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmobile.LostFocus
         If Trim(txtmobile.TextLength) < 10 Then
             StatusBarUpdater.updateStatusBar("enter Valid Number", 1)
             txtmobile.Focus()
-       
+
         End If
+    End Sub
 
+    Private Sub txtaddress_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtaddress.KeyPress
+        StatusBarUpdater.updateStatusBar("", 4)
+    End Sub
 
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        ViewDeleteLog.Show()
     End Sub
 End Class

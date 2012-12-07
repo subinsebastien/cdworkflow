@@ -39,29 +39,28 @@ Partial Class New_Transaction
         Me.Label13 = New System.Windows.Forms.Label
         Me.Label14 = New System.Windows.Forms.Label
         Me.cmburate = New System.Windows.Forms.ComboBox
-        Me.Label15 = New System.Windows.Forms.Label
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox
-        Me.btnsave = New System.Windows.Forms.Button
         Me.txtaddress = New System.Windows.Forms.TextBox
         Me.Panel1 = New System.Windows.Forms.Panel
-        Me.Label4 = New System.Windows.Forms.Label
         Me.lbluname = New System.Windows.Forms.LinkLabel
         Me.Label16 = New System.Windows.Forms.Label
         Me.Panel2 = New System.Windows.Forms.Panel
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
-        Me.label18 = New System.Windows.Forms.Button
         Me.indate = New System.Windows.Forms.DateTimePicker
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument
         Me.Button1 = New System.Windows.Forms.Button
         Me.Button3 = New System.Windows.Forms.Button
-        Me.Panel3 = New System.Windows.Forms.Panel
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.Panel3 = New System.Windows.Forms.Panel
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.btnsave = New System.Windows.Forms.Button
+        Me.label18 = New System.Windows.Forms.Button
+        Me.Label15 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Panel1.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -72,7 +71,7 @@ Partial Class New_Transaction
         Me.Label5.Location = New System.Drawing.Point(12, 121)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 15)
-        Me.Label5.TabIndex = 5
+        Me.Label5.TabIndex = 60
         Me.Label5.Text = "Name"
         '
         'cmbcname
@@ -83,7 +82,7 @@ Partial Class New_Transaction
         Me.cmbcname.MaxLength = 25
         Me.cmbcname.Name = "cmbcname"
         Me.cmbcname.Size = New System.Drawing.Size(146, 23)
-        Me.cmbcname.TabIndex = 1
+        Me.cmbcname.TabIndex = 120
         '
         'Label6
         '
@@ -92,7 +91,7 @@ Partial Class New_Transaction
         Me.Label6.Location = New System.Drawing.Point(14, 147)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 15)
-        Me.Label6.TabIndex = 14
+        Me.Label6.TabIndex = 70
         Me.Label6.Text = "Mobile No."
         '
         'txtmobile
@@ -104,7 +103,7 @@ Partial Class New_Transaction
         Me.txtmobile.MaxLength = 11
         Me.txtmobile.Name = "txtmobile"
         Me.txtmobile.Size = New System.Drawing.Size(146, 23)
-        Me.txtmobile.TabIndex = 2
+        Me.txtmobile.TabIndex = 125
         '
         'Label7
         '
@@ -113,7 +112,7 @@ Partial Class New_Transaction
         Me.Label7.Location = New System.Drawing.Point(14, 176)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(46, 15)
-        Me.Label7.TabIndex = 17
+        Me.Label7.TabIndex = 80
         Me.Label7.Text = "Due Rs."
         '
         'txtdue
@@ -125,7 +124,7 @@ Partial Class New_Transaction
         Me.txtdue.MaxLength = 7
         Me.txtdue.Name = "txtdue"
         Me.txtdue.Size = New System.Drawing.Size(146, 23)
-        Me.txtdue.TabIndex = 3
+        Me.txtdue.TabIndex = 130
         Me.txtdue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label8
@@ -135,7 +134,7 @@ Partial Class New_Transaction
         Me.Label8.Location = New System.Drawing.Point(240, 118)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(49, 15)
-        Me.Label8.TabIndex = 19
+        Me.Label8.TabIndex = 105
         Me.Label8.Text = "Address"
         '
         'Label11
@@ -145,7 +144,7 @@ Partial Class New_Transaction
         Me.Label11.Location = New System.Drawing.Point(12, 212)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(59, 15)
-        Me.Label11.TabIndex = 23
+        Me.Label11.TabIndex = 90
         Me.Label11.Text = "Fresh (kg)"
         '
         'txtinkg
@@ -156,7 +155,7 @@ Partial Class New_Transaction
         Me.txtinkg.MaxLength = 8
         Me.txtinkg.Name = "txtinkg"
         Me.txtinkg.Size = New System.Drawing.Size(146, 23)
-        Me.txtinkg.TabIndex = 5
+        Me.txtinkg.TabIndex = 140
         Me.txtinkg.Text = "0.000"
         Me.txtinkg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -169,7 +168,7 @@ Partial Class New_Transaction
         Me.txtoutkg.MaxLength = 8
         Me.txtoutkg.Name = "txtoutkg"
         Me.txtoutkg.Size = New System.Drawing.Size(146, 23)
-        Me.txtoutkg.TabIndex = 8
+        Me.txtoutkg.TabIndex = 155
         Me.txtoutkg.Text = "0.000"
         Me.txtoutkg.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -180,7 +179,7 @@ Partial Class New_Transaction
         Me.Label12.Location = New System.Drawing.Point(240, 243)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(84, 15)
-        Me.Label12.TabIndex = 25
+        Me.Label12.TabIndex = 115
         Me.Label12.Text = "Processed (kg)"
         '
         'txtcredit
@@ -188,10 +187,10 @@ Partial Class New_Transaction
         Me.txtcredit.Enabled = False
         Me.txtcredit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcredit.Location = New System.Drawing.Point(86, 237)
-        Me.txtcredit.MaxLength = 5
+        Me.txtcredit.MaxLength = 7
         Me.txtcredit.Name = "txtcredit"
         Me.txtcredit.Size = New System.Drawing.Size(146, 23)
-        Me.txtcredit.TabIndex = 6
+        Me.txtcredit.TabIndex = 150
         Me.txtcredit.Text = "0.00"
         Me.txtcredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -202,7 +201,7 @@ Partial Class New_Transaction
         Me.Label13.Location = New System.Drawing.Point(12, 243)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(39, 15)
-        Me.Label13.TabIndex = 27
+        Me.Label13.TabIndex = 100
         Me.Label13.Text = "Credit"
         '
         'Label14
@@ -212,7 +211,7 @@ Partial Class New_Transaction
         Me.Label14.Location = New System.Drawing.Point(240, 212)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(30, 15)
-        Me.Label14.TabIndex = 29
+        Me.Label14.TabIndex = 110
         Me.Label14.Text = "Rate"
         '
         'cmburate
@@ -226,19 +225,150 @@ Partial Class New_Transaction
         Me.cmburate.MaxLength = 6
         Me.cmburate.Name = "cmburate"
         Me.cmburate.Size = New System.Drawing.Size(146, 23)
-        Me.cmburate.TabIndex = 7
+        Me.cmburate.TabIndex = 145
         Me.cmburate.Text = "9.00"
         '
-        'Label15
+        'txtaddress
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.SystemColors.Control
-        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(343, 18)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(31, 15)
-        Me.Label15.TabIndex = 45
-        Me.Label15.Text = "Date"
+        Me.txtaddress.Enabled = False
+        Me.txtaddress.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtaddress.Location = New System.Drawing.Point(330, 115)
+        Me.txtaddress.Multiline = True
+        Me.txtaddress.Name = "txtaddress"
+        Me.txtaddress.Size = New System.Drawing.Size(146, 81)
+        Me.txtaddress.TabIndex = 135
+        '
+        'Panel1
+        '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.lbluname)
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(15, 17)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(250, 68)
+        Me.Panel1.TabIndex = 5
+        '
+        'lbluname
+        '
+        Me.lbluname.AutoSize = True
+        Me.lbluname.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbluname.Location = New System.Drawing.Point(136, 28)
+        Me.lbluname.Name = "lbluname"
+        Me.lbluname.Size = New System.Drawing.Size(99, 15)
+        Me.lbluname.TabIndex = 25
+        Me.lbluname.TabStop = True
+        Me.lbluname.Text = "Sale Person Name"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(160, 9)
+        Me.Label16.MaximumSize = New System.Drawing.Size(55, 22)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(22, 17)
+        Me.Label16.TabIndex = 15
+        Me.Label16.Text = "00"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(9, 10)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(46, 47)
+        Me.Panel2.TabIndex = 1
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.SystemColors.Control
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(63, 28)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(78, 15)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "Sales Person :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.SystemColors.Control
+        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(193, 5)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 22)
+        Me.Label2.TabIndex = 10
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.SystemColors.Control
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(62, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(103, 17)
+        Me.Label1.TabIndex = 10
+        Me.Label1.Text = "Sales Invoice: #"
+        '
+        'indate
+        '
+        Me.indate.Checked = False
+        Me.indate.CustomFormat = ""
+        Me.indate.Enabled = False
+        Me.indate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.indate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.indate.Location = New System.Drawing.Point(380, 12)
+        Me.indate.MinDate = New Date(2000, 11, 11, 0, 0, 0, 0)
+        Me.indate.Name = "indate"
+        Me.indate.Size = New System.Drawing.Size(100, 23)
+        Me.indate.TabIndex = 45
+        Me.indate.Value = New Date(2012, 12, 5, 0, 0, 0, 0)
+        '
+        'PrintDocument1
+        '
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(362, 41)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 35
+        Me.Button1.Text = "print"
+        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(271, 42)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 30
+        Me.Button3.Text = "image"
+        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.Visible = False
+        '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'Panel3
+        '
+        Me.Panel3.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
+        Me.Panel3.Controls.Add(Me.CheckBox1)
+        Me.Panel3.Controls.Add(Me.btnsave)
+        Me.Panel3.Location = New System.Drawing.Point(-4, 277)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(550, 59)
+        Me.Panel3.TabIndex = 50
         '
         'CheckBox1
         '
@@ -260,110 +390,9 @@ Partial Class New_Transaction
         Me.btnsave.Location = New System.Drawing.Point(383, 12)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(100, 32)
-        Me.btnsave.TabIndex = 1
+        Me.btnsave.TabIndex = 160
         Me.btnsave.Text = "Save/Exit"
         Me.btnsave.UseVisualStyleBackColor = True
-        '
-        'txtaddress
-        '
-        Me.txtaddress.Enabled = False
-        Me.txtaddress.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtaddress.Location = New System.Drawing.Point(330, 115)
-        Me.txtaddress.Multiline = True
-        Me.txtaddress.Name = "txtaddress"
-        Me.txtaddress.Size = New System.Drawing.Size(146, 81)
-        Me.txtaddress.TabIndex = 4
-        '
-        'Panel1
-        '
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.lbluname)
-        Me.Panel1.Controls.Add(Me.Label16)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(15, 17)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(250, 68)
-        Me.Panel1.TabIndex = 9
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.SystemColors.Control
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(63, 43)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 15)
-        Me.Label4.TabIndex = 15
-        Me.Label4.Text = "Date :"
-        '
-        'lbluname
-        '
-        Me.lbluname.AutoSize = True
-        Me.lbluname.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbluname.Location = New System.Drawing.Point(136, 28)
-        Me.lbluname.Name = "lbluname"
-        Me.lbluname.Size = New System.Drawing.Size(102, 15)
-        Me.lbluname.TabIndex = 14
-        Me.lbluname.TabStop = True
-        Me.lbluname.Text = "Sale Person Name"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(160, 9)
-        Me.Label16.MaximumSize = New System.Drawing.Size(55, 22)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(22, 17)
-        Me.Label16.TabIndex = 10
-        Me.Label16.Text = "23"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(9, 10)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(46, 47)
-        Me.Panel2.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.SystemColors.Control
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(63, 28)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 15)
-        Me.Label3.TabIndex = 11
-        Me.Label3.Text = "Sales Person :"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.SystemColors.Control
-        Me.Label2.Font = New System.Drawing.Font("Trebuchet MS", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(193, 5)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 22)
-        Me.Label2.TabIndex = 10
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.Control
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(62, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 17)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Sales Invoice: #"
         '
         'label18
         '
@@ -377,58 +406,21 @@ Partial Class New_Transaction
         Me.label18.Location = New System.Drawing.Point(346, 60)
         Me.label18.Name = "label18"
         Me.label18.Size = New System.Drawing.Size(140, 31)
-        Me.label18.TabIndex = 0
+        Me.label18.TabIndex = 50
         Me.label18.Text = "Balance Rs. 0.00"
         Me.label18.UseVisualStyleBackColor = False
         '
-        'indate
+        'Label15
         '
-        Me.indate.CustomFormat = ""
-        Me.indate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.indate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.indate.Location = New System.Drawing.Point(380, 12)
-        Me.indate.MinDate = New Date(2012, 11, 11, 0, 0, 0, 0)
-        Me.indate.Name = "indate"
-        Me.indate.Size = New System.Drawing.Size(100, 23)
-        Me.indate.TabIndex = 9
-        Me.indate.Value = New Date(2012, 11, 11, 0, 0, 0, 0)
-        '
-        'PrintDocument1
-        '
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(362, 41)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 47
-        Me.Button1.Text = "print"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(271, 42)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 49
-        Me.Button3.Text = "image"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Panel3
-        '
-        Me.Panel3.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
-        Me.Panel3.Controls.Add(Me.CheckBox1)
-        Me.Panel3.Controls.Add(Me.btnsave)
-        Me.Panel3.Location = New System.Drawing.Point(-4, 277)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(550, 59)
-        Me.Panel3.TabIndex = 50
-        '
-        'ErrorProvider1
-        '
-        Me.ErrorProvider1.ContainerControl = Me
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.SystemColors.Control
+        Me.Label15.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Image = Global.CDWorkFlow.My.Resources.Resources.BannerImage
+        Me.Label15.Location = New System.Drawing.Point(343, 18)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(31, 15)
+        Me.Label15.TabIndex = 40
+        Me.Label15.Text = "Date"
         '
         'PictureBox1
         '
@@ -436,7 +428,7 @@ Partial Class New_Transaction
         Me.PictureBox1.InitialImage = Nothing
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(606, 100)
+        Me.PictureBox1.Size = New System.Drawing.Size(495, 100)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -470,14 +462,15 @@ Partial Class New_Transaction
         Me.Controls.Add(Me.cmbcname)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.PictureBox1)
+        Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "New_Transaction"
         Me.Text = "New Transaction"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -517,5 +510,4 @@ Partial Class New_Transaction
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
-    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

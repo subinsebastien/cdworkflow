@@ -72,6 +72,12 @@
     <Compile Include="Forms\ChangeAdminPassword.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\ViewDeleteLog.Designer.vb">
+      <DependentUpon>ViewDeleteLog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewDeleteLog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Provider\DataBaseInterface.vb" />
     <Compile Include="Forms\EditCustomerDetails.designer.vb">
       <DependentUpon>EditCustomerDetails.vb</DependentUpon>
@@ -146,6 +152,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TransactionDetails.resx">
       <DependentUpon>TransactionDetails.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewDeleteLog.resx">
+      <DependentUpon>ViewDeleteLog.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

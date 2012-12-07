@@ -23,8 +23,7 @@ Public Class EditCustomerDetails
             End While
         End If
 
-        StatusBarUpdater.updateStatusBar("Please select name", 1)
-        cmbcname.Focus()
+        
     End Sub
 
     Private Sub cmbcname_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles cmbcname.KeyPress
@@ -41,6 +40,10 @@ Public Class EditCustomerDetails
         If Asc(e.KeyChar) = 13 Then
             cmbcname.Focus()
         End If
+    End Sub
+
+    Private Sub cmbcname_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbcname.LostFocus
+        
     End Sub
 
     Private Sub cmbcname_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbcname.SelectedIndexChanged
@@ -78,6 +81,7 @@ Public Class EditCustomerDetails
     End Sub
 
     Private Sub ButtonSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSave.Click
+
         If cmbcname.Text = "" Then
             StatusBarUpdater.updateStatusBar("Select Name", 1)
         ElseIf txtmobile.Text = "" Then
@@ -87,7 +91,7 @@ Public Class EditCustomerDetails
         Else
             db.manipulate("update TABLECUSTOMER set name='" & cmbcname.Text & "',mobile=" & txtmobile.Text & ",address='" & txtaddress.Text & "' where name='" & temp_name & "'")
             My.Computer.Audio.Play(My.Resources.SuccessAudio, AudioPlayMode.Background)
-            ' StatusBarUpdater.updateStatusBar("Updated successfully", 1)
+            'StatusBarUpdater.updateStatusBar("Updated successfully", 2)
             Me.Close()
         End If
     End Sub
@@ -99,4 +103,5 @@ Public Class EditCustomerDetails
 
         End If
     End Sub
+
 End Class

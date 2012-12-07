@@ -70,15 +70,18 @@ Public Class ViewInventory
             RadioButton1.Enabled = True
             RadioButton2.Enabled = True
             RadioButton3.Enabled = True
+            RadioButton5.Enabled = True
+
             If chkboxcustomer.Checked = False Then
                 RadioButton4.Enabled = True
             End If
-            RadioButton1.Checked = True
+            RadioButton5.Checked = True
         Else
             RadioButton1.Enabled = False
             RadioButton2.Enabled = False
             RadioButton3.Enabled = False
             RadioButton4.Enabled = False
+            RadioButton5.Enabled = False
         End If
     End Sub
 
@@ -125,6 +128,15 @@ Public Class ViewInventory
             StatusBarUpdater.updateStatusBar("Please Select an item", 1)
         Else
             If MsgBox("Do you want to delete", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                dr = db.reader("select c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid and t.id=" & getCellContent & " ")
+                dr.Read()
+                'Dim i As Integer = 0
+                'For i = 0 To 10
+                '    MsgBox(dr(i))
+                'Next
+
+                db.manipulate("insert into TableDeleteLog values('" & Home.label18.Text & "','" & dr(7) & "','" & dr(0) & "'," & dr(10) & "," & dr(2) & "," & dr(3) & "," & dr(4) & "," & dr(5) & "," & dr(6) & ") ")
+                'MsgBox(dr(7))
                 db.manipulate("delete  from TABLETRANSACTION where id=" & getCellContent & "")
                 Dim _sen As New System.Object
                 FiltrButton_Click(_sen, e)
@@ -170,7 +182,7 @@ Public Class ViewInventory
                 grid_viewupdate(dr)
             End If
         ElseIf dates = False And custName = True And sortby = False Then
-            dr = db.reader("select  c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid and c.name='" & cmbcname.Text & "' order by t.tdate asc  ")
+            dr = db.reader("select  c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid and c.name='" & cmbcname.Text & "' order by t.id desc")
             grid_viewupdate(dr)
         ElseIf dates = False And custName = True And sortby = True Then
             If RadioButton1.Checked = True Then
@@ -225,34 +237,5 @@ Public Class ViewInventory
         End If
     End Sub
 
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub Label3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub Label1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub Label5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub DataGridView1_CellStyleContentChanged(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellStyleContentChangedEventArgs) Handles DataGridView1.CellStyleContentChanged
-
-    End Sub
-
-    
     
 End Class
