@@ -259,7 +259,7 @@ Partial Class New_Transaction
         Me.lbluname.Location = New System.Drawing.Point(136, 28)
         Me.lbluname.Name = "lbluname"
         Me.lbluname.Size = New System.Drawing.Size(99, 15)
-        Me.lbluname.TabIndex = 25
+        Me.lbluname.TabIndex = 155
         Me.lbluname.TabStop = True
         Me.lbluname.Text = "Sale Person Name"
         '
@@ -390,7 +390,7 @@ Partial Class New_Transaction
         Me.btnsave.Location = New System.Drawing.Point(383, 12)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(100, 32)
-        Me.btnsave.TabIndex = 160
+        Me.btnsave.TabIndex = 155
         Me.btnsave.Text = "Save/Exit"
         Me.btnsave.UseVisualStyleBackColor = True
         '
