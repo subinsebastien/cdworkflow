@@ -282,6 +282,12 @@ Public Class New_Transaction
                 StatusBarUpdater.updateStatusBar("Transaction Completed", 2)
             End If
         End If
+
+        'printing the receipt
+        If cbprintonexit.Checked = True Then
+            PrintDocument1.Print()
+        End If
+
     End Sub
 
     Private Sub txtinkg_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinkg.Click
@@ -477,7 +483,7 @@ Public Class New_Transaction
         PrinterInterface.printLastTransaction(e)
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         PrintDocument1.Print()
         'Dim f As System.Drawing.Printing.PrintPageEventArgs
         'PrinterInterface.printLastTransaction(f)
@@ -509,7 +515,7 @@ Public Class New_Transaction
         StatusBarUpdater.updateStatusBar("", 4)
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ViewDeleteLog.Show()
     End Sub
 End Class

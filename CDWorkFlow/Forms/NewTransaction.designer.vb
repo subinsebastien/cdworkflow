@@ -49,11 +49,9 @@ Partial Class New_Transaction
         Me.Label1 = New System.Windows.Forms.Label
         Me.indate = New System.Windows.Forms.DateTimePicker
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.Button3 = New System.Windows.Forms.Button
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.cbprintonexit = New System.Windows.Forms.CheckBox
         Me.btnsave = New System.Windows.Forms.Button
         Me.label18 = New System.Windows.Forms.Button
         Me.Label15 = New System.Windows.Forms.Label
@@ -255,10 +253,10 @@ Partial Class New_Transaction
         'lbluname
         '
         Me.lbluname.AutoSize = True
-        Me.lbluname.Font = New System.Drawing.Font("Segoe UI Light", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbluname.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbluname.Location = New System.Drawing.Point(136, 28)
         Me.lbluname.Name = "lbluname"
-        Me.lbluname.Size = New System.Drawing.Size(99, 15)
+        Me.lbluname.Size = New System.Drawing.Size(111, 15)
         Me.lbluname.TabIndex = 155
         Me.lbluname.TabStop = True
         Me.lbluname.Text = "Sale Person Name"
@@ -334,28 +332,6 @@ Partial Class New_Transaction
         'PrintDocument1
         '
         '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(362, 41)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 35
-        Me.Button1.Text = "print"
-        Me.Button1.UseVisualStyleBackColor = True
-        Me.Button1.Visible = False
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(271, 42)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 30
-        Me.Button3.Text = "image"
-        Me.Button3.UseVisualStyleBackColor = True
-        Me.Button3.Visible = False
-        '
         'ErrorProvider1
         '
         Me.ErrorProvider1.ContainerControl = Me
@@ -363,26 +339,26 @@ Partial Class New_Transaction
         'Panel3
         '
         Me.Panel3.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
-        Me.Panel3.Controls.Add(Me.CheckBox1)
+        Me.Panel3.Controls.Add(Me.cbprintonexit)
         Me.Panel3.Controls.Add(Me.btnsave)
         Me.Panel3.Location = New System.Drawing.Point(-4, 277)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(550, 59)
         Me.Panel3.TabIndex = 50
         '
-        'CheckBox1
+        'cbprintonexit
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.BackColor = System.Drawing.Color.Transparent
-        Me.CheckBox1.Checked = True
-        Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CheckBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(19, 19)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(89, 19)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "Print on Exit"
-        Me.CheckBox1.UseVisualStyleBackColor = False
+        Me.cbprintonexit.AutoSize = True
+        Me.cbprintonexit.BackColor = System.Drawing.Color.Transparent
+        Me.cbprintonexit.Checked = True
+        Me.cbprintonexit.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbprintonexit.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbprintonexit.Location = New System.Drawing.Point(19, 19)
+        Me.cbprintonexit.Name = "cbprintonexit"
+        Me.cbprintonexit.Size = New System.Drawing.Size(89, 19)
+        Me.cbprintonexit.TabIndex = 0
+        Me.cbprintonexit.Text = "Print on Exit"
+        Me.cbprintonexit.UseVisualStyleBackColor = False
         '
         'btnsave
         '
@@ -439,8 +415,6 @@ Partial Class New_Transaction
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(491, 333)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.indate)
         Me.Controls.Add(Me.label18)
         Me.Controls.Add(Me.Panel1)
@@ -493,7 +467,7 @@ Partial Class New_Transaction
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents cmburate As System.Windows.Forms.ComboBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents cbprintonexit As System.Windows.Forms.CheckBox
     Friend WithEvents btnsave As System.Windows.Forms.Button
     Friend WithEvents txtaddress As System.Windows.Forms.TextBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
@@ -506,8 +480,6 @@ Partial Class New_Transaction
     Friend WithEvents indate As System.Windows.Forms.DateTimePicker
     Friend WithEvents lbluname As System.Windows.Forms.LinkLabel
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
 End Class

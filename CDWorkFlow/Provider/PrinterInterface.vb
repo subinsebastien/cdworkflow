@@ -89,16 +89,38 @@ Public Class PrinterInterface
         Dim b As Brush = Brushes.Black
 
         'draw fixed strings
-        g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 1)
-        g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 1)
-        g.DrawString("Rate(Rs)", fontMonacoBold, b, columnThree, unitHeight * 1)
-        g.DrawString("Amount(Rs)", fontMonacoBold, b, columnFour, unitHeight * 1)
 
-        g.DrawString("Fresh Cardamom", fontMonaco, b, columnOne, unitHeight * 2)
-        g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 2)
-        g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 2)
-        g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 2)
 
+        'g.DrawString("Cardamom Drier", fontMonacoBold, b, columnOne, unitHeight * 1)
+        'g.DrawString("Receipt", fontMonacoBold, b, columnFour, unitHeight * 1)
+        'g.DrawString("St. George's Church", fontMonacoBold, b, columnOne, unitHeight * 2)
+
+        'g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 3)
+        'g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 3)
+        'g.DrawString("Rate(Rs)", fontMonacoBold, b, columnThree, unitHeight * 3)
+        'g.DrawString("Amount(Rs)", fontMonacoBold, b, columnFour, unitHeight * 3)
+
+        'g.DrawString("Fresh Cardamom", fontMonaco, b, columnOne, unitHeight * 4)
+        'g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 4)
+        'g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 4)
+        'g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 4)
+
+        '*****************************************************
+
+
+        g.DrawString("Cardamom Drier", fontMonacoBold, b, columnOne, unitHeight * 1)
+        g.DrawString("Receipt", fontMonacoBold, b, columnOne, unitHeight * 2)
+        g.DrawString("St. George's Church", fontMonacoBold, b, columnOne, unitHeight * 2)
+
+        g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 3)
+        g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 3)
+        g.DrawString("Rate(Rs)", fontMonacoBold, b, columnThree, unitHeight * 3)
+        g.DrawString("Amount(Rs)", fontMonacoBold, b, columnFour, unitHeight * 3)
+
+        g.DrawString("Fresh Cardamom", fontMonaco, b, columnOne, unitHeight * 4)
+        g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 4)
+        g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 4)
+        g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 4)
 
 
         Dim location As New PointF(0, 0)
