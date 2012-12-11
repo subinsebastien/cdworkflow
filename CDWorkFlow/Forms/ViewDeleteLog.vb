@@ -27,4 +27,15 @@ Public Class ViewDeleteLog
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
     End Sub
+
+    Private Sub DeleteButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteButton.Click
+        If MsgBox("Do you want to delete", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            
+
+            
+            db.manipulate("delete   from TableDeleteLog")
+            DataGridView1.Rows.Clear()
+           
+        End If
+    End Sub
 End Class
