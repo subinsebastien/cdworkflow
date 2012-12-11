@@ -109,18 +109,23 @@ Public Class PrinterInterface
 
 
         g.DrawString("Cardamom Drier", fontMonacoBold, b, columnOne, unitHeight * 1)
-        g.DrawString("Receipt", fontMonacoBold, b, columnOne, unitHeight * 2)
+        g.DrawString("Receipt", fontMonacoBold, b, columnFour, unitHeight * 1)
         g.DrawString("St. George's Church", fontMonacoBold, b, columnOne, unitHeight * 2)
+        g.DrawString("Transaction Id : ", fontMonaco, b, columnTwo, unitHeight * 3)
+        g.DrawString("Date : ", fontMonaco, b, columnTwo, unitHeight * 4)
+        g.DrawString("Sales Person : ", fontMonaco, b, columnTwo, unitHeight * 5)
+        g.DrawString("Customer Name : ", fontMonaco, b, columnTwo, unitHeight * 6)
 
-        g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 3)
-        g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 3)
-        g.DrawString("Rate(Rs)", fontMonacoBold, b, columnThree, unitHeight * 3)
-        g.DrawString("Amount(Rs)", fontMonacoBold, b, columnFour, unitHeight * 3)
+        'g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 3)
+        'g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 3)
+        'g.DrawString("Rate(Rs)", fontMonacoBold, b, columnThree, unitHeight * 3)
+        'g.DrawString("Amount(Rs)", fontMonacoBold, b, columnFour, unitHeight * 3)
 
-        g.DrawString("Fresh Cardamom", fontMonaco, b, columnOne, unitHeight * 4)
-        g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 4)
-        g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 4)
-        g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 4)
+        'g.DrawString("Inbound Cardamom", fontMonaco, b, columnOne, unitHeight * 4)
+        'g.DrawString("OutBound Cardamom", fontMonaco, b, columnOne, unitHeight * 5)
+        'g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 4)
+        'g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 4)
+        'g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 4)
 
 
         Dim location As New PointF(0, 0)
