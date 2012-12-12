@@ -1,7 +1,16 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Drawing.Graphics
 
 
 Public Class PrinterInterface
+
+    Private Shared Function getRightAlignX(ByVal leftX As Decimal, ByVal paramString As String) As Decimal
+
+        Dim G As Graphics = New_Transaction.CreateGraphics
+        Dim stringSize As New SizeF
+        stringSize = G.MeasureString(paramString, fontMonaco)
+        Return leftX - stringSize.Width
+    End Function
 
     Shared fontMonacoBold As New Font("Monaco", 9, FontStyle.Bold)
     Shared fontMonaco As New Font("Monaco", 9, FontStyle.Regular)
@@ -106,7 +115,7 @@ Public Class PrinterInterface
         'g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 4)
 
         '*****************************************************
-
+        Dim stringLength As Decimal
 
         g.DrawString("Cardamom Drier", fontMonacoBold, b, columnOne, unitHeight * 1)
         g.DrawString("Receipt", fontMonacoBold, b, columnFour, unitHeight * 1)
@@ -114,8 +123,11 @@ Public Class PrinterInterface
         g.DrawString("", fontMonaco, b, columnTwo, unitHeight * 3)
         g.DrawString("Transaction Id : ", fontMonaco, b, columnTwo, unitHeight * 4)
         g.DrawString("Date : ", fontMonaco, b, columnTwo, unitHeight * 5)
-        g.DrawString("Sales Person : ", fontMonaco, b, columnTwo, unitHeight * 6)
-        g.DrawString("Customer Name : ", fontMonaco, b, columnTwo, unitHeight * 7)
+        stringLength = getRightAlignX(columnThree, "Sales Person : ")
+        g.DrawString("Sales Person : ", fontMonaco, b, stringLength, unitHeight * 6)
+        'g.DrawString("Customer Name : ", fontMonaco, b, columnTwo, unitHeight * 7)
+        stringLength = getRightAlignX(columnThree, "Customer Name : ")
+        g.DrawString("Customer Name : ", fontMonaco, b, stringLength, unitHeight * 7)
         g.DrawString("", fontMonaco, b, columnTwo, unitHeight * 8)
         g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 9)
         g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 9)
@@ -137,7 +149,7 @@ Public Class PrinterInterface
         g.DrawString(tId, fontMonaco, b, columnThree, unitHeight * 4)
         g.DrawString(tDate, fontMonaco, b, columnThree, unitHeight * 5)
         g.DrawString(salesPerson, fontMonaco, b, columnThree, unitHeight * 6)
-        g.DrawString(custName, fontMonaco, b, columnThree, unitHeight * 7)
+        g.DrawString(custName, fontMonaco, b, columnFour, unitHeight * 7)
         g.DrawString(qtyOne, fontMonaco, b, columnTwo, unitHeight * 10)
         g.DrawString(qtyTwo, fontMonaco, b, columnTwo, unitHeight * 11)
         g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 10)
@@ -148,15 +160,11 @@ Public Class PrinterInterface
         g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 17)
         g.DrawString(Balance, fontMonaco, b, columnFour, unitHeight * 18)
 
-        'g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 4)
-        'g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 4)
-        'g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 4)
-
-
         Dim location As New PointF(0, 0)
         e.Graphics.DrawImage(recieptBitmap, location)
         e.Graphics.Dispose()
 
     End Sub
 
+    
 End Class
