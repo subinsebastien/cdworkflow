@@ -124,10 +124,11 @@ Public Class ViewInventory
 
     
     Private Sub DeleteButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteButton.Click
-        If Val(getCellContent = 0) Then
+        If Val(getCellContent) = 0 Then
             StatusBarUpdater.updateStatusBar("Please Select an item", 1)
         Else
             If MsgBox("Do you want to delete", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+
                 dr = db.reader("select c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid and t.id=" & getCellContent & " ")
                 dr.Read()
                 'Dim i As Integer = 0
@@ -140,6 +141,7 @@ Public Class ViewInventory
                 db.manipulate("delete  from TABLETRANSACTION where id=" & getCellContent & "")
                 Dim _sen As New System.Object
                 FiltrButton_Click(_sen, e)
+                getCellContent = 0
             End If
         End If
     End Sub

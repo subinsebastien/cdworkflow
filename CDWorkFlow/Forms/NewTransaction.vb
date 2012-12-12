@@ -9,7 +9,7 @@ Public Class New_Transaction
     Dim ProcessedTotal As Decimal
     Dim chk_insert As Integer = 0
     Public Function claculateSum()
-        Dim _getfraction
+        Dim _getfraction As Decimal
         Dim _uRate As Decimal
         Dim _credit As Decimal
         Dim _freshcardamom As Decimal = 0

@@ -3,6 +3,7 @@ Imports System.Drawing.Graphics
 
 
 Public Class PrinterInterface
+    
 
     Private Shared Function getRightAlignX(ByVal leftX As Decimal, ByVal paramString As String) As Decimal
 
@@ -160,5 +161,5 @@ Public Class PrinterInterface
 
     End Sub
 
-    
+
 End Class
