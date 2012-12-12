@@ -9,12 +9,12 @@ Public Class PrinterInterface
 
         Dim G As Graphics = New_Transaction.CreateGraphics
         Dim stringSize As New SizeF
-        stringSize = G.MeasureString(paramString, fontMonaco)
+        stringSize = G.MeasureString(paramString, fontRegular)
         Return leftX - stringSize.Width
     End Function
 
-    Shared fontMonacoBold As New Font("Monaco", 9, FontStyle.Bold)
-    Shared fontMonaco As New Font("Monaco", 9, FontStyle.Regular)
+    Shared fontBold As New Font("Fixedsys", 10, FontStyle.Bold)
+    Shared fontRegular As New Font("Fixedsys", 10, FontStyle.Regular)
 
     Public Shared Sub printLastTransaction(ByVal e As System.Drawing.Printing.PrintPageEventArgs)
         'find the the last transaction id and call the proper ladder
@@ -91,7 +91,7 @@ Public Class PrinterInterface
         Dim columnFour As Integer = columnThree + unitWidth * 3 + columnSpacing
         Dim columnFive As Integer = columnFour + unitWidth * 4
         Dim recieptWidth As Integer = unitWidth * 15
-        Dim recieptHeight As Integer = unitWidth * 18
+        Dim recieptHeight As Integer = unitWidth * 21
 
         'declare pre-requisites
         Dim recieptBitmap As New Bitmap(recieptWidth, recieptHeight, Imaging.PixelFormat.Format24bppRgb)
@@ -104,57 +104,57 @@ Public Class PrinterInterface
         '*****************************************************
         Dim stringLength As Decimal
 
-        g.DrawString("Cardamom Drier", fontMonacoBold, b, columnOne, unitHeight * 1)
-        g.DrawString("Receipt", fontMonacoBold, b, getRightAlignX(columnFive, "Receipt"), unitHeight * 1)
-        g.DrawString("St. George's Church", fontMonacoBold, b, columnOne, unitHeight * 2)
-        g.DrawString("", fontMonaco, b, columnTwo, unitHeight * 3)
+        g.DrawString("Cardamom Drier", fontBold, b, columnOne, unitHeight * 1)
+        g.DrawString("Receipt", fontBold, b, getRightAlignX(columnFive, "Receipt"), unitHeight * 1)
+        g.DrawString("St. George's Church", fontBold, b, columnOne, unitHeight * 2)
+        g.DrawString("", fontRegular, b, columnTwo, unitHeight * 3)
         stringLength = getRightAlignX(columnThree, "Transaction Id : ")
-        g.DrawString("Transaction Id : ", fontMonaco, b, stringLength, unitHeight * 4)
+        g.DrawString("Transaction Id : ", fontRegular, b, stringLength, unitHeight * 4)
         stringLength = getRightAlignX(columnThree, "Date : ")
-        g.DrawString("Date : ", fontMonaco, b, stringLength, unitHeight * 5)
+        g.DrawString("Date : ", fontRegular, b, stringLength, unitHeight * 5)
         stringLength = getRightAlignX(columnThree, "Sales Person : ")
-        g.DrawString("Sales Person : ", fontMonaco, b, stringLength, unitHeight * 6)
+        g.DrawString("Sales Person : ", fontRegular, b, stringLength, unitHeight * 6)
         stringLength = getRightAlignX(columnThree, "Customer Name : ")
-        g.DrawString("Customer Name : ", fontMonaco, b, stringLength, unitHeight * 7)
-        g.DrawString("", fontMonaco, b, columnTwo, unitHeight * 8)
-        g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 9)
-        g.DrawString("Qty(Kg)", fontMonacoBold, b, getRightAlignX(columnThree, "Qty(Kg)"), unitHeight * 9)
-        g.DrawString("Rate(Rs)", fontMonacoBold, b, getRightAlignX(columnFour, "Rate(Rs)"), unitHeight * 9)
-        g.DrawString("Amount(Rs)", fontMonacoBold, b, getRightAlignX(columnFive, "Amount(Rs)"), unitHeight * 9)
+        g.DrawString("Customer Name : ", fontRegular, b, stringLength, unitHeight * 7)
+        g.DrawString("", fontRegular, b, columnTwo, unitHeight * 8)
+        g.DrawString("Description", fontBold, b, columnOne, unitHeight * 9)
+        g.DrawString("Qty(Kg)", fontBold, b, getRightAlignX(columnThree, "Qty(Kg)"), unitHeight * 9)
+        g.DrawString("Rate(Rs)", fontBold, b, getRightAlignX(columnFour, "Rate(Rs)"), unitHeight * 9)
+        g.DrawString("Amount(Rs)", fontBold, b, getRightAlignX(columnFive, "Amount(Rs)"), unitHeight * 9)
 
-        g.DrawString("Fresh", fontMonaco, b, columnOne, unitHeight * 10)
-        g.DrawString("Processed", fontMonaco, b, columnOne, unitHeight * 11)
-        g.DrawString("", fontMonaco, b, columnOne, unitHeight * 12)
+        g.DrawString("Fresh", fontRegular, b, columnOne, unitHeight * 10)
+        g.DrawString("Processed", fontRegular, b, columnOne, unitHeight * 11)
+        g.DrawString("", fontRegular, b, columnOne, unitHeight * 12)
 
         stringLength = getRightAlignX(columnFour, "Total :")
-        g.DrawString("Total :", fontMonaco, b, stringLength, unitHeight * 13)
+        g.DrawString("Total :", fontRegular, b, stringLength, unitHeight * 13)
         stringLength = getRightAlignX(columnFour, "Prev Balance :")
-        g.DrawString("Prev Balance :", fontMonaco, b, stringLength, unitHeight * 14)
-        g.DrawString("", fontMonaco, b, columnThree, unitHeight * 15)
+        g.DrawString("Prev Balance :", fontRegular, b, stringLength, unitHeight * 14)
+        g.DrawString("", fontRegular, b, columnThree, unitHeight * 15)
         stringLength = getRightAlignX(columnFour, "Grand Total :")
-        g.DrawString("Grand Total :", fontMonaco, b, stringLength, unitHeight * 16)
+        g.DrawString("Grand Total :", fontRegular, b, stringLength, unitHeight * 16)
         stringLength = getRightAlignX(columnFour, "Amount Recived :")
-        g.DrawString("Amount Recived :", fontMonaco, b, stringLength, unitHeight * 17)
+        g.DrawString("Amount Recived :", fontRegular, b, stringLength, unitHeight * 17)
         stringLength = getRightAlignX(columnFour, "Balance :")
-        g.DrawString("Balance :", fontMonaco, b, stringLength, unitHeight * 18)
+        g.DrawString("Balance :", fontRegular, b, stringLength, unitHeight * 18)
 
         'draw values
 
-        g.DrawString(tId, fontMonaco, b, columnThree, unitHeight * 4)
-        g.DrawString(tDate, fontMonaco, b, columnThree, unitHeight * 5)
-        g.DrawString(salesPerson, fontMonaco, b, columnThree, unitHeight * 6)
-        g.DrawString(custName, fontMonaco, b, columnThree, unitHeight * 7)
+        g.DrawString(tId, fontRegular, b, columnThree, unitHeight * 4)
+        g.DrawString(tDate, fontRegular, b, columnThree, unitHeight * 5)
+        g.DrawString(salesPerson, fontRegular, b, columnThree, unitHeight * 6)
+        g.DrawString(custName, fontRegular, b, columnThree, unitHeight * 7)
 
-        g.DrawString(qtyOne, fontMonaco, b, getRightAlignX(columnThree, qtyOne.ToString), unitHeight * 10)
-        g.DrawString(qtyTwo, fontMonaco, b, getRightAlignX(columnThree, qtyTwo.ToString), unitHeight * 11)
-        g.DrawString(charge, fontMonaco, b, getRightAlignX(columnFour, charge.ToString), unitHeight * 10)
-        g.DrawString(total, fontMonaco, b, getRightAlignX(columnFive, total.ToString), unitHeight * 10)
-        g.DrawString(total, fontMonaco, b, getRightAlignX(columnFive, total.ToString), unitHeight * 13)
-        g.DrawString(runBalance, fontMonaco, b, getRightAlignX(columnFive, runBalance.ToString), unitHeight * 14)
-        g.DrawString((total + runBalance), fontMonaco, b, getRightAlignX(columnFive, (total + runBalance).ToString), unitHeight * 16)
-        g.DrawString(amountRecvd, fontMonaco, b, getRightAlignX(columnFive, amountRecvd.ToString), unitHeight * 17)
-        g.DrawString(Balance, fontMonaco, b, getRightAlignX(columnFive, Balance.ToString), unitHeight * 18)
-
+        g.DrawString(qtyOne, fontRegular, b, getRightAlignX(columnThree, qtyOne.ToString), unitHeight * 10)
+        g.DrawString(qtyTwo, fontRegular, b, getRightAlignX(columnThree, qtyTwo.ToString), unitHeight * 11)
+        g.DrawString(charge, fontRegular, b, getRightAlignX(columnFour, charge.ToString), unitHeight * 10)
+        g.DrawString(total, fontRegular, b, getRightAlignX(columnFive, total.ToString), unitHeight * 10)
+        g.DrawString(total, fontRegular, b, getRightAlignX(columnFive, total.ToString), unitHeight * 13)
+        g.DrawString(runBalance, fontRegular, b, getRightAlignX(columnFive, runBalance.ToString), unitHeight * 14)
+        g.DrawString((total + runBalance), fontRegular, b, getRightAlignX(columnFive, (total + runBalance).ToString), unitHeight * 16)
+        g.DrawString(amountRecvd, fontRegular, b, getRightAlignX(columnFive, amountRecvd.ToString), unitHeight * 17)
+        g.DrawString(Balance, fontRegular, b, getRightAlignX(columnFive, Balance.ToString), unitHeight * 18)
+        g.DrawString(".", fontRegular, b, columnThree, unitHeight * 21)
         Dim location As New PointF(0, 0)
         e.Graphics.DrawImage(recieptBitmap, location)
         e.Graphics.Dispose()
