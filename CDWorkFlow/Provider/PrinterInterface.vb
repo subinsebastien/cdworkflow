@@ -41,19 +41,19 @@ Public Class PrinterInterface
         Dim _total As String = _ttotal.ToString("#,##0.00")
 
         Dim c As Decimal = dr(7)
-        Dim d As Decimal = dr(8)
+        Dim d As Decimal = Val(dr(8)) - Val(dr(6))
         Dim r As Decimal = dr(6)
 
         Dim _charge As Decimal = c.ToString("#,##0.00")
         Dim _runBalance As Decimal = d.ToString("#,##0.00")
         Dim _amountRecivd As Decimal = r.ToString("#,##0.00")
-        Dim _balance As Decimal = Val(dr(8)) - Val(dr(6))
+
 
         Dim _salesPrsn As String = dr1(0)
         Dim _custName As String = dr2(0)
         Dim _qtyOne As Decimal = dr(4)
         Dim _qtyTwo As Decimal = dr(5)
-
+         Dim _balance As Decimal = _runBalance +_total -_amountRecivd 
         Dim _transId As Integer = Val(dr(0))
 
         printTransaction(_transId, _date, _time, _salesPrsn, _custName, _
@@ -111,18 +111,43 @@ Public Class PrinterInterface
         g.DrawString("Cardamom Drier", fontMonacoBold, b, columnOne, unitHeight * 1)
         g.DrawString("Receipt", fontMonacoBold, b, columnFour, unitHeight * 1)
         g.DrawString("St. George's Church", fontMonacoBold, b, columnOne, unitHeight * 2)
-        g.DrawString("Transaction Id : ", fontMonaco, b, columnTwo, unitHeight * 3)
-        g.DrawString("Date : ", fontMonaco, b, columnTwo, unitHeight * 4)
-        g.DrawString("Sales Person : ", fontMonaco, b, columnTwo, unitHeight * 5)
-        g.DrawString("Customer Name : ", fontMonaco, b, columnTwo, unitHeight * 6)
+        g.DrawString("", fontMonaco, b, columnTwo, unitHeight * 3)
+        g.DrawString("Transaction Id : ", fontMonaco, b, columnTwo, unitHeight * 4)
+        g.DrawString("Date : ", fontMonaco, b, columnTwo, unitHeight * 5)
+        g.DrawString("Sales Person : ", fontMonaco, b, columnTwo, unitHeight * 6)
+        g.DrawString("Customer Name : ", fontMonaco, b, columnTwo, unitHeight * 7)
+        g.DrawString("", fontMonaco, b, columnTwo, unitHeight * 8)
+        g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 9)
+        g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 9)
+        g.DrawString("Rate(Rs)", fontMonacoBold, b, columnThree, unitHeight * 9)
+        g.DrawString("Amount(Rs)", fontMonacoBold, b, columnFour, unitHeight * 9)
 
-        'g.DrawString("Description", fontMonacoBold, b, columnOne, unitHeight * 3)
-        'g.DrawString("Qty(Kg)", fontMonacoBold, b, columnTwo, unitHeight * 3)
-        'g.DrawString("Rate(Rs)", fontMonacoBold, b, columnThree, unitHeight * 3)
-        'g.DrawString("Amount(Rs)", fontMonacoBold, b, columnFour, unitHeight * 3)
+        g.DrawString("Fresh Cardamom", fontMonaco, b, columnOne, unitHeight * 10)
+        g.DrawString("Dried Cardamom", fontMonaco, b, columnOne, unitHeight * 11)
+        g.DrawString("", fontMonaco, b, columnOne, unitHeight * 12)
+        g.DrawString("Total", fontMonaco, b, columnThree, unitHeight * 13)
+        g.DrawString("Prev Balance", fontMonaco, b, columnThree, unitHeight * 14)
+        g.DrawString("", fontMonaco, b, columnThree, unitHeight * 15)
+        g.DrawString("Grand Total", fontMonaco, b, columnThree, unitHeight * 16)
+        g.DrawString("Amount Rcvd", fontMonaco, b, columnThree, unitHeight * 17)
+        g.DrawString("Balance", fontMonaco, b, columnThree, unitHeight * 18)
 
-        'g.DrawString("Inbound Cardamom", fontMonaco, b, columnOne, unitHeight * 4)
-        'g.DrawString("OutBound Cardamom", fontMonaco, b, columnOne, unitHeight * 5)
+        'draw values
+
+        g.DrawString(tId, fontMonaco, b, columnThree, unitHeight * 4)
+        g.DrawString(tDate, fontMonaco, b, columnThree, unitHeight * 5)
+        g.DrawString(salesPerson, fontMonaco, b, columnThree, unitHeight * 6)
+        g.DrawString(custName, fontMonaco, b, columnThree, unitHeight * 7)
+        g.DrawString(qtyOne, fontMonaco, b, columnTwo, unitHeight * 10)
+        g.DrawString(qtyTwo, fontMonaco, b, columnTwo, unitHeight * 11)
+        g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 10)
+        g.DrawString(total, fontMonaco, b, columnFour, unitHeight * 10)
+        g.DrawString(total, fontMonaco, b, columnFour, unitHeight * 13)
+        g.DrawString(runBalance, fontMonaco, b, columnFour, unitHeight * 14)
+        g.DrawString((total + runBalance), fontMonaco, b, columnFour, unitHeight * 16)
+        g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 17)
+        g.DrawString(Balance, fontMonaco, b, columnFour, unitHeight * 18)
+
         'g.DrawString(salesPerson, fontMonaco, b, columnTwo, unitHeight * 4)
         'g.DrawString(charge, fontMonaco, b, columnThree, unitHeight * 4)
         'g.DrawString(amountRecvd, fontMonaco, b, columnFour, unitHeight * 4)
