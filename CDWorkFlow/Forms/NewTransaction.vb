@@ -280,14 +280,15 @@ Public Class New_Transaction
                 Me.Close()
 
                 StatusBarUpdater.updateStatusBar("Transaction Completed", 2)
+                If cbprintonexit.Checked = True Then
+                    PrintDocument1.Print()
+                End If
+
             End If
         End If
 
-        'printing the receipt
-        If cbprintonexit.Checked = True Then
-            PrintDocument1.Print()
-        End If
 
+        
     End Sub
 
     Private Sub txtinkg_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinkg.Click
