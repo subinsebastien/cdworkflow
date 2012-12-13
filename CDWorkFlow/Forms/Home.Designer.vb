@@ -26,23 +26,13 @@ Partial Class Home
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.StatusStrip = New System.Windows.Forms.StatusStrip
-        Me.tsslwarning = New System.Windows.Forms.ToolStripStatusLabel
-        Me.tsslerror = New System.Windows.Forms.ToolStripStatusLabel
-        Me.tsslok = New System.Windows.Forms.ToolStripStatusLabel
-        Me.tssldefault = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.txtpswd = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.txtuname = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.btnlogin = New System.Windows.Forms.Button
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.ButtonCancel = New System.Windows.Forms.Button
-        Me.btnsave = New System.Windows.Forms.Button
         Me.txtconfirm_passwd = New System.Windows.Forms.TextBox
         Me.txtpassword = New System.Windows.Forms.TextBox
         Me.txtusername = New System.Windows.Forms.TextBox
@@ -75,51 +65,43 @@ Partial Class Home
         Me.MenuStrip = New System.Windows.Forms.MenuStrip
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
-        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator
-        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PrintPreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PrintSetupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.EditMenu = New System.Windows.Forms.ToolStripMenuItem
-        Me.UndoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.RedoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator
-        Me.CutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.PasteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator
-        Me.SelectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ViewMenu = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.StatusBarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ViewInventoryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolsMenu = New System.Windows.Forms.ToolStripMenuItem
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.WindowsMenu = New System.Windows.Forms.ToolStripMenuItem
         Me.NewWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TileVerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.TileHorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CloseAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ArrangeIconsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.HelpMenu = New System.Windows.Forms.ToolStripMenuItem
         Me.ContentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.IndexToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.tsslwarning = New System.Windows.Forms.ToolStripStatusLabel
+        Me.tsslerror = New System.Windows.Forms.ToolStripStatusLabel
+        Me.tsslok = New System.Windows.Forms.ToolStripStatusLabel
+        Me.tssldefault = New System.Windows.Forms.ToolStripStatusLabel
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.btnlogin = New System.Windows.Forms.Button
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.ButtonCancel = New System.Windows.Forms.Button
+        Me.btnsave = New System.Windows.Forms.Button
         Me.StatusStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip
@@ -130,37 +112,6 @@ Partial Class Home
         Me.StatusStrip.Size = New System.Drawing.Size(925, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
-        '
-        'tsslwarning
-        '
-        Me.tsslwarning.Image = CType(resources.GetObject("tsslwarning.Image"), System.Drawing.Image)
-        Me.tsslwarning.Name = "tsslwarning"
-        Me.tsslwarning.Size = New System.Drawing.Size(66, 17)
-        Me.tsslwarning.Text = "warning"
-        Me.tsslwarning.Visible = False
-        '
-        'tsslerror
-        '
-        Me.tsslerror.Image = CType(resources.GetObject("tsslerror.Image"), System.Drawing.Image)
-        Me.tsslerror.Name = "tsslerror"
-        Me.tsslerror.Size = New System.Drawing.Size(48, 17)
-        Me.tsslerror.Text = "error"
-        Me.tsslerror.Visible = False
-        '
-        'tsslok
-        '
-        Me.tsslok.Image = CType(resources.GetObject("tsslok.Image"), System.Drawing.Image)
-        Me.tsslok.Name = "tsslok"
-        Me.tsslok.Size = New System.Drawing.Size(36, 17)
-        Me.tsslok.Text = "ok"
-        Me.tsslok.Visible = False
-        '
-        'tssldefault
-        '
-        Me.tssldefault.Image = CType(resources.GetObject("tssldefault.Image"), System.Drawing.Image)
-        Me.tssldefault.Name = "tssldefault"
-        Me.tssldefault.Size = New System.Drawing.Size(168, 17)
-        Me.tssldefault.Text = "St. George Cardamom Drier"
         '
         'GroupBox1
         '
@@ -188,7 +139,6 @@ Partial Class Home
         Me.txtpswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpswd.Size = New System.Drawing.Size(134, 23)
         Me.txtpswd.TabIndex = 12
-        Me.txtpswd.Text = "k"
         '
         'Label2
         '
@@ -208,7 +158,6 @@ Partial Class Home
         Me.txtuname.Name = "txtuname"
         Me.txtuname.Size = New System.Drawing.Size(134, 23)
         Me.txtuname.TabIndex = 10
-        Me.txtuname.Text = "k"
         '
         'Label1
         '
@@ -219,41 +168,6 @@ Partial Class Home
         Me.Label1.Size = New System.Drawing.Size(63, 15)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "User name"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
-        Me.Panel1.Controls.Add(Me.btnlogin)
-        Me.Panel1.Controls.Add(Me.LinkLabel1)
-        Me.Panel1.Location = New System.Drawing.Point(6, 88)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(271, 49)
-        Me.Panel1.TabIndex = 14
-        '
-        'btnlogin
-        '
-        Me.btnlogin.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnlogin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlogin.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnlogin.Location = New System.Drawing.Point(195, 13)
-        Me.btnlogin.Name = "btnlogin"
-        Me.btnlogin.Size = New System.Drawing.Size(64, 23)
-        Me.btnlogin.TabIndex = 10
-        Me.btnlogin.Text = "Login"
-        Me.btnlogin.UseVisualStyleBackColor = False
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(17, 16)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(57, 15)
-        Me.LinkLabel1.TabIndex = 13
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "New User"
         '
         'GroupBox2
         '
@@ -283,42 +197,6 @@ Partial Class Home
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Visible = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
-        Me.Panel2.Controls.Add(Me.ButtonCancel)
-        Me.Panel2.Controls.Add(Me.btnsave)
-        Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(6, 290)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(271, 49)
-        Me.Panel2.TabIndex = 29
-        '
-        'ButtonCancel
-        '
-        Me.ButtonCancel.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.ButtonCancel.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCancel.Location = New System.Drawing.Point(125, 14)
-        Me.ButtonCancel.Name = "ButtonCancel"
-        Me.ButtonCancel.Size = New System.Drawing.Size(64, 23)
-        Me.ButtonCancel.TabIndex = 28
-        Me.ButtonCancel.Text = "Cancel"
-        Me.ButtonCancel.UseVisualStyleBackColor = False
-        '
-        'btnsave
-        '
-        Me.btnsave.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnsave.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsave.Location = New System.Drawing.Point(195, 14)
-        Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(64, 23)
-        Me.btnsave.TabIndex = 20
-        Me.btnsave.Text = "Register"
-        Me.btnsave.UseVisualStyleBackColor = False
         '
         'txtconfirm_passwd
         '
@@ -616,7 +494,7 @@ Partial Class Home
         '
         Me.MenuStrip.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.MenuStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.EditMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
@@ -626,7 +504,7 @@ Partial Class Home
         '
         'FileMenu
         '
-        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.OpenToolStripMenuItem, Me.ToolStripSeparator3, Me.SaveToolStripMenuItem, Me.SaveAsToolStripMenuItem, Me.ToolStripSeparator4, Me.PrintToolStripMenuItem, Me.PrintPreviewToolStripMenuItem, Me.PrintSetupToolStripMenuItem, Me.ToolStripSeparator5, Me.ExitToolStripMenuItem})
+        Me.FileMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.ToolStripSeparator4, Me.ExitToolStripMenuItem})
         Me.FileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.FileMenu.Name = "FileMenu"
         Me.FileMenu.Size = New System.Drawing.Size(37, 20)
@@ -638,149 +516,23 @@ Partial Class Home
         Me.NewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
         Me.NewToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.NewToolStripMenuItem.Text = "&New"
-        '
-        'OpenToolStripMenuItem
-        '
-        Me.OpenToolStripMenuItem.Image = CType(resources.GetObject("OpenToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.OpenToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.OpenToolStripMenuItem.Text = "&Open"
-        '
-        'ToolStripSeparator3
-        '
-        Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(143, 6)
-        '
-        'SaveToolStripMenuItem
-        '
-        Me.SaveToolStripMenuItem.Image = CType(resources.GetObject("SaveToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.SaveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.SaveToolStripMenuItem.Text = "&Save"
-        '
-        'SaveAsToolStripMenuItem
-        '
-        Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.SaveAsToolStripMenuItem.Text = "Save &As"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.NewToolStripMenuItem.Text = "&New Transaction"
         '
         'ToolStripSeparator4
         '
         Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(143, 6)
-        '
-        'PrintToolStripMenuItem
-        '
-        Me.PrintToolStripMenuItem.Image = CType(resources.GetObject("PrintToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PrintToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
-        Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.PrintToolStripMenuItem.Text = "&Print"
-        '
-        'PrintPreviewToolStripMenuItem
-        '
-        Me.PrintPreviewToolStripMenuItem.Image = CType(resources.GetObject("PrintPreviewToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PrintPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.PrintPreviewToolStripMenuItem.Name = "PrintPreviewToolStripMenuItem"
-        Me.PrintPreviewToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.PrintPreviewToolStripMenuItem.Text = "Print Pre&view"
-        '
-        'PrintSetupToolStripMenuItem
-        '
-        Me.PrintSetupToolStripMenuItem.Name = "PrintSetupToolStripMenuItem"
-        Me.PrintSetupToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
-        Me.PrintSetupToolStripMenuItem.Text = "Print Setup"
-        '
-        'ToolStripSeparator5
-        '
-        Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(143, 6)
+        Me.ToolStripSeparator4.Size = New System.Drawing.Size(203, 6)
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(146, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
         Me.ExitToolStripMenuItem.Text = "E&xit"
-        '
-        'EditMenu
-        '
-        Me.EditMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UndoToolStripMenuItem, Me.RedoToolStripMenuItem, Me.ToolStripSeparator6, Me.CutToolStripMenuItem, Me.CopyToolStripMenuItem, Me.PasteToolStripMenuItem, Me.ToolStripSeparator7, Me.SelectAllToolStripMenuItem})
-        Me.EditMenu.Name = "EditMenu"
-        Me.EditMenu.Size = New System.Drawing.Size(39, 20)
-        Me.EditMenu.Text = "&Edit"
-        '
-        'UndoToolStripMenuItem
-        '
-        Me.UndoToolStripMenuItem.Image = CType(resources.GetObject("UndoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.UndoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem"
-        Me.UndoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.UndoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.UndoToolStripMenuItem.Text = "&Undo"
-        '
-        'RedoToolStripMenuItem
-        '
-        Me.RedoToolStripMenuItem.Image = CType(resources.GetObject("RedoToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.RedoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.RedoToolStripMenuItem.Name = "RedoToolStripMenuItem"
-        Me.RedoToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.RedoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.RedoToolStripMenuItem.Text = "&Redo"
-        '
-        'ToolStripSeparator6
-        '
-        Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(161, 6)
-        '
-        'CutToolStripMenuItem
-        '
-        Me.CutToolStripMenuItem.Image = CType(resources.GetObject("CutToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.CutToolStripMenuItem.Name = "CutToolStripMenuItem"
-        Me.CutToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.CutToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.CutToolStripMenuItem.Text = "Cu&t"
-        '
-        'CopyToolStripMenuItem
-        '
-        Me.CopyToolStripMenuItem.Image = CType(resources.GetObject("CopyToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CopyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
-        Me.CopyToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.CopyToolStripMenuItem.Text = "&Copy"
-        '
-        'PasteToolStripMenuItem
-        '
-        Me.PasteToolStripMenuItem.Image = CType(resources.GetObject("PasteToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black
-        Me.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem"
-        Me.PasteToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.PasteToolStripMenuItem.Text = "&Paste"
-        '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(161, 6)
-        '
-        'SelectAllToolStripMenuItem
-        '
-        Me.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem"
-        Me.SelectAllToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.SelectAllToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.SelectAllToolStripMenuItem.Text = "Select &All"
         '
         'ViewMenu
         '
-        Me.ViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolBarToolStripMenuItem, Me.StatusBarToolStripMenuItem})
+        Me.ViewMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolBarToolStripMenuItem, Me.StatusBarToolStripMenuItem, Me.ViewInventoryToolStripMenuItem})
         Me.ViewMenu.Name = "ViewMenu"
         Me.ViewMenu.Size = New System.Drawing.Size(44, 20)
         Me.ViewMenu.Text = "&View"
@@ -791,7 +543,7 @@ Partial Class Home
         Me.ToolBarToolStripMenuItem.CheckOnClick = True
         Me.ToolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.ToolBarToolStripMenuItem.Name = "ToolBarToolStripMenuItem"
-        Me.ToolBarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.ToolBarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ToolBarToolStripMenuItem.Text = "&Toolbar"
         '
         'StatusBarToolStripMenuItem
@@ -800,8 +552,14 @@ Partial Class Home
         Me.StatusBarToolStripMenuItem.CheckOnClick = True
         Me.StatusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.StatusBarToolStripMenuItem.Name = "StatusBarToolStripMenuItem"
-        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
+        Me.StatusBarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.StatusBarToolStripMenuItem.Text = "&Status Bar"
+        '
+        'ViewInventoryToolStripMenuItem
+        '
+        Me.ViewInventoryToolStripMenuItem.Name = "ViewInventoryToolStripMenuItem"
+        Me.ViewInventoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ViewInventoryToolStripMenuItem.Text = "View Inventory"
         '
         'ToolsMenu
         '
@@ -818,7 +576,7 @@ Partial Class Home
         '
         'WindowsMenu
         '
-        Me.WindowsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewWindowToolStripMenuItem, Me.CascadeToolStripMenuItem, Me.TileVerticalToolStripMenuItem, Me.TileHorizontalToolStripMenuItem, Me.CloseAllToolStripMenuItem, Me.ArrangeIconsToolStripMenuItem})
+        Me.WindowsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewWindowToolStripMenuItem, Me.TileVerticalToolStripMenuItem, Me.TileHorizontalToolStripMenuItem, Me.CloseAllToolStripMenuItem})
         Me.WindowsMenu.Name = "WindowsMenu"
         Me.WindowsMenu.Size = New System.Drawing.Size(68, 20)
         Me.WindowsMenu.Text = "&Windows"
@@ -828,12 +586,6 @@ Partial Class Home
         Me.NewWindowToolStripMenuItem.Name = "NewWindowToolStripMenuItem"
         Me.NewWindowToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.NewWindowToolStripMenuItem.Text = "&New Window"
-        '
-        'CascadeToolStripMenuItem
-        '
-        Me.CascadeToolStripMenuItem.Name = "CascadeToolStripMenuItem"
-        Me.CascadeToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
-        Me.CascadeToolStripMenuItem.Text = "&Cascade"
         '
         'TileVerticalToolStripMenuItem
         '
@@ -852,12 +604,6 @@ Partial Class Home
         Me.CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem"
         Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
         Me.CloseAllToolStripMenuItem.Text = "C&lose All"
-        '
-        'ArrangeIconsToolStripMenuItem
-        '
-        Me.ArrangeIconsToolStripMenuItem.Name = "ArrangeIconsToolStripMenuItem"
-        Me.ArrangeIconsToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
-        Me.ArrangeIconsToolStripMenuItem.Text = "&Arrange Icons"
         '
         'HelpMenu
         '
@@ -900,6 +646,108 @@ Partial Class Home
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
+        'tsslwarning
+        '
+        Me.tsslwarning.Image = CType(resources.GetObject("tsslwarning.Image"), System.Drawing.Image)
+        Me.tsslwarning.Name = "tsslwarning"
+        Me.tsslwarning.Size = New System.Drawing.Size(66, 17)
+        Me.tsslwarning.Text = "warning"
+        Me.tsslwarning.Visible = False
+        '
+        'tsslerror
+        '
+        Me.tsslerror.Image = CType(resources.GetObject("tsslerror.Image"), System.Drawing.Image)
+        Me.tsslerror.Name = "tsslerror"
+        Me.tsslerror.Size = New System.Drawing.Size(48, 17)
+        Me.tsslerror.Text = "error"
+        Me.tsslerror.Visible = False
+        '
+        'tsslok
+        '
+        Me.tsslok.Image = CType(resources.GetObject("tsslok.Image"), System.Drawing.Image)
+        Me.tsslok.Name = "tsslok"
+        Me.tsslok.Size = New System.Drawing.Size(36, 17)
+        Me.tsslok.Text = "ok"
+        Me.tsslok.Visible = False
+        '
+        'tssldefault
+        '
+        Me.tssldefault.Image = CType(resources.GetObject("tssldefault.Image"), System.Drawing.Image)
+        Me.tssldefault.Name = "tssldefault"
+        Me.tssldefault.Size = New System.Drawing.Size(168, 17)
+        Me.tssldefault.Text = "St. George Cardamom Drier"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
+        Me.Panel1.Controls.Add(Me.btnlogin)
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
+        Me.Panel1.Location = New System.Drawing.Point(6, 88)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(271, 49)
+        Me.Panel1.TabIndex = 14
+        '
+        'btnlogin
+        '
+        Me.btnlogin.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnlogin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogin.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnlogin.Location = New System.Drawing.Point(195, 13)
+        Me.btnlogin.Name = "btnlogin"
+        Me.btnlogin.Size = New System.Drawing.Size(64, 23)
+        Me.btnlogin.TabIndex = 10
+        Me.btnlogin.Text = "Login"
+        Me.btnlogin.UseVisualStyleBackColor = False
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(17, 16)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(57, 15)
+        Me.LinkLabel1.TabIndex = 13
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "New User"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
+        Me.Panel2.Controls.Add(Me.ButtonCancel)
+        Me.Panel2.Controls.Add(Me.btnsave)
+        Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(6, 290)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(271, 49)
+        Me.Panel2.TabIndex = 29
+        '
+        'ButtonCancel
+        '
+        Me.ButtonCancel.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.ButtonCancel.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCancel.Location = New System.Drawing.Point(125, 14)
+        Me.ButtonCancel.Name = "ButtonCancel"
+        Me.ButtonCancel.Size = New System.Drawing.Size(64, 23)
+        Me.ButtonCancel.TabIndex = 28
+        Me.ButtonCancel.Text = "Cancel"
+        Me.ButtonCancel.UseVisualStyleBackColor = False
+        '
+        'btnsave
+        '
+        Me.btnsave.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnsave.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnsave.Location = New System.Drawing.Point(195, 14)
+        Me.btnsave.Name = "btnsave"
+        Me.btnsave.Size = New System.Drawing.Size(64, 23)
+        Me.btnsave.TabIndex = 20
+        Me.btnsave.Text = "Register"
+        Me.btnsave.UseVisualStyleBackColor = False
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -912,6 +760,7 @@ Partial Class Home
         Me.Controls.Add(Me.StatusStrip)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "Home"
@@ -920,16 +769,16 @@ Partial Class Home
         Me.StatusStrip.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -940,11 +789,9 @@ Partial Class Home
     Friend WithEvents SearchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator8 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ArrangeIconsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CloseAllToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NewWindowToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents WindowsMenu As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CascadeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TileVerticalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TileHorizontalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OptionsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -953,27 +800,9 @@ Partial Class Home
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents NewToolStripButton As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStrip As System.Windows.Forms.ToolStrip
-    Friend WithEvents PrintPreviewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PrintToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator4 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents ExitToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator5 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents PrintSetupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SaveAsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FileMenu As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OpenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents SaveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EditMenu As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents UndoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RedoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator6 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents CutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CopyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PasteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator7 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents SelectAllToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolBarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusBarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -1021,5 +850,7 @@ Partial Class Home
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
     Friend WithEvents ToolStripButton7 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton5 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewInventoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -43,7 +43,6 @@ Partial Class New_Transaction
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.lbluname = New System.Windows.Forms.LinkLabel
         Me.Label16 = New System.Windows.Forms.Label
-        Me.Panel2 = New System.Windows.Forms.Panel
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
@@ -54,6 +53,7 @@ Partial Class New_Transaction
         Me.cbprintonexit = New System.Windows.Forms.CheckBox
         Me.btnsave = New System.Windows.Forms.Button
         Me.label18 = New System.Windows.Forms.Button
+        Me.Panel2 = New System.Windows.Forms.Panel
         Me.Label15 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Panel1.SuspendLayout()
@@ -274,15 +274,6 @@ Partial Class New_Transaction
         Me.Label16.Text = "00"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(9, 10)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(46, 47)
-        Me.Panel2.TabIndex = 1
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -386,6 +377,15 @@ Partial Class New_Transaction
         Me.label18.Text = "Balance Rs. 0.00"
         Me.label18.UseVisualStyleBackColor = False
         '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(9, 10)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(46, 47)
+        Me.Panel2.TabIndex = 1
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -436,6 +436,7 @@ Partial Class New_Transaction
         Me.Controls.Add(Me.cmbcname)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.Name = "New_Transaction"

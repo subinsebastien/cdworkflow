@@ -136,7 +136,7 @@ Public Class ViewInventory
                 '    MsgBox(dr(i))
                 'Next
 
-                db.manipulate("insert into TableDeleteLog values('" & Home.label18.Text & "','" & dr(7) & "','" & dr(0) & "'," & dr(10) & "," & dr(2) & "," & dr(3) & "," & dr(4) & "," & dr(5) & "," & dr(6) & ") ")
+                db.manipulate("insert into TABLEDELETELOG values('" & Home.label18.Text & "','" & dr(7) & "','" & dr(0) & "'," & dr(10) & "," & dr(2) & "," & dr(3) & "," & dr(4) & "," & dr(5) & "," & dr(6) & ") ")
                 'MsgBox(dr(7))
                 db.manipulate("delete  from TABLETRANSACTION where id=" & getCellContent & "")
                 Dim _sen As New System.Object

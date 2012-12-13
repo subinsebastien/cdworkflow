@@ -3,18 +3,16 @@ Imports System.Drawing.Graphics
 
 
 Public Class PrinterInterface
-    
+   
+    Shared fontBold As New Font("Monaco", 10, FontStyle.Bold)
+    Shared fontRegular As New Font("Monaco", 10, FontStyle.Regular)
 
     Private Shared Function getRightAlignX(ByVal leftX As Decimal, ByVal paramString As String) As Decimal
-
         Dim G As Graphics = New_Transaction.CreateGraphics
         Dim stringSize As New SizeF
         stringSize = G.MeasureString(paramString, fontRegular)
         Return leftX - stringSize.Width
     End Function
-
-    Shared fontBold As New Font("Fixedsys", 10, FontStyle.Bold)
-    Shared fontRegular As New Font("Fixedsys", 10, FontStyle.Regular)
 
     Public Shared Sub printLastTransaction(ByVal e As System.Drawing.Printing.PrintPageEventArgs)
         'find the the last transaction id and call the proper ladder

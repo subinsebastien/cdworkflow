@@ -22,9 +22,10 @@ Partial Class TransactionDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TransactionDetails))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.GridviewDetails = New System.Windows.Forms.DataGridView
         Me.Cust_name = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -47,8 +48,8 @@ Partial Class TransactionDetails
         '
         Me.GridviewDetails.AllowUserToAddRows = False
         Me.GridviewDetails.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.GridviewDetails.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.GridviewDetails.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.GridviewDetails.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GridviewDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -63,8 +64,8 @@ Partial Class TransactionDetails
         Me.GridviewDetails.Name = "GridviewDetails"
         Me.GridviewDetails.ReadOnly = True
         Me.GridviewDetails.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        Me.GridviewDetails.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        Me.GridviewDetails.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.GridviewDetails.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.GridviewDetails.Size = New System.Drawing.Size(429, 225)
         Me.GridviewDetails.TabIndex = 92
@@ -79,10 +80,10 @@ Partial Class TransactionDetails
         'credit
         '
         Me.credit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.credit.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "N2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.credit.DefaultCellStyle = DataGridViewCellStyle2
         Me.credit.HeaderText = ""
         Me.credit.Name = "credit"
         Me.credit.ReadOnly = True
@@ -95,6 +96,7 @@ Partial Class TransactionDetails
         Me.ClientSize = New System.Drawing.Size(453, 348)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GridviewDetails)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "TransactionDetails"
         Me.Text = "TransactionDetails"

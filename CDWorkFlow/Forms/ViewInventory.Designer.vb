@@ -24,14 +24,22 @@ Partial Class ViewInventory
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewInventory))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewInventory))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
+        Me.dates = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Cust_name = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.inkg = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.outkg = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.credit = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.runbalance = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.tid = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.FiltrButton = New System.Windows.Forms.Button
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.RadioButton5 = New System.Windows.Forms.RadioButton
@@ -63,14 +71,6 @@ Partial Class ViewInventory
         Me.DeleteButton = New System.Windows.Forms.Button
         Me.totfresh = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.dates = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Cust_name = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.inkg = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.outkg = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.credit = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.runbalance = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.tid = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -100,6 +100,91 @@ Partial Class ViewInventory
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(700, 212)
         Me.DataGridView1.TabIndex = 25
+        '
+        'dates
+        '
+        Me.dates.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dates.DefaultCellStyle = DataGridViewCellStyle2
+        Me.dates.HeaderText = "Date"
+        Me.dates.Name = "dates"
+        Me.dates.ReadOnly = True
+        Me.dates.Width = 55
+        '
+        'Cust_name
+        '
+        Me.Cust_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Cust_name.HeaderText = "Customer Name"
+        Me.Cust_name.Name = "Cust_name"
+        Me.Cust_name.ReadOnly = True
+        '
+        'inkg
+        '
+        Me.inkg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N3"
+        Me.inkg.DefaultCellStyle = DataGridViewCellStyle3
+        Me.inkg.HeaderText = "Inbound Cardamom (Kg.)"
+        Me.inkg.Name = "inkg"
+        Me.inkg.ReadOnly = True
+        Me.inkg.Width = 98
+        '
+        'outkg
+        '
+        Me.outkg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N3"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.outkg.DefaultCellStyle = DataGridViewCellStyle4
+        Me.outkg.HeaderText = "Outbound Cardamom (Kg.)"
+        Me.outkg.Name = "outkg"
+        Me.outkg.ReadOnly = True
+        Me.outkg.Width = 98
+        '
+        'credit
+        '
+        Me.credit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.credit.DefaultCellStyle = DataGridViewCellStyle5
+        Me.credit.HeaderText = "Amount Paid (Rs.)"
+        Me.credit.Name = "credit"
+        Me.credit.ReadOnly = True
+        Me.credit.Width = 72
+        '
+        'rate
+        '
+        Me.rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.rate.DefaultCellStyle = DataGridViewCellStyle6
+        Me.rate.HeaderText = "Rate/Kg."
+        Me.rate.Name = "rate"
+        Me.rate.ReadOnly = True
+        Me.rate.Width = 76
+        '
+        'runbalance
+        '
+        Me.runbalance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle7.Format = "N2"
+        DataGridViewCellStyle7.NullValue = Nothing
+        Me.runbalance.DefaultCellStyle = DataGridViewCellStyle7
+        Me.runbalance.HeaderText = "Due Amount (Rs.)"
+        Me.runbalance.Name = "runbalance"
+        Me.runbalance.ReadOnly = True
+        Me.runbalance.Width = 87
+        '
+        'tid
+        '
+        Me.tid.HeaderText = "TransId"
+        Me.tid.Name = "tid"
+        Me.tid.ReadOnly = True
+        Me.tid.Visible = False
         '
         'FiltrButton
         '
@@ -479,91 +564,6 @@ Partial Class ViewInventory
         Me.PictureBox1.TabIndex = 61
         Me.PictureBox1.TabStop = False
         '
-        'dates
-        '
-        Me.dates.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.dates.DefaultCellStyle = DataGridViewCellStyle2
-        Me.dates.HeaderText = "Date"
-        Me.dates.Name = "dates"
-        Me.dates.ReadOnly = True
-        Me.dates.Width = 55
-        '
-        'Cust_name
-        '
-        Me.Cust_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Cust_name.HeaderText = "Customer Name"
-        Me.Cust_name.Name = "Cust_name"
-        Me.Cust_name.ReadOnly = True
-        '
-        'inkg
-        '
-        Me.inkg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N3"
-        Me.inkg.DefaultCellStyle = DataGridViewCellStyle3
-        Me.inkg.HeaderText = "Inbound Cardamom (Kg.)"
-        Me.inkg.Name = "inkg"
-        Me.inkg.ReadOnly = True
-        Me.inkg.Width = 116
-        '
-        'outkg
-        '
-        Me.outkg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N3"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.outkg.DefaultCellStyle = DataGridViewCellStyle4
-        Me.outkg.HeaderText = "Outbound Cardamom (Kg.)"
-        Me.outkg.Name = "outkg"
-        Me.outkg.ReadOnly = True
-        Me.outkg.Width = 124
-        '
-        'credit
-        '
-        Me.credit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.credit.DefaultCellStyle = DataGridViewCellStyle5
-        Me.credit.HeaderText = "Amount Paid (Rs.)"
-        Me.credit.Name = "credit"
-        Me.credit.ReadOnly = True
-        Me.credit.Width = 88
-        '
-        'rate
-        '
-        Me.rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.rate.DefaultCellStyle = DataGridViewCellStyle6
-        Me.rate.HeaderText = "Rate/Kg."
-        Me.rate.Name = "rate"
-        Me.rate.ReadOnly = True
-        Me.rate.Width = 76
-        '
-        'runbalance
-        '
-        Me.runbalance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Format = "N2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.runbalance.DefaultCellStyle = DataGridViewCellStyle7
-        Me.runbalance.HeaderText = "Due Amount (Rs.)"
-        Me.runbalance.Name = "runbalance"
-        Me.runbalance.ReadOnly = True
-        Me.runbalance.Width = 106
-        '
-        'tid
-        '
-        Me.tid.HeaderText = "TransId"
-        Me.tid.Name = "tid"
-        Me.tid.ReadOnly = True
-        Me.tid.Visible = False
-        '
         'ViewInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -588,6 +588,7 @@ Partial Class ViewInventory
         Me.Controls.Add(Me.FiltrButton)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Name = "ViewInventory"
         Me.Text = "View Inventory"

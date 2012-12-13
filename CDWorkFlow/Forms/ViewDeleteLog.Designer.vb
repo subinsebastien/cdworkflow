@@ -30,6 +30,7 @@ Partial Class ViewDeleteLog
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewDeleteLog))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -207,6 +208,7 @@ Partial Class ViewDeleteLog
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "ViewDeleteLog"
         Me.Text = "ViewDeleteLog"

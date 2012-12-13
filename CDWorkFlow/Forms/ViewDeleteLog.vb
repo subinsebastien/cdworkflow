@@ -5,8 +5,8 @@ Public Class ViewDeleteLog
     Private Sub ViewDeleteLog_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         MdiParent = Home
         Dim tot_row As Integer = 0
-        data_reader = db.reader("select * from TableDeleteLog ")
-        
+        data_reader = db.reader("select * from TABLEDELETELOG ")
+
         While (data_reader.Read())
             Dim calDate As Date
             calDate = data_reader(1)
@@ -30,12 +30,12 @@ Public Class ViewDeleteLog
 
     Private Sub DeleteButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DeleteButton.Click
         If MsgBox("Do you want to delete", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            
 
-            
-            db.manipulate("delete   from TableDeleteLog")
+
+
+            db.manipulate("delete   from TABLEDELETELOG")
             DataGridView1.Rows.Clear()
-           
+
         End If
     End Sub
 End Class

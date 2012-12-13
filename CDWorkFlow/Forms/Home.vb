@@ -34,7 +34,7 @@ Public Class Home
     '    End If
     'End Sub
 
-    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles SaveAsToolStripMenuItem.Click
+    Private Sub SaveAsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Dim SaveFileDialog As New SaveFileDialog
         SaveFileDialog.InitialDirectory = My.Computer.FileSystem.SpecialDirectories.MyDocuments
         SaveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*"
@@ -50,15 +50,15 @@ Public Class Home
         Me.Close()
     End Sub
 
-    Private Sub CutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CutToolStripMenuItem.Click
+    Private Sub CutToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         ' Use My.Computer.Clipboard to insert the selected text or images into the clipboard
     End Sub
 
-    Private Sub CopyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CopyToolStripMenuItem.Click
+    Private Sub CopyToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         ' Use My.Computer.Clipboard to insert the selected text or images into the clipboard
     End Sub
 
-    Private Sub PasteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles PasteToolStripMenuItem.Click
+    Private Sub PasteToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         'Use My.Computer.Clipboard.GetText() or My.Computer.Clipboard.GetData to retrieve information from the clipboard.
     End Sub
 
@@ -70,7 +70,7 @@ Public Class Home
         Me.StatusStrip.Visible = Me.StatusBarToolStripMenuItem.Checked
     End Sub
 
-    Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles CascadeToolStripMenuItem.Click
+    Private Sub CascadeToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.LayoutMdi(MdiLayout.Cascade)
     End Sub
 
@@ -82,7 +82,7 @@ Public Class Home
         Me.LayoutMdi(MdiLayout.TileHorizontal)
     End Sub
 
-    Private Sub ArrangeIconsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ArrangeIconsToolStripMenuItem.Click
+    Private Sub ArrangeIconsToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs)
         Me.LayoutMdi(MdiLayout.ArrangeIcons)
     End Sub
 
@@ -96,6 +96,7 @@ Public Class Home
     Private m_ChildFormNumber As Integer
 
     Public Sub drier_name_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         Me.Height = 641
         Me.Width = 941
         Me.MaximizeBox = True
@@ -499,5 +500,17 @@ Public Class Home
 
     Private Sub ToolStripButton5_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
         ViewDeleteLog.Show()
+    End Sub
+
+    Private Sub ViewInventoryToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewInventoryToolStripMenuItem.Click
+        ViewInventory.Show()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
+        AboutCDWorkFlow.Show()
+    End Sub
+
+    Private Sub WindowsMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WindowsMenu.Click
+
     End Sub
 End Class
