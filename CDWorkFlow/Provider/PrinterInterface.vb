@@ -2,8 +2,9 @@
 Imports System.Drawing.Graphics
 
 
+
 Public Class PrinterInterface
-   
+
     Shared fontBold As New Font("Monaco", 10, FontStyle.Bold)
     Shared fontRegular As New Font("Monaco", 10, FontStyle.Regular)
 
@@ -54,7 +55,8 @@ Public Class PrinterInterface
 
         Dim _charge As Decimal = c.ToString("#,##0.00")
         Dim _runBalance As Decimal = d.ToString("#,##0.00")
-        _runBalance = _runBalance + r - _total
+        ' _runBalance = _runBalance + r - _total
+        _runBalance = prebal
         Dim _amountRecivd As Decimal = r.ToString("#,##0.00")
 
 
@@ -62,7 +64,41 @@ Public Class PrinterInterface
         Dim _custName As String = dr2(0)
         Dim _qtyOne As Decimal = dr(4)
         Dim _qtyTwo As Decimal = dr(5)
+
+
         Dim _balance As Decimal = _runBalance + _total - _amountRecivd
+        Dim _getfraction As Decimal
+
+        _getfraction = _balance Mod 1
+        If _getfraction <= 0.5 And _getfraction <> 0 Then
+            Dim _findRoundValue As Decimal
+            If _getfraction < 0 Then
+                _findRoundValue = 0.5 + _getfraction
+            Else
+                _findRoundValue = 0.5 - _getfraction
+            End If
+
+            _balance += _findRoundValue
+            'MsgBox(_findRoundValue)
+        Else
+            _balance = System.Math.Round(_balance)
+
+        End If
+
+
+
+
+
+        
+        'Dim _balance As Decimal = prebal
+
+
+
+
+
+
+
+
         Dim _transId As Integer = Val(dr(0))
 
         printTransaction(_transId, _date, _time, _salesPrsn, _custName, _
@@ -104,7 +140,7 @@ Public Class PrinterInterface
 
         g.DrawString("Cardamom Drier", fontBold, b, columnOne, unitHeight * 1)
         g.DrawString("Receipt", fontBold, b, getRightAlignX(columnFive, "Receipt"), unitHeight * 1)
-        g.DrawString("St. George's Church", fontBold, b, columnOne, unitHeight * 2)
+        g.DrawString("St. Joseph's Church", fontBold, b, columnOne, unitHeight * 2)
         g.DrawString("", fontRegular, b, columnTwo, unitHeight * 3)
         stringLength = getRightAlignX(columnThree, "Transaction Id : ")
         g.DrawString("Transaction Id : ", fontRegular, b, stringLength, unitHeight * 4)

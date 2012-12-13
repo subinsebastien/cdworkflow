@@ -26,13 +26,23 @@ Partial Class Home
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.StatusStrip = New System.Windows.Forms.StatusStrip
+        Me.tsslwarning = New System.Windows.Forms.ToolStripStatusLabel
+        Me.tsslerror = New System.Windows.Forms.ToolStripStatusLabel
+        Me.tsslok = New System.Windows.Forms.ToolStripStatusLabel
+        Me.tssldefault = New System.Windows.Forms.ToolStripStatusLabel
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.txtpswd = New System.Windows.Forms.TextBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.txtuname = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
+        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.btnlogin = New System.Windows.Forms.Button
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.ButtonCancel = New System.Windows.Forms.Button
+        Me.btnsave = New System.Windows.Forms.Button
         Me.txtconfirm_passwd = New System.Windows.Forms.TextBox
         Me.txtpassword = New System.Windows.Forms.TextBox
         Me.txtusername = New System.Windows.Forms.TextBox
@@ -84,24 +94,14 @@ Partial Class Home
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.tsslwarning = New System.Windows.Forms.ToolStripStatusLabel
-        Me.tsslerror = New System.Windows.Forms.ToolStripStatusLabel
-        Me.tsslok = New System.Windows.Forms.ToolStripStatusLabel
-        Me.tssldefault = New System.Windows.Forms.ToolStripStatusLabel
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.btnlogin = New System.Windows.Forms.Button
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.ButtonCancel = New System.Windows.Forms.Button
-        Me.btnsave = New System.Windows.Forms.Button
         Me.StatusStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip.SuspendLayout()
         Me.MenuStrip.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip
@@ -112,6 +112,37 @@ Partial Class Home
         Me.StatusStrip.Size = New System.Drawing.Size(925, 22)
         Me.StatusStrip.TabIndex = 7
         Me.StatusStrip.Text = "StatusStrip"
+        '
+        'tsslwarning
+        '
+        Me.tsslwarning.Image = CType(resources.GetObject("tsslwarning.Image"), System.Drawing.Image)
+        Me.tsslwarning.Name = "tsslwarning"
+        Me.tsslwarning.Size = New System.Drawing.Size(66, 17)
+        Me.tsslwarning.Text = "warning"
+        Me.tsslwarning.Visible = False
+        '
+        'tsslerror
+        '
+        Me.tsslerror.Image = CType(resources.GetObject("tsslerror.Image"), System.Drawing.Image)
+        Me.tsslerror.Name = "tsslerror"
+        Me.tsslerror.Size = New System.Drawing.Size(48, 17)
+        Me.tsslerror.Text = "error"
+        Me.tsslerror.Visible = False
+        '
+        'tsslok
+        '
+        Me.tsslok.Image = CType(resources.GetObject("tsslok.Image"), System.Drawing.Image)
+        Me.tsslok.Name = "tsslok"
+        Me.tsslok.Size = New System.Drawing.Size(36, 17)
+        Me.tsslok.Text = "ok"
+        Me.tsslok.Visible = False
+        '
+        'tssldefault
+        '
+        Me.tssldefault.Image = CType(resources.GetObject("tssldefault.Image"), System.Drawing.Image)
+        Me.tssldefault.Name = "tssldefault"
+        Me.tssldefault.Size = New System.Drawing.Size(174, 17)
+        Me.tssldefault.Text = "St. Joseph's Cardamom Drier"
         '
         'GroupBox1
         '
@@ -169,6 +200,41 @@ Partial Class Home
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "User name"
         '
+        'Panel1
+        '
+        Me.Panel1.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
+        Me.Panel1.Controls.Add(Me.btnlogin)
+        Me.Panel1.Controls.Add(Me.LinkLabel1)
+        Me.Panel1.Location = New System.Drawing.Point(6, 88)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(271, 49)
+        Me.Panel1.TabIndex = 14
+        '
+        'btnlogin
+        '
+        Me.btnlogin.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnlogin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnlogin.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnlogin.Location = New System.Drawing.Point(195, 13)
+        Me.btnlogin.Name = "btnlogin"
+        Me.btnlogin.Size = New System.Drawing.Size(64, 23)
+        Me.btnlogin.TabIndex = 10
+        Me.btnlogin.Text = "Login"
+        Me.btnlogin.UseVisualStyleBackColor = False
+        '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Location = New System.Drawing.Point(17, 16)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(57, 15)
+        Me.LinkLabel1.TabIndex = 13
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "New User"
+        '
         'GroupBox2
         '
         Me.GroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -197,6 +263,42 @@ Partial Class Home
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Visible = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
+        Me.Panel2.Controls.Add(Me.ButtonCancel)
+        Me.Panel2.Controls.Add(Me.btnsave)
+        Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(6, 290)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(271, 49)
+        Me.Panel2.TabIndex = 29
+        '
+        'ButtonCancel
+        '
+        Me.ButtonCancel.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.ButtonCancel.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCancel.Location = New System.Drawing.Point(125, 14)
+        Me.ButtonCancel.Name = "ButtonCancel"
+        Me.ButtonCancel.Size = New System.Drawing.Size(64, 23)
+        Me.ButtonCancel.TabIndex = 28
+        Me.ButtonCancel.Text = "Cancel"
+        Me.ButtonCancel.UseVisualStyleBackColor = False
+        '
+        'btnsave
+        '
+        Me.btnsave.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnsave.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnsave.Location = New System.Drawing.Point(195, 14)
+        Me.btnsave.Name = "btnsave"
+        Me.btnsave.Size = New System.Drawing.Size(64, 23)
+        Me.btnsave.TabIndex = 20
+        Me.btnsave.Text = "Register"
+        Me.btnsave.UseVisualStyleBackColor = False
         '
         'txtconfirm_passwd
         '
@@ -646,108 +748,6 @@ Partial Class Home
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
-        'tsslwarning
-        '
-        Me.tsslwarning.Image = CType(resources.GetObject("tsslwarning.Image"), System.Drawing.Image)
-        Me.tsslwarning.Name = "tsslwarning"
-        Me.tsslwarning.Size = New System.Drawing.Size(66, 17)
-        Me.tsslwarning.Text = "warning"
-        Me.tsslwarning.Visible = False
-        '
-        'tsslerror
-        '
-        Me.tsslerror.Image = CType(resources.GetObject("tsslerror.Image"), System.Drawing.Image)
-        Me.tsslerror.Name = "tsslerror"
-        Me.tsslerror.Size = New System.Drawing.Size(48, 17)
-        Me.tsslerror.Text = "error"
-        Me.tsslerror.Visible = False
-        '
-        'tsslok
-        '
-        Me.tsslok.Image = CType(resources.GetObject("tsslok.Image"), System.Drawing.Image)
-        Me.tsslok.Name = "tsslok"
-        Me.tsslok.Size = New System.Drawing.Size(36, 17)
-        Me.tsslok.Text = "ok"
-        Me.tsslok.Visible = False
-        '
-        'tssldefault
-        '
-        Me.tssldefault.Image = CType(resources.GetObject("tssldefault.Image"), System.Drawing.Image)
-        Me.tssldefault.Name = "tssldefault"
-        Me.tssldefault.Size = New System.Drawing.Size(168, 17)
-        Me.tssldefault.Text = "St. George Cardamom Drier"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
-        Me.Panel1.Controls.Add(Me.btnlogin)
-        Me.Panel1.Controls.Add(Me.LinkLabel1)
-        Me.Panel1.Location = New System.Drawing.Point(6, 88)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(271, 49)
-        Me.Panel1.TabIndex = 14
-        '
-        'btnlogin
-        '
-        Me.btnlogin.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.btnlogin.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnlogin.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnlogin.ImageAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnlogin.Location = New System.Drawing.Point(195, 13)
-        Me.btnlogin.Name = "btnlogin"
-        Me.btnlogin.Size = New System.Drawing.Size(64, 23)
-        Me.btnlogin.TabIndex = 10
-        Me.btnlogin.Text = "Login"
-        Me.btnlogin.UseVisualStyleBackColor = False
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(17, 16)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(57, 15)
-        Me.LinkLabel1.TabIndex = 13
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "New User"
-        '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
-        Me.Panel2.Controls.Add(Me.ButtonCancel)
-        Me.Panel2.Controls.Add(Me.btnsave)
-        Me.Panel2.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(6, 290)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(271, 49)
-        Me.Panel2.TabIndex = 29
-        '
-        'ButtonCancel
-        '
-        Me.ButtonCancel.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.ButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.ButtonCancel.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCancel.Location = New System.Drawing.Point(125, 14)
-        Me.ButtonCancel.Name = "ButtonCancel"
-        Me.ButtonCancel.Size = New System.Drawing.Size(64, 23)
-        Me.ButtonCancel.TabIndex = 28
-        Me.ButtonCancel.Text = "Cancel"
-        Me.ButtonCancel.UseVisualStyleBackColor = False
-        '
-        'btnsave
-        '
-        Me.btnsave.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnsave.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsave.Location = New System.Drawing.Point(195, 14)
-        Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(64, 23)
-        Me.btnsave.TabIndex = 20
-        Me.btnsave.Text = "Register"
-        Me.btnsave.UseVisualStyleBackColor = False
-        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -769,16 +769,16 @@ Partial Class Home
         Me.StatusStrip.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolStrip.ResumeLayout(False)
         Me.ToolStrip.PerformLayout()
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

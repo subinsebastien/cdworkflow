@@ -1,6 +1,10 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Drawing.Graphics
+Module mod1
+    Public prebal As New Decimal
+End Module
 Public Class New_Transaction
+
     Dim db As New DataBaseInterface
     Dim globalDataReader As SqlDataReader
     Dim checkForNewEntry As Integer = 0
@@ -111,6 +115,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub New_Transaction_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         indate.Value = Date.Today
         lbluname.Text = Home.userName
         If chk_insert = 1 Then
@@ -228,8 +233,10 @@ Public Class New_Transaction
                 tempSum = dataReader(0)
                 txtinkg.Focus()
                 label18.Text = "Balance Rs. " + Val(dataReader(0)).ToString("#,##0.00")
+                prebal = Val(dataReader(0))
 
             Else
+                prebal = 0.0
                 txtinkg.Focus()
                 label18.Text = "Balance Rs. 0.00"
 
