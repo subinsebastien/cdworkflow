@@ -12,6 +12,7 @@ Public Class New_Transaction
     Dim tempSum As Decimal
     Dim ProcessedTotal As Decimal
     Dim chk_insert As Integer = 0
+
     Public Function claculateSum()
         Dim _getfraction As Decimal
         Dim _uRate As Decimal
@@ -60,6 +61,18 @@ Public Class New_Transaction
         Catch ex As Exception
             StatusBarUpdater.updateStatusBar("plese enter in correct format", 1)
             cmburate.Focus()
+
+        End Try
+
+
+
+        Try
+            If txtoutkg.Text <> "" Then
+
+            End If
+        Catch ex As Exception
+            StatusBarUpdater.updateStatusBar("plese enter in correct format", 1)
+            txtoutkg.Focus()
 
         End Try
 
@@ -247,6 +260,8 @@ Public Class New_Transaction
 
     Private Sub btnsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnsave.Click
         If checkForNewEntry = 1 And chk_insert = 0 Then
+           
+
             If Trim(cmbcname.Text) = "" Then
                 StatusBarUpdater.updateStatusBar("Please select name", 1)
                 cmbcname.Focus()
@@ -258,9 +273,13 @@ Public Class New_Transaction
                 txtmobile.Focus()
             Else
                 db.manipulate("insert into TABLECUSTOMER values('" & cmbcname.Text & "'," & txtmobile.Text & ",'" & txtaddress.Text & "') ")
+               
                 chk_insert = 1
                 New_Transaction_Load(Me, New System.EventArgs)
+
             End If
+            
+           
         End If
         If checkForNewEntry = 0 Or chk_insert = 1 Then
             Dim instatus As Boolean
@@ -283,7 +302,9 @@ Public Class New_Transaction
                 globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
                 globalDataReader.Read()
                 customerId = globalDataReader(0)
-                db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & Val(txtinkg.Text) & "," & Val(txtoutkg.Text) & " ," & Val(txtcredit.Text) & "," & Val(cmburate.Text) & "," & ProcessedTotal & ")   ")
+                Dim _creditvalue As Decimal = txtcredit.Text
+                'MsgBox(_creditvalue)
+                db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & Val(txtinkg.Text) & "," & Val(txtoutkg.Text) & " ," & _creditvalue & "," & Val(cmburate.Text) & "," & ProcessedTotal & ")   ")
                 Me.Close()
 
                 StatusBarUpdater.updateStatusBar("Transaction Completed", 2)
@@ -503,12 +524,19 @@ Public Class New_Transaction
     Private Sub txtoutkg_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtoutkg.Leave
         Dim s As String
         Dim _outKg As String = txtoutkg.Text
-        If (Trim(txtoutkg.TextLength = 0)) Then
-            txtoutkg.Text = "0.000"
-        Else
-            s = Convert.ToDecimal(_outKg).ToString("#,##0.000")
-            txtoutkg.Text = s
-        End If
+        Try
+            If (Trim(txtoutkg.TextLength = 0)) Then
+                txtoutkg.Text = "0.000"
+            Else
+                s = Convert.ToDecimal(_outKg).ToString("#,##0.000")
+                txtoutkg.Text = s
+            End If
+
+        Catch ex As Exception
+            txtoutkg.Focus()
+        End Try
+        
+       
     End Sub
 
     Private Sub txtmobile_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtmobile.LostFocus

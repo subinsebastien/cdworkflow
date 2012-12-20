@@ -43,6 +43,7 @@ Partial Class New_Transaction
         Me.Panel1 = New System.Windows.Forms.Panel
         Me.lbluname = New System.Windows.Forms.LinkLabel
         Me.Label16 = New System.Windows.Forms.Label
+        Me.Panel2 = New System.Windows.Forms.Panel
         Me.Label3 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
@@ -53,7 +54,6 @@ Partial Class New_Transaction
         Me.cbprintonexit = New System.Windows.Forms.CheckBox
         Me.btnsave = New System.Windows.Forms.Button
         Me.label18 = New System.Windows.Forms.Button
-        Me.Panel2 = New System.Windows.Forms.Panel
         Me.Label15 = New System.Windows.Forms.Label
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.Panel1.SuspendLayout()
@@ -218,13 +218,13 @@ Partial Class New_Transaction
         Me.cmburate.Enabled = False
         Me.cmburate.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmburate.FormattingEnabled = True
-        Me.cmburate.Items.AddRange(New Object() {"8.50", "9.00"})
+        Me.cmburate.Items.AddRange(New Object() {"9.00", "10.00"})
         Me.cmburate.Location = New System.Drawing.Point(330, 208)
         Me.cmburate.MaxLength = 6
         Me.cmburate.Name = "cmburate"
         Me.cmburate.Size = New System.Drawing.Size(146, 23)
         Me.cmburate.TabIndex = 145
-        Me.cmburate.Text = "9.00"
+        Me.cmburate.Text = "10.00"
         '
         'txtaddress
         '
@@ -273,6 +273,15 @@ Partial Class New_Transaction
         Me.Label16.TabIndex = 15
         Me.Label16.Text = "00"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Panel2
+        '
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel2.Location = New System.Drawing.Point(9, 10)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(46, 47)
+        Me.Panel2.TabIndex = 1
         '
         'Label3
         '
@@ -376,15 +385,6 @@ Partial Class New_Transaction
         Me.label18.TabIndex = 50
         Me.label18.Text = "Balance Rs. 0.00"
         Me.label18.UseVisualStyleBackColor = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel2.Location = New System.Drawing.Point(9, 10)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(46, 47)
-        Me.Panel2.TabIndex = 1
         '
         'Label15
         '
