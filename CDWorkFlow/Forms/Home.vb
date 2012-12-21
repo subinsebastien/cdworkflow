@@ -96,7 +96,7 @@ Public Class Home
     Private m_ChildFormNumber As Integer
 
     Public Sub drier_name_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Me.tsslok.Visible = False
         Me.Height = 641
         Me.Width = 941
         Me.MaximizeBox = True

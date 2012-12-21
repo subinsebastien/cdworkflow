@@ -10,6 +10,7 @@ Public Class EditCustomerDetails
     End Sub
 
     Private Sub customeredit_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Home.tsslok.Visible = False
         Me.MaximizeBox = False
         MdiParent = Home
         cmbcname.AutoCompleteMode = AutoCompleteMode.SuggestAppend

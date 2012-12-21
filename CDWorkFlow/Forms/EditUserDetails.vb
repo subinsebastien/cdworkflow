@@ -21,7 +21,8 @@ Public Class EditUserDetails
     End Sub
 
     Private Sub user_edit_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-         StatusBarUpdater.updateStatusBar("", 4)
+        Home.tsslok.Visible = False
+        StatusBarUpdater.updateStatusBar("", 4)
         MdiParent = Home
         dr = db.reader("select * from TABLEUSER where loginid=" & Home.logid & " ")
         dr.Read()

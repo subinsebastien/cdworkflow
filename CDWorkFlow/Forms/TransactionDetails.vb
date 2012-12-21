@@ -3,6 +3,7 @@ Public Class TransactionDetails
     Dim db As New DataBaseInterface
     Dim dr As SqlDataReader
     Private Sub TransactionDetails_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Home.tsslok.Visible = False
         MdiParent = Home
         dr = db.reader("select  c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where t.id=" & ViewInventory.getCellContent & " and c.customerid=t.customerid")
         dr.Read()

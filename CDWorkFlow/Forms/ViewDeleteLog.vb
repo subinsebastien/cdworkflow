@@ -3,6 +3,7 @@ Public Class ViewDeleteLog
     Dim db As New DataBaseInterface
     Dim data_reader As SqlDataReader
     Private Sub ViewDeleteLog_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Home.tsslok.Visible = False
         MdiParent = Home
         Dim tot_row As Integer = 0
         data_reader = db.reader("select * from TABLEDELETELOG ")

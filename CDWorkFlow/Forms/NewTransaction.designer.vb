@@ -253,11 +253,12 @@ Partial Class New_Transaction
         'lbluname
         '
         Me.lbluname.AutoSize = True
+        Me.lbluname.Enabled = False
         Me.lbluname.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbluname.Location = New System.Drawing.Point(136, 28)
         Me.lbluname.Name = "lbluname"
         Me.lbluname.Size = New System.Drawing.Size(111, 15)
-        Me.lbluname.TabIndex = 155
+        Me.lbluname.TabIndex = 0
         Me.lbluname.TabStop = True
         Me.lbluname.Text = "Sale Person Name"
         '
@@ -356,17 +357,17 @@ Partial Class New_Transaction
         Me.cbprintonexit.Location = New System.Drawing.Point(19, 19)
         Me.cbprintonexit.Name = "cbprintonexit"
         Me.cbprintonexit.Size = New System.Drawing.Size(89, 19)
-        Me.cbprintonexit.TabIndex = 0
+        Me.cbprintonexit.TabIndex = 157
         Me.cbprintonexit.Text = "Print on Exit"
         Me.cbprintonexit.UseVisualStyleBackColor = False
         '
         'btnsave
         '
         Me.btnsave.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnsave.Location = New System.Drawing.Point(383, 12)
+        Me.btnsave.Location = New System.Drawing.Point(380, 12)
         Me.btnsave.Name = "btnsave"
         Me.btnsave.Size = New System.Drawing.Size(100, 32)
-        Me.btnsave.TabIndex = 155
+        Me.btnsave.TabIndex = 156
         Me.btnsave.Text = "Save/Exit"
         Me.btnsave.UseVisualStyleBackColor = True
         '

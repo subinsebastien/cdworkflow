@@ -49,6 +49,7 @@ Public Class ViewInventory
         Home.tssldefault.Visible = True
         Home.tsslerror.Visible = False
         Home.tsslwarning.Visible = False
+        Home.tsslok.Visible = False
         Me.MaximizeBox = False
         cmbcname.AutoCompleteMode = AutoCompleteMode.SuggestAppend
         cmbcname.AutoCompleteSource = AutoCompleteSource.ListItems

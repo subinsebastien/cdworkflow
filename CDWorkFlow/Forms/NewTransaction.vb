@@ -128,6 +128,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub New_Transaction_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Home.tsslok.Visible = False
         prebal = 0.0
         indate.Value = Date.Today
         lbluname.Text = Home.userName
@@ -304,7 +305,7 @@ Public Class New_Transaction
                 cmbcname.Focus()
                 'ElseIf txtdue.Text <> 0 And instatus = True And outstatus = True And creditstatus = True Then
                 '    MsgBox("ya working")
-            ElseIf txtdue.Text <> 0 And checkForNewEntry = 1 And (Val(txtinkg.Text) = 0 And Val(txtoutkg.Text) = 0 And Val(txtcredit.Text) = 0) Then
+            ElseIf checkForNewEntry = 1 And (Val(txtinkg.Text) = 0 And Val(txtoutkg.Text) = 0 And Val(txtcredit.Text) = 0) Then
 
                 Try
                     globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
@@ -317,7 +318,7 @@ Public Class New_Transaction
 
                     db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & _inbound & "," & _outbound & " ," & _advancde & "," & _ratekg & "," & Val(txtdue.Text) & ")   ")
                     Me.Close()
-
+                    StatusBarUpdater.updateStatusBar("Transaction Completed", 5)
                 Catch ex As Exception
                     StatusBarUpdater.updateStatusBar("Please enter in correct format", 1)
                     txtdue.Focus()
@@ -338,7 +339,7 @@ Public Class New_Transaction
                 db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & Val(txtinkg.Text) & "," & Val(txtoutkg.Text) & " ," & _creditvalue & "," & Val(cmburate.Text) & "," & ProcessedTotal & ")   ")
                 Me.Close()
 
-                StatusBarUpdater.updateStatusBar("Transaction Completed", 2)
+                StatusBarUpdater.updateStatusBar("Transaction Completed", 5)
                 If cbprintonexit.Checked = True Then
                     If checkForNewEntry = 1 Then
                         prebal = _prebal
@@ -589,7 +590,4 @@ Public Class New_Transaction
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ViewDeleteLog.Show()
     End Sub
-
-   
-    
 End Class

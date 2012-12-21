@@ -27,6 +27,14 @@
             Home.tssldefault.Visible = True
             Home.tsslerror.Visible = False
             Home.tsslwarning.Visible = False
+        ElseIf statusLabelIdentifire = 5 Then
+            Home.StatusStrip.Visible = True
+            Home.tssldefault.Visible = False
+            Home.tsslerror.Visible = False
+            Home.tsslwarning.Visible = False
+            Home.tsslok.Visible = True
+            Home.tsslok.Text = message
+            My.Computer.Audio.Play(My.Resources.SuccessAudio, AudioPlayMode.Background)
         End If
 
         Return 0
