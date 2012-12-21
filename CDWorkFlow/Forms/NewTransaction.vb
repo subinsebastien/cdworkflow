@@ -4,7 +4,7 @@ Module mod1
     Public prebal As New Decimal
 End Module
 Public Class New_Transaction
-
+    Dim _prebal As Decimal
     Dim db As New DataBaseInterface
     Dim globalDataReader As SqlDataReader
     Dim checkForNewEntry As Integer = 0
@@ -128,7 +128,7 @@ Public Class New_Transaction
     End Sub
 
     Private Sub New_Transaction_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        prebal = 0.0
         indate.Value = Date.Today
         lbluname.Text = Home.userName
         If chk_insert = 1 Then
@@ -216,6 +216,7 @@ Public Class New_Transaction
             txtinkg.Enabled = True
             txtoutkg.Enabled = True
             cmburate.Enabled = True
+
         End If
     End Sub
 
@@ -230,6 +231,7 @@ Public Class New_Transaction
         globalDataReader.Read()
         customerId = globalDataReader(0)
 
+
         If globalDataReader.HasRows Then
 
             If IsDBNull(globalDataReader(2)) Then
@@ -241,6 +243,7 @@ Public Class New_Transaction
             End If
             dataReader = db.reader("select runbalance from TABLETRANSACTION where customerid=" & customerId & " order by id desc")
             dataReader.Read()
+
             If dataReader.HasRows Then
                 txtdue.Text = Val(dataReader(0)).ToString("#,##0.00")
                 tempSum = dataReader(0)
@@ -255,12 +258,17 @@ Public Class New_Transaction
 
                 txtdue.Text = "0.00"
             End If
+            
+
+
         End If
     End Sub
 
     Private Sub btnsave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnsave.Click
+       
+
         If checkForNewEntry = 1 And chk_insert = 0 Then
-           
+
 
             If Trim(cmbcname.Text) = "" Then
                 StatusBarUpdater.updateStatusBar("Please select name", 1)
@@ -273,14 +281,15 @@ Public Class New_Transaction
                 txtmobile.Focus()
             Else
                 db.manipulate("insert into TABLECUSTOMER values('" & cmbcname.Text & "'," & txtmobile.Text & ",'" & txtaddress.Text & "') ")
-               
+
                 chk_insert = 1
                 New_Transaction_Load(Me, New System.EventArgs)
 
             End If
-            
-           
+
+
         End If
+
         If checkForNewEntry = 0 Or chk_insert = 1 Then
             Dim instatus As Boolean
             Dim outstatus As Boolean
@@ -293,11 +302,33 @@ Public Class New_Transaction
 
                 StatusBarUpdater.updateStatusBar("Please select name", 1)
                 cmbcname.Focus()
+                'ElseIf txtdue.Text <> 0 And instatus = True And outstatus = True And creditstatus = True Then
+                '    MsgBox("ya working")
+            ElseIf txtdue.Text <> 0 And checkForNewEntry = 1 And (Val(txtinkg.Text) = 0 And Val(txtoutkg.Text) = 0 And Val(txtcredit.Text) = 0) Then
+
+                Try
+                    globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
+                    globalDataReader.Read()
+                    customerId = globalDataReader(0)
+                    Dim _inbound As Decimal = 0.0
+                    Dim _outbound As Decimal = 0.0
+                    Dim _advancde As Decimal = 0.0
+                    Dim _ratekg As Decimal = 0.0
+
+                    db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & _inbound & "," & _outbound & " ," & _advancde & "," & _ratekg & "," & Val(txtdue.Text) & ")   ")
+                    Me.Close()
+
+                Catch ex As Exception
+                    StatusBarUpdater.updateStatusBar("Please enter in correct format", 1)
+                    txtdue.Focus()
+                End Try
             ElseIf (instatus And outstatus And creditstatus) Then
 
                 StatusBarUpdater.updateStatusBar("Enter any values", 1)
                 txtinkg.Focus()
+
             Else
+
                 ProcessedTotal = claculateSum()
                 globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
                 globalDataReader.Read()
@@ -309,6 +340,10 @@ Public Class New_Transaction
 
                 StatusBarUpdater.updateStatusBar("Transaction Completed", 2)
                 If cbprintonexit.Checked = True Then
+                    If checkForNewEntry = 1 Then
+                        prebal = _prebal
+                    End If
+
                     PrintDocument1.Print()
                 End If
 
@@ -316,7 +351,7 @@ Public Class New_Transaction
         End If
 
 
-        
+
     End Sub
 
     Private Sub txtinkg_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtinkg.Click
@@ -424,6 +459,10 @@ Public Class New_Transaction
             s = Convert.ToDecimal(_due).ToString("#,##0.00")
             txtdue.Text = s
         End If
+        If checkForNewEntry = 1 Then
+            _prebal = (Val(txtdue.Text))
+        End If
+
     End Sub
 
     Private Sub txtdue_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtdue.TextChanged
@@ -458,9 +497,10 @@ Public Class New_Transaction
     End Sub
 
     Private Sub txtinkg_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtinkg.TextChanged
-       
+
         label18.Text = "Balance Rs." + Val(claculateSum()).ToString("#,##0.00")
         'txtinkg.Text = Convert.ToDecimal(_inKg).ToString("#,##0.000")
+
     End Sub
 
     Private Sub cmburate_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmburate.TextChanged
@@ -509,18 +549,13 @@ Public Class New_Transaction
     End Sub
 
     Private Sub PrintDocument1_PrintPage(ByVal sender As System.Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+
         PrinterInterface.printLastTransaction(e)
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        PrintDocument1.Print()
-        'Dim f As System.Drawing.Printing.PrintPageEventArgs
-        'PrinterInterface.printLastTransaction(f)
-    End Sub
+    
 
-    Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        StatusBarUpdater.updateStatusBar("oh God", 3)
-    End Sub
+   
     Private Sub txtoutkg_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtoutkg.Leave
         Dim s As String
         Dim _outKg As String = txtoutkg.Text
@@ -554,4 +589,7 @@ Public Class New_Transaction
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ViewDeleteLog.Show()
     End Sub
+
+   
+    
 End Class

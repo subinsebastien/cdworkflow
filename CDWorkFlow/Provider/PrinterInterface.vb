@@ -41,6 +41,7 @@ Public Class PrinterInterface
         dr2 = db2.reader("select name from TABLECUSTOMER where customerid=" & dr(3) & "")
         dr2.Read()
 
+       
         'getting the values(date and time\)
         Dim _time As String = DateTime.Now.ToString("HH:mm:ss")
         Dim _date As Date = dr(2)
