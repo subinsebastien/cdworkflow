@@ -703,6 +703,17 @@
         r4kRn979n/wL+3psq8aglDoAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="RefreshButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEiSURBVDhPY2AgEsSvCP9PpFJMZUmrIv+3fM8m3gCQhpil
+        wf8zz8f8z7+U9r/kTsL/ro9F/6N3BRE2JHZq+P/CtxFgGyf8rfhf/SsBzE+96/c/6rLL/+BuL9yGwDSH
+        bfX679pn8997vsv/wJlu/2Nvuv/3PWH533K/yn/1xeK4DQBpBDkdORRANoZfs/1vvFoJbCjOgCzsz8cq
+        aT1FH79GsqOGphpBgRlw2OZ/TClm4sEbDqAA89hj+j/tagA42pJ7Y+Dhkjw1GiwHChOcrg88bfM/4bwX
+        OL5TH3mDDYm75gHG8fdc/tts0cKfkEAuiHkI0QxKQLBEBIpGvDYjO8lnkz1YI8ivIAP9elz/R3Whpg2C
+        ERB1y45wmsdnSsaBUKINAAAXebLtlPcADAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAMDAQAAEABABoBgAAlgAAACAgEAABAAQA6AIAAP4GAAAQEBAAAQAEACgBAADmCQAAMDAAAAEA

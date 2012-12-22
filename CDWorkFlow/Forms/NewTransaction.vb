@@ -590,4 +590,8 @@ Public Class New_Transaction
     Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         ViewDeleteLog.Show()
     End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        System.Diagnostics.Process.Start("http://www.google.com")
+    End Sub
 End Class

@@ -124,14 +124,17 @@
   <data name="BannerImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BannerImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CDWorkFlow_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CDWorkFlow_Icon.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Circles" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circles.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ErrorAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ErrorAudio.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Installer_banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Installer_banner.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Installer_Top_Banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Installer_Top_Banner.jpg;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SuccessAudio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WarningAudio.wav;System.IO.MemoryStream, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>

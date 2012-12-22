@@ -22,14 +22,14 @@ Partial Class ViewInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewInventory))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.dates = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -40,7 +40,6 @@ Partial Class ViewInventory
         Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.runbalance = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.tid = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.FiltrButton = New System.Windows.Forms.Button
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.RadioButton5 = New System.Windows.Forms.RadioButton
         Me.chkbox_sort = New System.Windows.Forms.CheckBox
@@ -71,6 +70,7 @@ Partial Class ViewInventory
         Me.DeleteButton = New System.Windows.Forms.Button
         Me.totfresh = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
+        Me.RefreshButton = New System.Windows.Forms.Button
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -82,8 +82,8 @@ Partial Class ViewInventory
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -94,8 +94,8 @@ Partial Class ViewInventory
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(700, 212)
@@ -104,10 +104,10 @@ Partial Class ViewInventory
         'dates
         '
         Me.dates.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.dates.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Trebuchet MS", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.dates.DefaultCellStyle = DataGridViewCellStyle10
         Me.dates.HeaderText = "Date"
         Me.dates.Name = "dates"
         Me.dates.ReadOnly = True
@@ -123,9 +123,9 @@ Partial Class ViewInventory
         'inkg
         '
         Me.inkg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N3"
-        Me.inkg.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle11.Format = "N3"
+        Me.inkg.DefaultCellStyle = DataGridViewCellStyle11
         Me.inkg.HeaderText = "Inbound Cardamom (Kg.)"
         Me.inkg.Name = "inkg"
         Me.inkg.ReadOnly = True
@@ -134,10 +134,10 @@ Partial Class ViewInventory
         'outkg
         '
         Me.outkg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N3"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.outkg.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Format = "N3"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.outkg.DefaultCellStyle = DataGridViewCellStyle12
         Me.outkg.HeaderText = "Outbound Cardamom (Kg.)"
         Me.outkg.Name = "outkg"
         Me.outkg.ReadOnly = True
@@ -146,10 +146,10 @@ Partial Class ViewInventory
         'credit
         '
         Me.credit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N2"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.credit.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle13.Format = "N2"
+        DataGridViewCellStyle13.NullValue = Nothing
+        Me.credit.DefaultCellStyle = DataGridViewCellStyle13
         Me.credit.HeaderText = "Amount Paid (Rs.)"
         Me.credit.Name = "credit"
         Me.credit.ReadOnly = True
@@ -158,10 +158,10 @@ Partial Class ViewInventory
         'rate
         '
         Me.rate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle6.Format = "N2"
-        DataGridViewCellStyle6.NullValue = Nothing
-        Me.rate.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle14.Format = "N2"
+        DataGridViewCellStyle14.NullValue = Nothing
+        Me.rate.DefaultCellStyle = DataGridViewCellStyle14
         Me.rate.HeaderText = "Rate/Kg."
         Me.rate.Name = "rate"
         Me.rate.ReadOnly = True
@@ -170,10 +170,10 @@ Partial Class ViewInventory
         'runbalance
         '
         Me.runbalance.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle7.Format = "N2"
-        DataGridViewCellStyle7.NullValue = Nothing
-        Me.runbalance.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle15.Format = "N2"
+        DataGridViewCellStyle15.NullValue = Nothing
+        Me.runbalance.DefaultCellStyle = DataGridViewCellStyle15
         Me.runbalance.HeaderText = "Due Amount (Rs.)"
         Me.runbalance.Name = "runbalance"
         Me.runbalance.ReadOnly = True
@@ -185,16 +185,6 @@ Partial Class ViewInventory
         Me.tid.Name = "tid"
         Me.tid.ReadOnly = True
         Me.tid.Visible = False
-        '
-        'FiltrButton
-        '
-        Me.FiltrButton.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FiltrButton.Location = New System.Drawing.Point(616, 228)
-        Me.FiltrButton.Name = "FiltrButton"
-        Me.FiltrButton.Size = New System.Drawing.Size(96, 32)
-        Me.FiltrButton.TabIndex = 60
-        Me.FiltrButton.Text = "Filter"
-        Me.FiltrButton.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -564,12 +554,23 @@ Partial Class ViewInventory
         Me.PictureBox1.TabIndex = 61
         Me.PictureBox1.TabStop = False
         '
+        'RefreshButton
+        '
+        Me.RefreshButton.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RefreshButton.Image = CType(resources.GetObject("RefreshButton.Image"), System.Drawing.Image)
+        Me.RefreshButton.Location = New System.Drawing.Point(582, 484)
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.Size = New System.Drawing.Size(28, 26)
+        Me.RefreshButton.TabIndex = 92
+        Me.RefreshButton.UseVisualStyleBackColor = True
+        '
         'ViewInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(721, 537)
+        Me.Controls.Add(Me.RefreshButton)
         Me.Controls.Add(Me.totavg)
         Me.Controls.Add(Me.PrintButton)
         Me.Controls.Add(Me.Label7)
@@ -585,7 +586,6 @@ Partial Class ViewInventory
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.FiltrButton)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -605,7 +605,6 @@ Partial Class ViewInventory
 
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents FiltrButton As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents chkbox_sort As System.Windows.Forms.CheckBox
@@ -644,4 +643,5 @@ Partial Class ViewInventory
     Friend WithEvents rate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents runbalance As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tid As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents RefreshButton As System.Windows.Forms.Button
 End Class

@@ -20,6 +20,12 @@ Public Class ViewInventory
             total_fresh_cdm += Val(data_reader(2))
             total_dried_cdm += Val(data_reader(3))
             DataGridView1.Rows.Add()
+            If Val(dr(6)) > 1000 Then
+                DataGridView1.Rows(tot_row).DefaultCellStyle.BackColor = Color.Wheat
+            End If
+            If Val(dr(6)) < 0 Then
+                DataGridView1.Rows(tot_row).DefaultCellStyle.BackColor = Color.Tomato
+            End If
             DataGridView1.Item(columnIndex:=0, rowIndex:=tot_row).Value = calDate.Date.ToShortDateString
             DataGridView1.Item(columnIndex:=1, rowIndex:=tot_row).Value = data_reader(0)
             DataGridView1.Item(columnIndex:=2, rowIndex:=tot_row).Value = data_reader(2)
@@ -141,13 +147,24 @@ Public Class ViewInventory
                 'MsgBox(dr(7))
                 db.manipulate("delete  from TABLETRANSACTION where id=" & getCellContent & "")
                 Dim _sen As New System.Object
-                FiltrButton_Click(_sen, e)
+                RefreshButton_Click(_sen, e)
                 getCellContent = 0
             End If
         End If
     End Sub
 
-    Private Sub FiltrButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FiltrButton.Click
+ 
+
+    Private Sub ViewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewButton.Click
+        If Val(getCellContent = 0) Then
+            StatusBarUpdater.updateStatusBar("Please Select an item", 1)
+        Else
+            TransactionDetails.Show()
+        End If
+    End Sub
+
+    
+    Private Sub RefreshButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RefreshButton.Click
         Dim custName As Boolean
         Dim dates As Boolean
         Dim sortby As Boolean
@@ -231,14 +248,4 @@ Public Class ViewInventory
             End If
         End If
     End Sub
-
-    Private Sub ViewButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ViewButton.Click
-        If Val(getCellContent = 0) Then
-            StatusBarUpdater.updateStatusBar("Please Select an item", 1)
-        Else
-            TransactionDetails.Show()
-        End If
-    End Sub
-
-    
 End Class

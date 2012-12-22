@@ -74,6 +74,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property CDWorkFlow_Icon() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("CDWorkFlow_Icon", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
         Friend ReadOnly Property Circles() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Circles", resourceCulture)
@@ -87,9 +94,9 @@ Namespace My.Resources
             End Get
         End Property
         
-        Friend ReadOnly Property Installer_banner() As System.Drawing.Bitmap
+        Friend ReadOnly Property Installer_Top_Banner() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Installer_banner", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Installer_Top_Banner", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
