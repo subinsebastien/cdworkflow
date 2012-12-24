@@ -334,9 +334,8 @@ Public Class New_Transaction
                 globalDataReader = db.reader("select * from TABLECUSTOMER where name='" & Trim(cmbcname.Text) & "' ")
                 globalDataReader.Read()
                 customerId = globalDataReader(0)
-                Dim _creditvalue As Decimal = txtcredit.Text
-                'MsgBox(_creditvalue)
-                db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & Val(txtinkg.Text) & "," & Val(txtoutkg.Text) & " ," & _creditvalue & "," & Val(cmburate.Text) & "," & ProcessedTotal & ")   ")
+                Dim _creditvalue As Decimal = Convert.ToDecimal(txtcredit.Text)
+                db.manipulate("insert into TABLETRANSACTION values(" & Home.logid & ",'" & indate.Text & "'," & customerId & "," & Convert.ToDecimal(txtinkg.Text) & "," & Convert.ToDecimal(txtoutkg.Text) & " ," & _creditvalue & "," & Convert.ToDecimal(cmburate.Text) & "," & ProcessedTotal & ")   ")
                 Me.Close()
 
                 StatusBarUpdater.updateStatusBar("Transaction Completed", 5)

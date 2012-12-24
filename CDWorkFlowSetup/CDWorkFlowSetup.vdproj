@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_B46E7D601AA04AD4B373C948D35B8A03"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_617D558B48DD42C49B1E042203F28764"
         "MsmSig" = "8:_UNDEFINED"
@@ -55,6 +61,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -166,6 +180,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B46E7D601AA04AD4B373C948D35B8A03"
+            {
+            "SourcePath" = "8:..\\CDWorkFlow\\Resources\\Installer_Top_Banner.jpg"
+            "TargetName" = "8:Installer_Top_Banner.jpg"
+            "Tag" = "8:"
+            "Folder" = "8:_2D0C3324817546B79BF43EBDB449E6E6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -245,7 +279,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CPC Manager"
         "ProductCode" = "8:{0DF80E6B-510F-4C7E-A7A0-7237E0E40301}"
-        "PackageCode" = "8:{2CEB611A-2FA6-4945-AF26-2BE2E43D35C1}"
+        "PackageCode" = "8:{AB6F84B8-11D7-475D-8691-7CF38B1CA7B6}"
         "UpgradeCode" = "8:{14E45B58-F7C6-410F-AE43-9668BED342BD}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -482,7 +516,8 @@
                             "Type" = "3:8"
                             "ContextData" = "8:Bitmap"
                             "Attributes" = "3:4"
-                            "Setting" = "3:1"
+                            "Setting" = "3:2"
+                            "Value" = "8:_B46E7D601AA04AD4B373C948D35B8A03"
                             "UsePlugInResources" = "11:TRUE"
                             }
                             "CopyrightWarning"

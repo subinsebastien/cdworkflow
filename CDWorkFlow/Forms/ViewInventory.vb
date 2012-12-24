@@ -135,15 +135,15 @@ Public Class ViewInventory
             StatusBarUpdater.updateStatusBar("Please Select an item", 1)
         Else
             If MsgBox("Do you want to delete", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-
-                dr = db.reader("select c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid and t.id=" & getCellContent & " ")
-                dr.Read()
+                Dim _dataReader As SqlDataReader
+                _dataReader = db.reader("select c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid and t.id=" & getCellContent & " ")
+                _dataReader.Read()
                 'Dim i As Integer = 0
                 'For i = 0 To 10
                 '    MsgBox(dr(i))
                 'Next
 
-                db.manipulate("insert into TABLEDELETELOG values('" & Home.label18.Text & "','" & dr(7) & "','" & dr(0) & "'," & dr(10) & "," & dr(2) & "," & dr(3) & "," & dr(4) & "," & dr(5) & "," & dr(6) & ") ")
+                db.manipulate("insert into TABLEDELETELOG values('" & Home.label18.Text & "','" & _dataReader(7).ToString & "','" & _dataReader(0) & "'," & _dataReader(10) & "," & _dataReader(2) & "," & _dataReader(3) & "," & _dataReader(4) & "," & _dataReader(5) & "," & _dataReader(6) & ") ")
                 'MsgBox(dr(7))
                 db.manipulate("delete  from TABLETRANSACTION where id=" & getCellContent & "")
                 Dim _sen As New System.Object
