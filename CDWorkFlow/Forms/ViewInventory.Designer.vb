@@ -31,6 +31,9 @@ Partial Class ViewInventory
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewInventory))
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.DataGridView1 = New System.Windows.Forms.DataGridView
         Me.dates = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Cust_name = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -71,11 +74,16 @@ Partial Class ViewInventory
         Me.totfresh = New System.Windows.Forms.Button
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.RefreshButton = New System.Windows.Forms.Button
+        Me.ConsolidationGridview = New System.Windows.Forms.DataGridView
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.Amount = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ConsolidationGridview, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -196,7 +204,7 @@ Partial Class ViewInventory
         Me.GroupBox2.Controls.Add(Me.RadioButton4)
         Me.GroupBox2.Location = New System.Drawing.Point(285, 101)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(205, 159)
+        Me.GroupBox2.Size = New System.Drawing.Size(174, 159)
         Me.GroupBox2.TabIndex = 69
         Me.GroupBox2.TabStop = False
         '
@@ -564,12 +572,63 @@ Partial Class ViewInventory
         Me.RefreshButton.TabIndex = 92
         Me.RefreshButton.UseVisualStyleBackColor = True
         '
+        'ConsolidationGridview
+        '
+        Me.ConsolidationGridview.AllowUserToAddRows = False
+        Me.ConsolidationGridview.AllowUserToDeleteRows = False
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.ConsolidationGridview.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.ConsolidationGridview.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ConsolidationGridview.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.ConsolidationGridview.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
+        Me.ConsolidationGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ConsolidationGridview.ColumnHeadersVisible = False
+        Me.ConsolidationGridview.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Amount})
+        Me.ConsolidationGridview.Location = New System.Drawing.Point(466, 143)
+        Me.ConsolidationGridview.Name = "ConsolidationGridview"
+        Me.ConsolidationGridview.ReadOnly = True
+        Me.ConsolidationGridview.RowHeadersVisible = False
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Goldenrod
+        Me.ConsolidationGridview.RowsDefaultCellStyle = DataGridViewCellStyle11
+        Me.ConsolidationGridview.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.ConsolidationGridview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.ConsolidationGridview.Size = New System.Drawing.Size(246, 69)
+        Me.ConsolidationGridview.TabIndex = 93
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = "inbound Cardamom"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 113
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = ":"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        Me.Column2.Width = 35
+        '
+        'Amount
+        '
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle10.Format = "kg"
+        DataGridViewCellStyle10.NullValue = "0.00"
+        Me.Amount.DefaultCellStyle = DataGridViewCellStyle10
+        Me.Amount.HeaderText = "outbound "
+        Me.Amount.Name = "Amount"
+        Me.Amount.ReadOnly = True
+        Me.Amount.Width = 95
+        '
         'ViewInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(721, 537)
+        Me.Controls.Add(Me.ConsolidationGridview)
         Me.Controls.Add(Me.RefreshButton)
         Me.Controls.Add(Me.totavg)
         Me.Controls.Add(Me.PrintButton)
@@ -600,6 +659,7 @@ Partial Class ViewInventory
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ConsolidationGridview, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -644,4 +704,8 @@ Partial Class ViewInventory
     Friend WithEvents runbalance As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents tid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RefreshButton As System.Windows.Forms.Button
+    Friend WithEvents ConsolidationGridview As System.Windows.Forms.DataGridView
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Amount As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

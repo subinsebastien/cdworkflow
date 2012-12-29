@@ -41,6 +41,23 @@ Public Class ViewInventory
         Else
             average_cdm = total_fresh_cdm / total_dried_cdm
         End If
+
+
+
+
+
+
+        ConsolidationGridview.Rows.Add(3)
+        ConsolidationGridview.Item(columnIndex:=0, rowIndex:=0).Value = "Inbound Cardamom"
+        ConsolidationGridview.Item(columnIndex:=0, rowIndex:=1).Value = "outbound Cardamom"
+        ConsolidationGridview.Item(columnIndex:=0, rowIndex:=2).Value = "Average"
+        ConsolidationGridview.Item(columnIndex:=1, rowIndex:=0).Value = ":"
+        ConsolidationGridview.Item(columnIndex:=1, rowIndex:=1).Value = ":"
+        ConsolidationGridview.Item(columnIndex:=1, rowIndex:=2).Value = ":"
+        ConsolidationGridview.Item(columnIndex:=2, rowIndex:=0).Value = total_fresh_cdm.ToString("#,##0.000")
+        ConsolidationGridview.Item(columnIndex:=2, rowIndex:=1).Value = total_dried_cdm.ToString("#,##0.000")
+        ConsolidationGridview.Item(columnIndex:=2, rowIndex:=2).Value = average_cdm.ToString("#,##0.000")
+
         totfresh.Text = total_fresh_cdm.ToString("#,##0.000")
         totdried.Text = total_dried_cdm.ToString("#,##0.000")
         totavg.Text = average_cdm.ToString("#,##0.000")
@@ -183,6 +200,10 @@ Public Class ViewInventory
             cmbcname.Focus()
         Else
             Home.tsslerror.Visible = False
+        End If
+        If RadioButton5.Checked = True Then
+            dr = db.reader("select  c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid order by t.id desc ")
+            grid_viewupdate(dr)
         End If
         If dates = False And custName = False And sortby = False Then
             dr = db.reader("select  c.name,c.mobile,t.inkg,t.outkg,t.credit,t.rate,t.runbalance,t.tdate,c.customerid,t.customerid,t.id from TABLECUSTOMER c,TABLETRANSACTION t where c.customerid=t.customerid order by t.id desc ")
