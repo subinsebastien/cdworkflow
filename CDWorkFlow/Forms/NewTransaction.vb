@@ -123,9 +123,6 @@ Public Class New_Transaction
         Me.Dispose()
     End Sub
 
-    Private Sub New_Transaction_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
-        
-    End Sub
 
     Private Sub New_Transaction_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Home.tsslok.Visible = False

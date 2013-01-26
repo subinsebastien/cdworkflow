@@ -513,4 +513,13 @@ Public Class Home
     Private Sub WindowsMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles WindowsMenu.Click
 
     End Sub
+
+    Private Sub ToolStripButton6_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton6.Click
+        Expense_Tracker.Show()
+
+    End Sub
+
+    Private Sub IndexToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IndexToolStripMenuItem.Click
+        Other_Expense.ShowDialog()
+    End Sub
 End Class

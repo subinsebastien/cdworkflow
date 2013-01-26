@@ -72,6 +72,7 @@ Partial Class Home
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripButton7 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
+        Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton
         Me.MenuStrip = New System.Windows.Forms.MenuStrip
         Me.FileMenu = New System.Windows.Forms.ToolStripMenuItem
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -501,7 +502,7 @@ Partial Class Home
         Me.ToolStrip.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.ToolStrip.Dock = System.Windows.Forms.DockStyle.Left
         Me.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
-        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.ToolStripSeparator2, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton4, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripButton7, Me.ToolStripButton3})
+        Me.ToolStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripButton, Me.ToolStripSeparator2, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton4, Me.ToolStripSeparator1, Me.ToolStripButton5, Me.ToolStripButton7, Me.ToolStripButton3, Me.ToolStripButton6})
         Me.ToolStrip.Location = New System.Drawing.Point(0, 24)
         Me.ToolStrip.Name = "ToolStrip"
         Me.ToolStrip.Padding = New System.Windows.Forms.Padding(10, 0, 1, 0)
@@ -591,6 +592,16 @@ Partial Class Home
         Me.ToolStripButton3.Padding = New System.Windows.Forms.Padding(10)
         Me.ToolStripButton3.Size = New System.Drawing.Size(143, 48)
         Me.ToolStripButton3.Text = "  Logout"
+        '
+        'ToolStripButton6
+        '
+        Me.ToolStripButton6.Image = CType(resources.GetObject("ToolStripButton6.Image"), System.Drawing.Image)
+        Me.ToolStripButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ToolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripButton6.Name = "ToolStripButton6"
+        Me.ToolStripButton6.Padding = New System.Windows.Forms.Padding(10)
+        Me.ToolStripButton6.Size = New System.Drawing.Size(143, 48)
+        Me.ToolStripButton6.Text = "Expense Tracker"
         '
         'MenuStrip
         '
@@ -852,5 +863,6 @@ Partial Class Home
     Friend WithEvents ToolStripButton5 As System.Windows.Forms.ToolStripButton
     Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewInventoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripButton6 As System.Windows.Forms.ToolStripButton
 
 End Class
