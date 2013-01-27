@@ -5,9 +5,9 @@
         Expense_Tracker.ExpenseView.Rows.Add()
         Expense_Tracker.ExpenseView.Item(columnIndex:=0, rowIndex:=SalaryExpense.totRow).Value = cmbcname.Text
         Expense_Tracker.ExpenseView.Item(columnIndex:=1, rowIndex:=SalaryExpense.totRow).Value = from_date.Text
-        Expense_Tracker.ExpenseView.Item(columnIndex:=2, rowIndex:=SalaryExpense.totRow).Value = Date.Today.ToShortDateString
+
         Dim _val As Decimal = Convert.ToDecimal(txtAmount.Text).ToString("#,##0.0")
-        Expense_Tracker.ExpenseView.Item(columnIndex:=3, rowIndex:=SalaryExpense.totRow).Value = _val
+        Expense_Tracker.ExpenseView.Item(columnIndex:=2, rowIndex:=SalaryExpense.totRow).Value = _val
         SalaryExpense.totRow += 1
     End Sub
 

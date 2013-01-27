@@ -38,10 +38,11 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Try
+            ExpenseView.SelectAll()
             Dim FirstValue As Boolean = True
             Dim cell As DataGridViewCell
             Dim roow As DataGridViewRow
-            For Each roow In ExpenseView.SelectedRows
+            For Each roow In ExpenseView.Rows
 
                 k += 1
                 For Each cell In ExpenseView.SelectedCells

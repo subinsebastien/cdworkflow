@@ -117,30 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ExpenseName.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Fdate.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Amount.UserAddedColumn" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="DeleteButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAi9JREFUOE9tUt1P
-        knEU9q/soptsq+lFq62LPuyuLWurRBkw6NXKSRAwwkIUYWCIivEZxDdYwEqghMDSzasnnkNW5PtuZ7/n
-        /Z1znnOe3zljY7+/fCGPbKGI03+evItGYwiHw2L8/9f/BweTOcTLDeQqn5DIl7GVeC+42uqg2enJWRtY
-        ob4Pxnp3U3+JtGYXDDY3TM4VaMyv4Yw1YPDGYHBHoLH7cFex4tasgqvTWkzNGHDH+Azzb/zQW5eHJEyO
-        5PbwpX+EUquH5P4xQtUuQpWO2GbtEEbPrhAyLtP5KScLj0igYz1XE4L10gGc8Y9CRIL5wAc83chhdTuB
-        nXpLZIy8BTWRgAGU4C32oX3bFltM9OHIDDtil550EYFIfJSAiamvhyKBlacdVYzr25hY6GFSaWDuVWEo
-        KZ6GL1uRQiMd2Hyb0j4nsRj4jIvaKiaUJmyp74KvmIqCD34cCwHjzxCwNVsghpm1Fs7fS0LnrYoUXbAv
-        d3OekoxTlYAtud5lseSPwhgYEDxu4MbzPB666lL9gq6JF6GyvEGoVD8rge3YQ3HQGHhJ6eLybFqSiUnE
-        6ZDAHc2ob6PFvyXzfWQPyiRWEsORWrabWB087E6hIdvIONV15nZ1j05ExpTJieheW4yJ9FncPjjWNgSr
-        Eii2ZanAl842vslIOW/lpVM008cpMU6VgBVuPtBIEjEDNQtLYiSxeny4r38iPlUCXo5fvw2zyy2BxOcm
-        r4kRn979n/wL+3psq8aglDoAAAAASUVORK5CYII=
-</value>
-  </data>
 </root>

@@ -23,12 +23,11 @@ Partial Class Expense_Tracker
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Expense_Tracker))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
         Me.ExpenseView = New System.Windows.Forms.DataGridView
         Me.ButtonSalaryExp = New System.Windows.Forms.Button
         Me.ButtonOtherExp = New System.Windows.Forms.Button
@@ -37,7 +36,6 @@ Partial Class Expense_Tracker
         Me.Button1 = New System.Windows.Forms.Button
         Me.ExpenseName = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Fdate = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Tdate = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.Amount = New System.Windows.Forms.DataGridViewTextBoxColumn
         CType(Me.ExpenseView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,16 +52,16 @@ Partial Class Expense_Tracker
         Me.ExpenseView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.ExpenseView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.ExpenseView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ExpenseView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ExpenseName, Me.Fdate, Me.Tdate, Me.Amount})
+        Me.ExpenseView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ExpenseName, Me.Fdate, Me.Amount})
         Me.ExpenseView.Location = New System.Drawing.Point(12, 134)
         Me.ExpenseView.Name = "ExpenseView"
         Me.ExpenseView.ReadOnly = True
         Me.ExpenseView.RowHeadersVisible = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        Me.ExpenseView.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        Me.ExpenseView.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.ExpenseView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.ExpenseView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.ExpenseView.Size = New System.Drawing.Size(473, 133)
+        Me.ExpenseView.Size = New System.Drawing.Size(401, 133)
         Me.ExpenseView.TabIndex = 41
         '
         'ButtonSalaryExp
@@ -100,7 +98,7 @@ Partial Class Expense_Tracker
         '
         Me.DeleteButton.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DeleteButton.Image = CType(resources.GetObject("DeleteButton.Image"), System.Drawing.Image)
-        Me.DeleteButton.Location = New System.Drawing.Point(460, 272)
+        Me.DeleteButton.Location = New System.Drawing.Point(385, 272)
         Me.DeleteButton.Name = "DeleteButton"
         Me.DeleteButton.Size = New System.Drawing.Size(28, 26)
         Me.DeleteButton.TabIndex = 81
@@ -108,7 +106,7 @@ Partial Class Expense_Tracker
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(379, 273)
+        Me.Button1.Location = New System.Drawing.Point(304, 273)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 24)
         Me.Button1.TabIndex = 82
@@ -133,29 +131,18 @@ Partial Class Expense_Tracker
         Me.Fdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         Me.Fdate.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Fdate.HeaderText = "From Date"
+        Me.Fdate.HeaderText = "Date"
         Me.Fdate.Name = "Fdate"
         Me.Fdate.ReadOnly = True
         Me.Fdate.Width = 81
         '
-        'Tdate
-        '
-        Me.Tdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.Format = "N3"
-        Me.Tdate.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Tdate.HeaderText = "To Date"
-        Me.Tdate.Name = "Tdate"
-        Me.Tdate.ReadOnly = True
-        Me.Tdate.Width = 71
-        '
         'Amount
         '
         Me.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle5.Format = "N3"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.Amount.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N3"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.Amount.DefaultCellStyle = DataGridViewCellStyle4
         Me.Amount.HeaderText = "Amount"
         Me.Amount.Name = "Amount"
         Me.Amount.ReadOnly = True
@@ -165,7 +152,7 @@ Partial Class Expense_Tracker
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(497, 313)
+        Me.ClientSize = New System.Drawing.Size(425, 313)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DeleteButton)
         Me.Controls.Add(Me.PictureBox1)
@@ -188,6 +175,5 @@ Partial Class Expense_Tracker
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents ExpenseName As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Fdate As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Tdate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Amount As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
