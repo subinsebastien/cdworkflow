@@ -89,7 +89,7 @@ Partial Class SalaryExpense
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(94, 15)
         Me.Label3.TabIndex = 79
-        Me.Label3.Text = "Customer Name"
+        Me.Label3.Text = "Employee Name"
         '
         'cmbcname
         '
@@ -116,6 +116,7 @@ Partial Class SalaryExpense
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(227, 194)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txtAmount)
@@ -125,7 +126,10 @@ Partial Class SalaryExpense
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cmbcname)
+        Me.Location = New System.Drawing.Point(500, 500)
+        Me.MaximizeBox = False
         Me.Name = "SalaryExpense"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "SalaryExpense"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

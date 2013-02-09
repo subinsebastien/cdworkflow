@@ -40,7 +40,7 @@ Partial Class AddEmployee
         Me.ButtonSave.Location = New System.Drawing.Point(142, 195)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(75, 23)
-        Me.ButtonSave.TabIndex = 42
+        Me.ButtonSave.TabIndex = 44
         Me.ButtonSave.Text = "Save"
         Me.ButtonSave.UseVisualStyleBackColor = True
         '
@@ -74,7 +74,7 @@ Partial Class AddEmployee
         Me.txtaddress.Multiline = True
         Me.txtaddress.Name = "txtaddress"
         Me.txtaddress.Size = New System.Drawing.Size(146, 57)
-        Me.txtaddress.TabIndex = 38
+        Me.txtaddress.TabIndex = 42
         '
         'Label8
         '
@@ -120,8 +120,10 @@ Partial Class AddEmployee
         '
         'AddEmployee
         '
+        Me.AcceptButton = Me.ButtonSave
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(225, 225)
         Me.Controls.Add(Me.ButtonSave)
         Me.Controls.Add(Me.Banner)
@@ -131,6 +133,7 @@ Partial Class AddEmployee
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cmbcname)
         Me.Controls.Add(Me.Label5)
+        Me.MaximizeBox = False
         Me.Name = "AddEmployee"
         Me.Text = "AddEmployee"
         CType(Me.Banner, System.ComponentModel.ISupportInitialize).EndInit()

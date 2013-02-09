@@ -24,13 +24,12 @@ Partial Class Other_Expense
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox
         Me.txtAmount = New System.Windows.Forms.TextBox
-        Me.Buttondone = New System.Windows.Forms.Button
         Me.ButtonAdd = New System.Windows.Forms.Button
         Me.from_date = New System.Windows.Forms.DateTimePicker
         Me.Label4 = New System.Windows.Forms.Label
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label3 = New System.Windows.Forms.Label
-        Me.cmbcname = New System.Windows.Forms.ComboBox
+        Me.ExpenseName = New System.Windows.Forms.ComboBox
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,18 +52,9 @@ Partial Class Other_Expense
         Me.txtAmount.TabIndex = 100
         Me.txtAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Buttondone
-        '
-        Me.Buttondone.Location = New System.Drawing.Point(160, 169)
-        Me.Buttondone.Name = "Buttondone"
-        Me.Buttondone.Size = New System.Drawing.Size(75, 23)
-        Me.Buttondone.TabIndex = 99
-        Me.Buttondone.Text = "Done"
-        Me.Buttondone.UseVisualStyleBackColor = True
-        '
         'ButtonAdd
         '
-        Me.ButtonAdd.Location = New System.Drawing.Point(79, 169)
+        Me.ButtonAdd.Location = New System.Drawing.Point(160, 160)
         Me.ButtonAdd.Name = "ButtonAdd"
         Me.ButtonAdd.Size = New System.Drawing.Size(75, 23)
         Me.ButtonAdd.TabIndex = 98
@@ -107,36 +97,37 @@ Partial Class Other_Expense
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(5, 79)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(94, 15)
+        Me.Label3.Size = New System.Drawing.Size(84, 15)
         Me.Label3.TabIndex = 91
-        Me.Label3.Text = "Customer Name"
+        Me.Label3.Text = "Expense Name"
         '
-        'cmbcname
+        'ExpenseName
         '
-        Me.cmbcname.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbcname.FormattingEnabled = True
-        Me.cmbcname.Items.AddRange(New Object() {"FireWood", "Electricity Bill", "Charity", "Food Expense"})
-        Me.cmbcname.Location = New System.Drawing.Point(105, 76)
-        Me.cmbcname.Name = "cmbcname"
-        Me.cmbcname.Size = New System.Drawing.Size(130, 23)
-        Me.cmbcname.TabIndex = 92
-        Me.cmbcname.Text = "---Expense Name---"
+        Me.ExpenseName.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ExpenseName.FormattingEnabled = True
+        Me.ExpenseName.Location = New System.Drawing.Point(105, 76)
+        Me.ExpenseName.Name = "ExpenseName"
+        Me.ExpenseName.Size = New System.Drawing.Size(130, 23)
+        Me.ExpenseName.TabIndex = 92
+        Me.ExpenseName.Text = "--------Select--------"
         '
         'Other_Expense
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(244, 204)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(244, 190)
         Me.Controls.Add(Me.txtAmount)
-        Me.Controls.Add(Me.Buttondone)
         Me.Controls.Add(Me.ButtonAdd)
         Me.Controls.Add(Me.from_date)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.cmbcname)
+        Me.Controls.Add(Me.ExpenseName)
         Me.Controls.Add(Me.PictureBox1)
+        Me.MaximizeBox = False
         Me.Name = "Other_Expense"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OtherExpense"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -145,11 +136,10 @@ Partial Class Other_Expense
     End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents txtAmount As System.Windows.Forms.TextBox
-    Friend WithEvents Buttondone As System.Windows.Forms.Button
     Friend WithEvents ButtonAdd As System.Windows.Forms.Button
     Friend WithEvents from_date As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents cmbcname As System.Windows.Forms.ComboBox
+    Friend WithEvents ExpenseName As System.Windows.Forms.ComboBox
 End Class

@@ -1,11 +1,14 @@
 ﻿Public Class Expense_Tracker
     Dim row_index As Integer = -1
     Dim k As Integer = 0
+    Dim db As New DataBaseInterface
     Private Sub ButtonSalaryExp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSalaryExp.Click
+        StatusBarUpdater.updateStatusBar(" ", 4)
         SalaryExpense.ShowDialog()
     End Sub
 
     Private Sub ButtonOtherExp_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonOtherExp.Click
+        StatusBarUpdater.updateStatusBar(" ", 4)
         Other_Expense.ShowDialog()
     End Sub
 
@@ -37,35 +40,33 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        Try
-            ExpenseView.SelectAll()
-            Dim FirstValue As Boolean = True
-            Dim cell As DataGridViewCell
-            Dim roow As DataGridViewRow
-            For Each roow In ExpenseView.Rows
+     
 
-                k += 1
-                For Each cell In ExpenseView.SelectedCells
-                    'If Not FirstValue Then
+        Dim name As String
+        Dim dateoftransaction As Date
+        Dim amount As Decimal
+        Dim count As Integer = 0
+        For Each row As DataGridViewRow In ExpenseView.Rows
+            count += 1
+        Next
 
-                    'End If
-                    If cell.Value.ToString <> "" Then
-                        MsgBox(cell.Value.ToString())
-                        'FirstValue = False
-                    End If
-
-                Next
-
-                Exit For
+        If count >= 1 Then
 
 
+
+            For Each row As DataGridViewRow In ExpenseView.Rows
+                If Not row.IsNewRow Then
+                    name = row.Cells(0).Value.ToString
+                    dateoftransaction = Convert.ToDateTime(row.Cells(1).Value)
+                    amount = Convert.ToDecimal((row.Cells(2).Value))
+                    db.manipulate("insert into TABLEEXPENSE values('" & name & "'," & dateoftransaction & "," & amount & ") ")
+                    Me.Close()
+                    StatusBarUpdater.updateStatusBar("Data Saved", 5)
+                End If
             Next
-
-
-
-
-        Catch ex As Exception
-            MsgBox("select an item")
-        End Try
+        Else
+            StatusBarUpdater.updateStatusBar("No item to save", 1)
+        End If
+        
     End Sub
 End Class

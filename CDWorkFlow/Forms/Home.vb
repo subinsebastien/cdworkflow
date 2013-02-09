@@ -522,4 +522,20 @@ Public Class Home
     Private Sub IndexToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles IndexToolStripMenuItem.Click
         Other_Expense.ShowDialog()
     End Sub
+
+    Private Sub OptionsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OptionsToolStripMenuItem.Click
+        AddEmployee.Show()
+    End Sub
+
+    Private Sub AddEmployeeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddEmployeeToolStripMenuItem.Click
+        AddEmployee.Show()
+    End Sub
+
+    Private Sub AddExpenseToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddExpenseToolStripMenuItem.Click
+        Expense_Tracker.Show()
+    End Sub
+
+    Private Sub ExpenseTypesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExpenseTypesToolStripMenuItem.Click
+        AddExpenseTypes.Show()
+    End Sub
 End Class

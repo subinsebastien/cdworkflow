@@ -95,6 +95,11 @@ Partial Class Home
         Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ExpenceToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AddEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ViewExpenseDetailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.AddExpenseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ExpenseTypesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.StatusStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -171,6 +176,7 @@ Partial Class Home
         Me.txtpswd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpswd.Size = New System.Drawing.Size(134, 23)
         Me.txtpswd.TabIndex = 12
+        Me.txtpswd.Text = "a"
         '
         'Label2
         '
@@ -190,6 +196,7 @@ Partial Class Home
         Me.txtuname.Name = "txtuname"
         Me.txtuname.Size = New System.Drawing.Size(134, 23)
         Me.txtuname.TabIndex = 10
+        Me.txtuname.Text = "a"
         '
         'Label1
         '
@@ -607,7 +614,7 @@ Partial Class Home
         '
         Me.MenuStrip.BackgroundImage = Global.CDWorkFlow.My.Resources.Resources.BannerImage
         Me.MenuStrip.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileMenu, Me.ViewMenu, Me.ToolsMenu, Me.WindowsMenu, Me.HelpMenu, Me.ExpenceToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
@@ -759,6 +766,37 @@ Partial Class Home
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.AboutToolStripMenuItem.Text = "&About ..."
         '
+        'ExpenceToolStripMenuItem
+        '
+        Me.ExpenceToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddEmployeeToolStripMenuItem, Me.ViewExpenseDetailsToolStripMenuItem, Me.AddExpenseToolStripMenuItem, Me.ExpenseTypesToolStripMenuItem})
+        Me.ExpenceToolStripMenuItem.Name = "ExpenceToolStripMenuItem"
+        Me.ExpenceToolStripMenuItem.Size = New System.Drawing.Size(62, 20)
+        Me.ExpenceToolStripMenuItem.Text = "Expence"
+        '
+        'AddEmployeeToolStripMenuItem
+        '
+        Me.AddEmployeeToolStripMenuItem.Name = "AddEmployeeToolStripMenuItem"
+        Me.AddEmployeeToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.AddEmployeeToolStripMenuItem.Text = "Add Employee"
+        '
+        'ViewExpenseDetailsToolStripMenuItem
+        '
+        Me.ViewExpenseDetailsToolStripMenuItem.Name = "ViewExpenseDetailsToolStripMenuItem"
+        Me.ViewExpenseDetailsToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.ViewExpenseDetailsToolStripMenuItem.Text = "View Expense Details"
+        '
+        'AddExpenseToolStripMenuItem
+        '
+        Me.AddExpenseToolStripMenuItem.Name = "AddExpenseToolStripMenuItem"
+        Me.AddExpenseToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.AddExpenseToolStripMenuItem.Text = "Add Expense"
+        '
+        'ExpenseTypesToolStripMenuItem
+        '
+        Me.ExpenseTypesToolStripMenuItem.Name = "ExpenseTypesToolStripMenuItem"
+        Me.ExpenseTypesToolStripMenuItem.Size = New System.Drawing.Size(182, 22)
+        Me.ExpenseTypesToolStripMenuItem.Text = "ExpenseTypes"
+        '
         'Home
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -864,5 +902,10 @@ Partial Class Home
     Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewInventoryToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripButton6 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents ExpenceToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ViewExpenseDetailsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AddExpenseToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExpenseTypesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
